@@ -31,7 +31,8 @@ $total_registros = mysqli_num_rows($resultado);
                     <?php 
                         if($total_registros > 0){
                             while($row = mysqli_fetch_array($resultado)){
-                                echo "<option>" . $row['tipo'] ."</option>";
+                                echo '<option value="' . $row['id'] . '">' . $row['tipo'] . '</option>';
+
                             }
                         }
                     ?>   
