@@ -1,0 +1,24 @@
+body{
+    margin: 0px;
+    padding: 0px;;
+}
+#container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: darkolivegreen;
+    height: 100vh;
+}
+#formulario_clientes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#formulario_clientes form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
