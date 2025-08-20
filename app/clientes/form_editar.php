@@ -6,7 +6,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Editar Cliente</title>
     <link rel="stylesheet" href="../include/estilo_clientes.css">
 </head>
 <body>
@@ -16,8 +16,8 @@ session_start();
         <div id="topo"></div>
 
         <div id="formulario_clientes">
-            <h1>Cadastro de Clientes</h1>
-            <form action="cClientes.php" method="POST">
+            <h1>Editar Cliente</h1>
+            <form action="uClientes.php" method="POST">
                 <input type="text" name="nome" placeholder="nome">
                 <input type="date" name="data_nasc">
                 <input type="text" name="cpf" placeholder="CPF">
@@ -30,7 +30,7 @@ session_start();
         </div>
 
         <div id="roda"> 
-            <?php include 'rClientes.php'; ?>    
+             
         <a href="../funcionarios/inicio.php">Voltar</a> </div>
     </div>
     

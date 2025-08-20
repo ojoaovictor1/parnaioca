@@ -22,6 +22,7 @@ session_start();
             <a href="../tipo_acomodacao/index.php">Cadastrar o Tipo de Acomodação</a><br>
             <a href="../acomodacoes/index.php">Cadastrar Acomodações</a><br>
             <a href="../item_frigobar/index.php">Cadastrar itens para o frigobar</a>
+            <a href="../vaga_estacionamento">Cadastrar Vaga no Estacionamento</a>
         </div>
            
         <div id="roda"></div>
