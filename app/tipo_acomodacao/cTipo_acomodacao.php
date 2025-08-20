@@ -4,7 +4,7 @@ session_start();
 include '../config/conexao.php';
 
 $sql_criar_tabela_tipo_acomodacao = 
-    "CREATE TABLE tipo_da_acomodacao (
+    "CREATE TABLE IF NOT EXISTS tipo_da_acomodacao (
     id INT PRIMARY KEY AUTO_INCREMENT,
     tipo VARCHAR(32)
     )";

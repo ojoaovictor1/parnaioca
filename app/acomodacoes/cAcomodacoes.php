@@ -14,12 +14,7 @@ $sql_criar_tabela_acomodacoes =
     FOREIGN KEY (tipo) REFERENCES tipo_da_acomodacao(id)
     )";
 
-if(mysqli_query($con, $sql_criar_tabela_acomodacoes)){
-    echo 'tabela criada com sucesso';
-}else{
-    echo 'erro ao criar a tabela' . mysqli_error($con);
-}
-
+mysqli_query($con, $sql_criar_tabela_acomodacoes);
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
@@ -35,7 +30,7 @@ $sql_cadastrar_acomodacoes =
      VALUES ('$nome', '$numero', '$valor', '$capacidade', '$tipo')";
 
 mysqli_query($con, $sql_cadastrar_acomodacoes);
-echo 'Dados inseridos com Sucesso!';
+header('location: ../funcionarios/inicio.php');
 
 }else{
     echo 'Erro ao receber os dados!';

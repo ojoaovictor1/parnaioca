@@ -4,7 +4,7 @@ session_start();
 include '../config/conexao.php';
 
 $sql_criar_tabela_clientes = 
-    "CREATE TABLE clientes (
+    "CREATE TABLE IF NOT EXISTS clientes (
     id INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(32) NOT NULL,
     data_nasc DATE,
