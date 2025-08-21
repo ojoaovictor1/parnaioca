@@ -30,7 +30,7 @@ $sql_cadastrar_acomodacoes =
      VALUES ('$nome', '$numero', '$valor', '$capacidade', '$tipo')";
 
 mysqli_query($con, $sql_cadastrar_acomodacoes);
-header('location: ../funcionarios/inicio.php');
+header('location: index.php');
 
 }else{
     echo 'Erro ao receber os dados!';

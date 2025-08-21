@@ -14,7 +14,7 @@ session_start();
     <div id="container">
         <div id="topo">
             Bem Vindo!!! <?= $_SESSION['login']; ?>
-            <a href="login.php">Voltar</a>
+            <a href="logout.php">Sair</a>
         </div>
 
         <div id="cont">

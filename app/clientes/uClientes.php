@@ -12,11 +12,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $estado = $_POST['estado'];
     $cidade = $_POST['cidade'];
 
-    $recupera_id = "SELECT * FROM clientes WHERE cpf = $cpf";
-    $resultado = mysqli_query($con, $recupera_id);
-    $row = mysqli_fetch_array($resultado);
-    $id = $row['id'];
-    header('location: index.php');
+    $id = $_POST['id'];  
  
 }else{
     echo 'Dados não Atualizados' . mysqli_error($con);
@@ -36,7 +32,7 @@ $sql_update_clientes =
 
 $resultado_update = mysqli_query($con,$sql_update_clientes);
 if($resultado_update){
-    echo 'deu tudo certo';
+    header('location: index.php');
 }else{
     echo 'deu erro:' . mysqli_error($con);
 }

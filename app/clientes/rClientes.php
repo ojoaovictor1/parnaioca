@@ -28,8 +28,8 @@ if(mysqli_num_rows($resultado) >= 0){
         echo "<td>" . $row['telefone'] . "</td>";
         echo "<td>" . $row['estado'] . "</td>";
         echo "<td>" . $row['cidade'] . "</td>";
-        echo "<td> <a href='form_editar.php'>Edit.</a> </td>";
-        echo "<td> <a href='#'>Del.</a> </td>";
+        echo "<td> <a href='form_editar.php?id=" . $row['id'] . "'>Edit.</a> </td>";
+        echo "<td> <a href='dClientes.php?id=" . $row['id'] . "'>Del.</a> </td>";
         echo "</tr>";
     }
     echo "Total de registros: ". mysqli_num_rows($resultado); 

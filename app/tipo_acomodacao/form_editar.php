@@ -1,12 +1,14 @@
 <?php
 session_start();
+
+$id = $_GET['id'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Editar Cliente</title>
     <link rel="stylesheet" href="../include/estilo_clientes.css">
 </head>
 <body>
@@ -16,20 +18,17 @@ session_start();
         <div id="topo"></div>
 
         <div id="formulario_clientes">
-            
-            <h1>Cadastrar Tipo de Acomodação</h1>
-
-            <form action="cTipo_acomodacao.php" method="POST">
-                <input type="text " name="tipo_da_acomodacao"> <br>
+            <h1>Editar Tipo da Acomodação</h1>
+            <form action="uTipo_acomodacao.php" method="POST">
+                <input type="hidden" name="id" value="<?php echo $id; ?>">
+                <input type="text" name="tipo" placeholder="tipo da acomodação">
                 <input type="submit" value="Enviar">
             </form>
         </div>
 
-        <div id="roda">
-            <?php include 'rTipo_acomodacao.php'; ?>  
-            <a href="../funcionarios/inicio.php">Voltar</a> 
-            aaaa
-        </div>
+        <div id="roda"> 
+             
+        <a href="../funcionarios/inicio.php">Voltar</a> </div>
     </div>
     
 </body>

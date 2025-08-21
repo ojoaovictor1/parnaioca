@@ -1,5 +1,7 @@
 <?php
 session_start();
+
+$id = $_GET['id'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,6 +20,7 @@ session_start();
         <div id="formulario_clientes">
             <h1>Editar Cliente</h1>
             <form action="uClientes.php" method="POST">
+                <input type="hidden" name="id" value="<?php echo $id; ?>">
                 <input type="text" name="nome" placeholder="nome">
                 <input type="date" name="data_nasc">
                 <input type="text" name="cpf" placeholder="CPF">

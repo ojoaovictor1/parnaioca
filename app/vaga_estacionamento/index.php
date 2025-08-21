@@ -1,7 +1,9 @@
 <?php
+include '../config/conexao.php';
 session_start();
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +25,23 @@ session_start();
             <form action="cVaga_estacionamento.php" method="POST">
                 <input type="number" name="numero">
                 <select name="ativo" id="">
-                    <option name="ativo" value="true">Sim</option>
+                    
+
+
+                    <?php 
+                        $sql_acomodacao_referencia = "SELECT * FROM acomodacoes";
+                        $resultado = mysqli_query($con,$sql_acomodacao_referencia);
+
+                        if(mysqli_num_rows($resultado) > 0){
+                           echo ' <option name="ativo" value="true">Vazia</option>';
+
+                           while($row = mysqli_fetch_array($resultado)){
+                                echo "<option>" . $row['nome'] . "</option>";
+                           }
+                        }
+                    ?>
+
+
                     <option name="ativo" value="false">Não</option>
                 </select>
                 <input type="submit" value="Enviar">
