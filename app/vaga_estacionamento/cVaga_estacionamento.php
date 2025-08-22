@@ -7,7 +7,7 @@ $sql_criar_tabela_estacionamento =
     "CREATE TABLE IF NOT EXISTS estacionamento (
     id INT PRIMARY KEY AUTO_INCREMENT,
     numero INT NOT NULL,
-    ativo BOOLEAN,
+    ativo VARCHAR(32),
     acomodacao_id INT,
     FOREIGN KEY (acomodacao_id) REFERENCES acomodacoes(id)
     )";
@@ -18,15 +18,21 @@ if(mysqli_query($con, $sql_criar_tabela_estacionamento)){
     echo 'erro ao criar a tabela' . mysqli_error($con);
 }
 
+
+
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
 $numero = $_POST['numero'];
-$ativo = $_POST['ativo'] === 'true' ? 1 : 0;
+$ativo = $_POST['ativo'];
+
+$sql_recupera_id = "SELECT id FROM acomodacoes WHERE nome = '" . $ativo . "'";
+$resultado_id = mysqli_query($con, $sql_recupera_id);
+$acomodacao_id = mysqli_fetch_array($resultado_id)['id'];
 
 $sql_cadastrar_vaga_estacionamento = 
     "INSERT INTO estacionamento 
-    (numero, ativo)
-     VALUES ('$numero', '$ativo')";
+    (numero, ativo, acomodacao_id)
+     VALUES ('$numero', '$ativo', '$acomodacao_id')";
 
 mysqli_query($con, $sql_cadastrar_vaga_estacionamento);
 echo 'Dados inseridos com Sucesso!';

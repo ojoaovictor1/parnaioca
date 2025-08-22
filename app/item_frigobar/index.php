@@ -7,15 +7,16 @@
     <link rel="stylesheet" href="../include/estilo.css">
 </head>
 <body>
+
     <div id="topo">
         <h1>Cadastro de Itens para o Frigobar</h1>
     </div>
 
-    <div id="formulario_item_frigobar">
+    <div id="formulario_clientes">
     <form action="cItem_frigobar.php" method="POST">
         
-        <input type="text" id="nome" name="nome" required><br>
-        <input type="number" id="preco" name="preco" required><br>
+        <input type="text" id="nome" name="nome" placeholder="nome" required><br>
+        <input type="number" id="preco" name="preco" placeholder="preco" required><br>
         <select name="ativo" id="">
             <option value="1">Ativo</option>
             <option value="0">Inativo</option>
@@ -24,7 +25,9 @@
     </form>
     </div>
     <div id="roda">
-        <a href="../funcionarios/inicio.php">Voltar</a>
+        <?php include 'rItem_frigobar.php'; ?>
+        <a href="../inicio.php">Voltar</a>
     </div>
+
 </body>
 </html>

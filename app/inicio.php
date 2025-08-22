@@ -18,11 +18,12 @@ session_start();
         </div>
 
         <div id="cont">
-            <a href="../clientes/index.php">Cadastrar clientes</a> <br>
-            <a href="../tipo_acomodacao/index.php">Cadastrar o Tipo de Acomodação</a><br>
-            <a href="../acomodacoes/index.php">Cadastrar Acomodações</a><br>
-            <a href="../item_frigobar/index.php">Cadastrar itens para o frigobar</a>
-            <a href="../vaga_estacionamento">Cadastrar Vaga no Estacionamento</a>
+            <a href="clientes/index.php">Cadastrar clientes</a> <br>
+            <a href="tipo_acomodacao/index.php">Cadastrar o Tipo de Acomodação</a><br>
+            <a href="acomodacoes/index.php">Cadastrar Acomodações</a><br>
+            <a href="item_frigobar/index.php">Cadastrar itens para o frigobar</a><br>
+            <a href="vaga_estacionamento">Cadastrar Vaga no Estacionamento</a><br>
+            <a href="hospedagem/index.php">Cadastrar Hospedagem</a>
         </div>
            
         <div id="roda"></div>

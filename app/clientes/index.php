@@ -31,7 +31,7 @@ session_start();
 
         <div id="roda"> 
             <?php include 'rClientes.php'; ?>    
-        <a href="../funcionarios/inicio.php">Voltar</a> </div>
+        <a href="../inicio.php">Voltar</a> </div>
     </div>
     
 </body>

@@ -31,19 +31,18 @@ session_start();
                     <?php 
                         $sql_acomodacao_referencia = "SELECT * FROM acomodacoes";
                         $resultado = mysqli_query($con,$sql_acomodacao_referencia);
-
-                        if(mysqli_num_rows($resultado) > 0){
-                           echo ' <option name="ativo" value="true">Vazia</option>';
-
-                           while($row = mysqli_fetch_array($resultado)){
-                                echo "<option>" . $row['nome'] . "</option>";
-                           }
+                        
+                        if(mysqli_num_rows($resultado) >= 1){
+                           
+                            while($row = mysqli_fetch_array($resultado)){
+                                echo "<option name='ativo' value='" . $row['nome'] . "'>" . $row['nome'] . "</option>";
+                                    
+                        }
+                           
                         }
                     ?>
-
-
-                    <option name="ativo" value="false">Não</option>
                 </select>
+        
                 <input type="submit" value="Enviar">
             </form>
             <br> <br>
@@ -51,7 +50,10 @@ session_start();
             
         </div>
 
-        <div id="roda"> <a href="../funcionarios/inicio.php">Voltar</a> </div>
+        <div id="roda">
+            <?php include 'rVaga_estacionamento.php'; ?>
+            <a href="../inicio.php">Voltar</a>
+        </div>
     </div>
 
     

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../include/estilo.css">
+    <link rel="stylesheet" href="include/estilo.css">
 </head>
 <body>
 
@@ -21,7 +21,7 @@
 
             </div>
             <div id="baixo">
-                <a href="cadastro_funcionarios.php">Cadastrar Funcionário</a>
+                <a href="funcionarios/cadastro_funcionarios.php">Cadastrar Funcionário</a>
             </div>
         </div>
 

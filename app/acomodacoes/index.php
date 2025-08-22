@@ -44,7 +44,7 @@ $total_registros = mysqli_num_rows($resultado);
 
         <div id="roda"> 
             <?php include 'rAcomodacoes.php'; ?>
-            <a href="../funcionarios/inicio.php">Voltar</a> </div>
+            <a href="../inicio.php">Voltar</a> </div>
     </div>
     
 </body>

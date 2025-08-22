@@ -27,8 +27,8 @@ session_start();
 
         <div id="roda">
             <?php include 'rTipo_acomodacao.php'; ?>  
-            <a href="../funcionarios/inicio.php">Voltar</a> 
-            aaaa
+            <a href="../inicio.php">Voltar</a> 
+            
         </div>
     </div>
     

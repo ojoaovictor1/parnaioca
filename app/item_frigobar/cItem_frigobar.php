@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $sql_cadastrar_item = "INSERT INTO itens_frigobar (nome, preco, ativo) VALUES ('$nome', '$preco', '$ativo')";
     mysqli_query($con, $sql_cadastrar_item);
-    header('location: ../funcionarios/inicio.php');
+    header('location: index.php');
 } else {
     echo 'Erro ao receber os dados!';
 }
