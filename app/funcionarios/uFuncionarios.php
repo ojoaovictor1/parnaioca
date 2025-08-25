@@ -19,16 +19,16 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
 $sql_update_funcionarios = 
     "UPDATE funcionarios SET 
-    nome = $nome,
-    cargo = $cargo,
-    poderes = $poderes,
-    login = $login,
-    senha = $senha
+    nome = '$nome',
+    cargo = '$cargo',
+    poderes = '$poderes',
+    login = '$login',
+    senha = '$senha'
     WHERE id = $id";
 
 $resultado_update = mysqli_query($con,$sql_update_funcionarios);
 if($resultado_update){
-    header('location: index.php');
+    header('location: form_editar.php');
 }else{
     echo 'deu erro:' . mysqli_error($con);
 }

@@ -23,7 +23,8 @@ session_start();
             <a href="acomodacoes/index.php">Cadastrar Acomodações</a><br>
             <a href="item_frigobar/index.php">Cadastrar itens para o frigobar</a><br>
             <a href="vaga_estacionamento">Cadastrar Vaga no Estacionamento</a><br>
-            <a href="hospedagem/index.php">Cadastrar Hospedagem</a>
+            <a href="hospedagem/index.php">Cadastrar Hospedagem</a><br>
+            <a href="frigobar/index.php">Cadastrar Frigobar</a>
         </div>
            
         <div id="roda"></div>
