@@ -42,9 +42,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                  VALUES 
                  ('$data_checkin', '$data_checkout', '$cliente', '$acomodacao', '$ativo')";
     if(mysqli_query($con, $sql_cadastrar_hospedagem)){
-        echo 'dados inseridos';
+        header('location: index.php');
     }
     
-            }
+    }
 }
 ?>

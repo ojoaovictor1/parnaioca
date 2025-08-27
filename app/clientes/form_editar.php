@@ -34,7 +34,7 @@ $id = $_GET['id'];
 
         <div id="roda"> 
              
-        <a href="../funcionarios/inicio.php">Voltar</a> </div>
+        <a href="../inicio.php">Voltar</a> </div>
     </div>
     
 </body>
