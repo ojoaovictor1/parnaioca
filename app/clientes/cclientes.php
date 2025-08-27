@@ -32,10 +32,18 @@ $sql_cadastrar_clientes =
     (nome, data_nasc, cpf, email, telefone, estado, cidade)
      VALUES ('$nome', '$data_nasc', '$cpf', '$email', '$telefone', '$estado', '$cidade')";
 
-mysqli_query($con, $sql_cadastrar_clientes);
-echo 'Dados inseridos com Sucesso!';
-header('location: index.php');
+try{
+    mysqli_query($con, $sql_cadastrar_clientes);
+    echo 'Dados inseridos com Sucesso!';
+    header('location: index.php');
+}catch(Exception $e){
+
+    if($e->getCode() == 1062){
+        echo 'Erro: CPF já cadastrado!';
+    }
+    
+}
 }else{
-    echo 'Erro ao receber os dados!';
+    echo 'Erro ao receber os dados!' . mysqli_error($con);
 }
 ?>
