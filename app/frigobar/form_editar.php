@@ -1,5 +1,6 @@
 <?php
 session_start();
+include '../config/conexao.php';
 
 $id = $_GET['id'];
 ?>
@@ -19,16 +20,16 @@ $id = $_GET['id'];
 
         <div id="formulario_clientes">
             <h1>Editar Frigobar</h1>
-            <form action="uTipo_acomodacao.php" method="POST">
+            <form action="uFrigobar.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $id; ?>">
                 <select name="acomodacoes" id="">
                     <?php 
                        $sql = "SELECT * FROM acomodacoes";
                        $resultado = mysqli_query($con,$sql);
                        
-                        if($row = mysqli_num_rows($resultado)){
-                            while(mysqli_fetch_array($resultado)){
-                                echo "<option>" .$row['nome'] "</option>"
+                        if(mysqli_num_rows($resultado) > 0){
+                            while($row = mysqli_fetch_array($resultado)){
+                                echo "<option value=" . $row['id'] .">" .$row['nome'] . "</option>";
                             }
                         }
                     ?>
@@ -39,7 +40,7 @@ $id = $_GET['id'];
 
         <div id="roda"> 
              
-        <a href="../funcionarios/inicio.php">Voltar</a> </div>
+        <a href="index.php">Voltar</a> </div>
     </div>
     
 </body>

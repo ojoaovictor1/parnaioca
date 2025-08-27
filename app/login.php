@@ -1,3 +1,8 @@
+<?php
+require 'function.php';
+    $erro = null;
+    $sucesso = null;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,6 +24,19 @@
                     <input type="submit" value="Enviar">
                 </form>
 
+            <div id="mensagem">
+                <?php if(exibirErro($erro)) : ?>
+                    <p style="color: red">
+                        <?= $erro; ?>
+                    </p>
+                <?php endif; ?>
+
+                <?php if(exibirErro($sucesso)) :?>
+                    <p style="color: green">
+                        <?= $sucesso; ?>
+                    </p>
+                <?php endif; ?>
+            </div>
             </div>
             <div id="baixo">
                 <a href="funcionarios/cadastro_funcionarios.php">Cadastrar Funcionário</a>

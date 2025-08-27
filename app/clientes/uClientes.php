@@ -30,10 +30,18 @@ $sql_update_clientes =
     cidade = '$cidade' 
     WHERE id = $id";
 
-$resultado_update = mysqli_query($con,$sql_update_clientes);
-if($resultado_update){
-    header('location: index.php');
-}else{
-    echo 'deu erro:' . mysqli_error($con);
+$sql_verifica_cpf = "SELECT * FROM clientes WHERE cpf = '$cpf'";
+$resultado_cpf = mysqli_query($con,$sql_verifica_cpf);
+
+if($row = mysqli_num_rows($resultado_cpf) > 0){
+    echo 'Erro: CPF já cadastrado!';
+} else {
+
+    $resultado_update = mysqli_query($con,$sql_update_clientes);
+    if($resultado_update){
+        header('location: index.php');
+    }else{
+        echo 'deu erro:' . mysqli_error($con);
+    }
 }
 ?>
