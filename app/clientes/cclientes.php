@@ -26,11 +26,12 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $telefone = $_POST['telefone'];
     $estado = $_POST['estado'];
     $cidade = $_POST['cidade'];
+    $situacao = $_POST['situacao'];
 
     $sql_cadastrar_clientes = 
         "INSERT INTO clientes 
-        (nome, data_nasc, cpf, email, telefone, estado, cidade)
-        VALUES ('$nome', '$data_nasc', '$cpf', '$email', '$telefone', '$estado', '$cidade')";
+        (nome, data_nasc, cpf, email, telefone, estado, cidade, situacao)
+        VALUES ('$nome', '$data_nasc', '$cpf', '$email', '$telefone', '$estado', '$cidade', '$situacao')";
 
     $sql_verifica_cpf = "SELECT * FROM clientes WHERE cpf = '$cpf'";
     

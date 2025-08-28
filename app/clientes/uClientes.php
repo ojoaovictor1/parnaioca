@@ -11,9 +11,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $telefone = $_POST['telefone'];
     $estado = $_POST['estado'];
     $cidade = $_POST['cidade'];
+    $situacao = $_POST['situacao'];
+    $id = $_POST['id'];
 
-    $id = $_POST['id'];  
- 
 }else{
     echo 'Dados não Atualizados' . mysqli_error($con);
     
@@ -27,7 +27,8 @@ $sql_update_clientes =
     email = '$email',
     telefone = '$telefone',
     estado = '$estado',
-    cidade = '$cidade' 
+    cidade = '$cidade',
+    situacao = '$situacao'
     WHERE id = $id";
 
 $sql_verifica_cpf = "SELECT * FROM clientes WHERE cpf = '$cpf'";

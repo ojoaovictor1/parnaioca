@@ -10,7 +10,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $capacidade = $_POST['capacidade'];
     $tipo = $_POST['tipo'];
     $id = $_POST['id'];  
- 
+    $situacao = $_POST['situacao'];
 }else{
     echo 'Dados não Atualizados' . mysqli_error($con);
     
@@ -22,7 +22,8 @@ $sql_update_Acomodacoes =
     numero = '$numero',
     valor = '$valor',
     capacidade = '$capacidade',
-    tipo = '$tipo'
+    tipo = '$tipo',
+    situacao = '$situacao'
     WHERE id = $id";
 
 $resultado_update = mysqli_query($con,$sql_update_Acomodacoes);

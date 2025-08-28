@@ -15,6 +15,7 @@ if(mysqli_num_rows($resultado) >= 0){
                     <th>Telefone</th>
                     <th>Estado</th>
                     <th>Cidade</th>
+                    <th>Situação</th>
                     <th>Editar</th>
                     <th>Excluir</th>
                 </tr>";
@@ -28,6 +29,7 @@ if(mysqli_num_rows($resultado) >= 0){
         echo "<td>" . $row['telefone'] . "</td>";
         echo "<td>" . $row['estado'] . "</td>";
         echo "<td>" . $row['cidade'] . "</td>";
+        echo "<td>" . ($row['situacao'] == 1 ? 'Ativo' : 'Inativo') . "</td>";
         echo "<td> <a href='form_editar.php?id=" . $row['id'] . "'>Edit.</a> </td>";
         echo "<td> <a href='dClientes.php?id=" . $row['id'] . "'>Del.</a> </td>";
         echo "</tr>";

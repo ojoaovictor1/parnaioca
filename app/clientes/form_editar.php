@@ -28,6 +28,10 @@ $id = $_GET['id'];
                 <input type="text" name="telefone" placeholder="Telefone">
                 <input type="text" name="estado" placeholder="Estado">
                 <input type="text" name="cidade" placeholder="Cidade">
+                <select name="situacao" id="">
+                    <option value="1">Ativo</option>
+                    <option value="0">Inativo</option>
+                </select>
                 <input type="submit" value="Enviar">
             </form>
         </div>

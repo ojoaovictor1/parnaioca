@@ -23,11 +23,12 @@ $numero = $_POST['numero'];
 $valor = $_POST['valor'];
 $capacidade = $_POST['capacidade'];
 $tipo = $_POST['tipo'];
+$situacao = $_POST['situacao'];
 
 $sql_cadastrar_acomodacoes = 
     "INSERT INTO acomodacoes 
-    (nome, numero, valor, capacidade, tipo)
-     VALUES ('$nome', '$numero', '$valor', '$capacidade', '$tipo')";
+    (nome, numero, valor, capacidade, tipo, situacao)
+     VALUES ('$nome', '$numero', '$valor', '$capacidade', '$tipo', '$situacao')";
 
 mysqli_query($con, $sql_cadastrar_acomodacoes);
 header('location: index.php');
