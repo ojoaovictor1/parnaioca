@@ -20,7 +20,7 @@ session_start();
             <h1>Cadastrar Tipo de Acomodação</h1>
 
             <form action="cTipo_acomodacao.php" method="POST">
-                <input type="text " name="tipo_da_acomodacao"> <br>
+                <input type="text " name="tipo_da_acomodacao" placeholder="Tipo de Acomodação"> <br>
                 <input type="submit" value="Enviar">
             </form>
         </div>

@@ -14,6 +14,7 @@ if(mysqli_num_rows($resultado) >= 0){
                     <th>Capacidade</th>
                     <th>Tipo</th>
                     <th>Situação</th>
+                    <th>Nome_Tipo</th>
                     <th>Editar</th>
                     <th>Excluir</th>
                 </tr>";
@@ -26,6 +27,7 @@ if(mysqli_num_rows($resultado) >= 0){
         echo "<td>" . $row['capacidade'] . "</td>";
         echo "<td>" . $row['tipo'] . "</td>";
         echo "<td>" . ($row['situacao'] == 1 ? 'Ativo' : 'Inativo') . "</td>";
+        echo "<td>" . $row['tipo_nome'] . "</td>";
         echo "<td> <a href='form_editar.php?id=" . $row['id'] . "'>Edit.</a> </td>";
         echo "<td> <a href='dAcomodacoes.php?id=" . $row['id'] . "'>Del.</a> </td>";
         echo "</tr>";

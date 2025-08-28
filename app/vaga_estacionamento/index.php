@@ -23,7 +23,7 @@ session_start();
             <h1>Cadastrar Vaga no estacionamento</h1>
             
             <form action="cVaga_estacionamento.php" method="POST">
-                <input type="number" name="numero">
+                <input type="number" name="numero" placeholder="numero da vaga">
                 <select name="ativo" id="">
                     
 

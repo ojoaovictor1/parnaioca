@@ -33,7 +33,7 @@ $id = $_GET['id'];
             </form>
         </div>
 
-        <div id="roda"> <a href="../funcionarios/inicio.php">Voltar</a> </div>
+        <div id="roda"> <a href="index.php">Voltar</a> </div>
     </div>
     
 </body>

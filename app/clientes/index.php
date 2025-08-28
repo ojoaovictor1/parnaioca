@@ -20,16 +20,13 @@ session_start();
             <form action="cClientes.php" method="POST">
                 <input type="text" name="nome" placeholder="nome">
                 <input type="date" name="data_nasc">
-                <input type="text" name="cpf" placeholder="CPF">
+                <input type="text" name="cpf" placeholder="CPF" maxlength="14" oninput="formatarCPF(this)" id="cpf">
                 <input type="text" name="email" placeholder="Email">
-                <input type="text" name="telefone" placeholder="Telefone">
+                <input type="text" name="telefone" placeholder="Telefone" maxlength="14" oninput="formatarTelefone(this)">
                 <input type="text" name="estado" placeholder="Estado">
                 <input type="text" name="cidade" placeholder="Cidade">
                 
-                <select name="situacao" id="">
-                    <option value="1">Ativo</option>
-                    <option value="0">Inativo</option>
-                </select>
+                
                 <input type="submit" value="Enviar">
             </form>
         </div>
@@ -38,6 +35,6 @@ session_start();
             <?php include 'rClientes.php'; ?>    
         <a href="../inicio.php">Voltar</a> </div>
     </div>
-    
+    <script src="../../assets/mascaras.js"></script>
 </body>
 </html>
