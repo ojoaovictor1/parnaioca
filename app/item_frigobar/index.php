@@ -17,10 +17,7 @@
         
         <input type="text" id="nome" name="nome" placeholder="nome" required><br>
         <input type="number" id="preco" name="preco" placeholder="preco" required><br>
-        <select name="ativo" id="">
-            <option value="1">Ativo</option>
-            <option value="0">Inativo</option>
-        </select>
+        
         <input type="submit" value="Cadastrar Item">
     </form>
     </div>

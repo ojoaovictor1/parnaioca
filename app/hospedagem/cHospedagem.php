@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data_checkout = $_POST['data_checkout'];
     $cliente = $_POST['cliente'];
     $acomodacao = $_POST['acomodacao'];
-    $ativo = $_POST['status'];
+    
 
     /* há sobreposição? */
     $sql_existe_sobreposicao = 
@@ -38,9 +38,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $sql_cadastrar_hospedagem = 
     "INSERT INTO hospedagem (data_checkin,
                  data_checkout, cliente,
-                 acomodacao, ativo) 
+                 acomodacao) 
                  VALUES 
-                 ('$data_checkin', '$data_checkout', '$cliente', '$acomodacao', '$ativo')";
+                 ('$data_checkin', '$data_checkout', '$cliente', '$acomodacao')";
     if(mysqli_query($con, $sql_cadastrar_hospedagem)){
         header('location: index.php');
     }

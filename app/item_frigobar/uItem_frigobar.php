@@ -6,7 +6,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
     $nome = $_POST['nome'];
     $preco = $_POST['preco'];
-    $ativo = $_POST['ativo'];
+    $ativo = $_POST['ativo'] == 1 ? "Ativo" : "Inativo";
     $id = $_POST['id'];  
 
     echo $nome;
@@ -20,7 +20,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 $sql_update_tipo_acomodacao = 
     "UPDATE itens_frigobar SET 
     nome = '$nome',
-    ativo = $ativo,
+    ativo = '$ativo',
     preco = $preco
     WHERE id = $id";
 
