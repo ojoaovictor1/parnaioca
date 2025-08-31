@@ -31,8 +31,8 @@ $tipo_nome = mysqli_fetch_array($resultado_tipo_nome)['tipo'];
 
 $sql_cadastrar_acomodacoes = 
     "INSERT INTO acomodacoes 
-    (nome, numero, valor, capacidade, tipo, situacao, tipo_nome)
-     VALUES ('$nome', '$numero', '$valor', '$capacidade', '$tipo', '$situacao', '$tipo_nome')";
+    (nome, numero, valor, capacidade, tipo, tipo_nome)
+     VALUES ('$nome', '$numero', '$valor', '$capacidade', '$tipo', '$tipo_nome')";
 
 mysqli_query($con, $sql_cadastrar_acomodacoes);
 header('location: index.php');
