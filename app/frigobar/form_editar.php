@@ -3,6 +3,8 @@ session_start();
 include '../config/conexao.php';
 
 $id = $_GET['id'];
+
+$sql_preencher_campos = "SELECT * FROM frigobar"
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -1,7 +1,12 @@
 <?php
 session_start();
+include "../config/conexao.php";
 
 $id = $_GET['id'];
+
+$sql_preencher_campos = "SELECT * FROM itens_frigobar WHERE id = $id";
+$resultado = mysqli_query($con,$sql_preencher_campos);
+$row = mysqli_fetch_assoc($resultado);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,8 +26,8 @@ $id = $_GET['id'];
             <h1>Editar Item do Frigobar</h1>
             <form action="uItem_frigobar.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $id; ?>">
-                <input type="text" name="nome" placeholder="nome">
-                <input type="number" name="preco" placeholder="preco">
+                <input type="text" name="nome" placeholder="nome" value="<?php echo $row['nome']?>">
+                <input type="number" name="preco" placeholder="preco" value="<?php echo $row['preco']?>">
 
                 <select name="ativo" id="">
                     <option value="1">Ativo</option>

@@ -23,9 +23,9 @@ $total_registros = mysqli_num_rows($resultado);
             <h1>Cadastro de Acomodações</h1>
             <form action="cAcomodacoes.php" method="POST">
                 <input type="text" name="nome" placeholder="nome">
-                <input type="text" name="numero" placeholder="numero">
-                <input type="text" name="valor" placeholder="valor">
-                <input type="text" name="capacidade" placeholder="capacidade">
+                <input type="number" name="numero" placeholder="numero">
+                <input type="text" name="valor" placeholder="valor" oninput="formatarMoeda(this)">
+                <input type="number" name="capacidade" placeholder="capacidade">
 
                 <select name="tipo" id="">
                     <?php 
@@ -46,6 +46,6 @@ $total_registros = mysqli_num_rows($resultado);
             <?php include 'rAcomodacoes.php'; ?>
             <a href="../inicio.php">Voltar</a> </div>
     </div>
-    
+    <script src="../../assets/novas_mascaras.js"></script>
 </body>
 </html>

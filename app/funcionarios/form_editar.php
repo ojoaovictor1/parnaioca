@@ -1,7 +1,12 @@
 <?php
 session_start();
+include '../config/conexao.php';
 
 $id = $_GET['id'];
+
+$sql_preencher = "SELECT * FROM funcionarios WHERE id = $id";
+$resultado = mysqli_query($con,$sql_preencher);
+$row = mysqli_fetch_assoc($resultado);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,11 +26,11 @@ $id = $_GET['id'];
             <h1>Editar Funcionario</h1>
             <form action="uFuncionarios.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $id; ?>">
-                <input type="text" name="nome" placeholder="nome">
-                <input type="text" name="cargo" placeholder="cargo">
-                <input type="text" name="poderes" placeholder="poderes">
-                <input type="text" name="login" placeholder="login">
-                <input type="text" name="senha" placeholder="senha">
+                <input type="text" name="nome" placeholder="nome" value="<?php echo $row['nome']; ?>">
+                <input type="text" name="cargo" placeholder="cargo" value="<?php echo $row['cargo']; ?>">
+                <input type="text" name="poderes" placeholder="poderes" value="<?php echo $row['poderes']; ?>">
+                <input type="text" name="login" placeholder="Novo Login">
+                <input type="text" name="senha" placeholder="Nova Senha">
                 <input type="submit" value="Enviar">
             </form>
         </div>

@@ -4,6 +4,10 @@ include '../config/conexao.php';
 
 $id = $_GET['id'];
 
+$sql_preencher_campos = "SELECT * FROM estacionamento WHERE id = $id";
+$resultado_preencher = mysqli_query($con,$sql_preencher_campos);
+$row = mysqli_fetch_assoc($resultado_preencher);
+
 $sql = "SELECT * FROM acomodacoes";
 $resultado = mysqli_query($con,$sql);
 ?>
@@ -25,7 +29,7 @@ $resultado = mysqli_query($con,$sql);
             <h1>Editar Vaga no Estacionamento</h1>
             <form action="uVaga_estacionamento.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $id; ?>">
-                <input type="number" name="numero" placeholder="número da Vaga">
+                <input type="number" name="numero" placeholder="número da Vaga" value="<?php echo $row['numero'];?>">
 
                 <select name="ativo" id="">
                     <?php
@@ -41,7 +45,7 @@ $resultado = mysqli_query($con,$sql);
         </div>
 
         <div id="roda"> 
-             
+        
         <a href="index.php">Voltar</a> </div>
     </div>
     
