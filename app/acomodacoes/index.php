@@ -37,7 +37,6 @@ $total_registros = mysqli_num_rows($resultado);
                         }
                     ?>   
                 </select>
-               
 
                 <input type="submit" value="Enviar">
             </form>

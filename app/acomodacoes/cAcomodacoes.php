@@ -23,7 +23,7 @@ $numero = $_POST['numero'];
 $valor = $_POST['valor'];
 $capacidade = $_POST['capacidade'];
 $tipo = $_POST['tipo'];
-$situacao = $_POST['situacao'];
+
 
 $sql_tipo_nome = "SELECT * FROM tipo_da_acomodacao WHERE id = $tipo";
 $resultado_tipo_nome = mysqli_query($con,$sql_tipo_nome);

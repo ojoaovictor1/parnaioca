@@ -50,12 +50,6 @@ $resultado_acomodacoes = mysqli_query($con,$sql_acomodacoes);
                     ?>
 
                 </select>
-
-                <select name="status" id="">
-                    <option value="ativo">Ativo</option>
-                    <option value="finalizado">Finalizado</option>
-                    <option value="cancelado">Cancelado</option>
-                </select>
                
                 <input type="submit" value="Enviar">
             </form>
