@@ -24,7 +24,8 @@ session_start();
             <a href="item_frigobar/index.php">Cadastrar itens para o frigobar</a><br>
             <a href="vaga_estacionamento">Cadastrar Vaga no Estacionamento</a><br>
             <a href="hospedagem/index.php">Cadastrar Hospedagem</a><br>
-            <a href="frigobar/index.php">Cadastrar Frigobar</a>
+            <a href="frigobar/index.php">Cadastrar Frigobar</a><br>
+            <a href="relatorios/index.php">Relatórios</a>
         </div>
            
         <div id="roda"></div>

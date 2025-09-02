@@ -14,7 +14,7 @@ $resultado_itens = mysqli_query($con, $sql_itens);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Checkout</title>
 </head>
 <body>
     <h1>Check-out</h1>
@@ -29,5 +29,9 @@ $resultado_itens = mysqli_query($con, $sql_itens);
 
         <input type="submit" value="Finalizar Check-out">
     </form>
+
+    <br> <br>
+    <a href="../hospedagem/index.php">Voltar</a>
+    <?php include 'rConsumo_frigobar.php'; ?>
 </body>
 </html>
