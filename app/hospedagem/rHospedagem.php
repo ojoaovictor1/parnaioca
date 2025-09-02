@@ -7,11 +7,12 @@ $resultado = mysqli_query($con, $sql_consulta);
 if(mysqli_num_rows($resultado) > 0){
    echo "<table border='1'>
                 <tr>
-                    <th>Check IN</th>
-                    <th>Check OUT</th>
+                    <th>Entrada</th>
+                    <th>Saída</th>
                     <th>Cliente</th>
                     <th>Acomodação</th>
                     <th>Status</th>
+                    <th>Realizar Check-out</th>
                     <th>Editar</th>
                     <th>Excluir</th>
                 </tr>";
@@ -22,6 +23,7 @@ if(mysqli_num_rows($resultado) > 0){
         echo "<td>" . $row['cliente'] . "</td>";
         echo "<td>" . $row['acomodacao'] . "</td>";
         echo "<td>" . $row['ativo'] . "</td>";
+        echo "<td> <a href='../consumo_frigobar/index.php?id=" . $row['id'] . "'>Check-out</a> </td>";
         echo "<td> <a href='form_editar.php?id=" . $row['id'] . "'>Edit.</a> </td>";
         echo "<td> <a href='dHospedagem.php?id=" . $row['id'] . "'>Del.</a> </td>";
         echo "</tr>";

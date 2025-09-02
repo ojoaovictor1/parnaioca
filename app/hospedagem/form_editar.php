@@ -8,6 +8,10 @@ $sql_todos_clientes = "SELECT * FROM clientes";
 $resultado_clientes = mysqli_query($con,$sql_todos_clientes);
 $sql_todas_acomodacoes = "SELECT * FROM acomodacoes";
 $resultado_acomodacoes = mysqli_query($con,$sql_todas_acomodacoes);
+
+$sql_preencher_campos = "SELECT * FROM hospedagem WHERE id = $id";
+$resultado_preencher = mysqli_query($con, $sql_preencher_campos);
+$row = mysqli_fetch_assoc($resultado_preencher);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,8 +32,8 @@ $resultado_acomodacoes = mysqli_query($con,$sql_todas_acomodacoes);
 
             <form action="uHospedagem.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $id; ?>">
-                <input type="date" name="data_checkin" placeholder="">
-                <input type="date" name="data_checkout" placeholder="">
+                <input type="date" name="data_checkin" placeholder="" value="<?php echo $row['data_checkin']; ?>">
+                <input type="date" name="data_checkout" placeholder="" value="<?php echo $row['data_checkout']; ?>">
 
                 <select name="clientes" id="">
                     <?php 

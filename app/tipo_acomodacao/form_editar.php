@@ -1,7 +1,12 @@
 <?php
 session_start();
+include '../config/conexao.php';
 
 $id = $_GET['id'];
+
+$sql_preencher_campos = "SELECT * FROM tipo_da_acomodacao WHERE id = $id";
+$resultado = mysqli_query($con,$sql_preencher_campos);
+$row = mysqli_fetch_assoc($resultado);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,14 +26,14 @@ $id = $_GET['id'];
             <h1>Editar Tipo da Acomodação</h1>
             <form action="uTipo_acomodacao.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $id; ?>">
-                <input type="text" name="tipo" placeholder="tipo da acomodação">
+                <input type="text" name="tipo" placeholder="tipo da acomodação" value="<?php echo $row['tipo']; ?>">
                 <input type="submit" value="Enviar">
             </form>
         </div>
 
         <div id="roda"> 
              
-        <a href="../funcionarios/inicio.php">Voltar</a> </div>
+        <a href="index.php">Voltar</a> </div>
     </div>
     
 </body>

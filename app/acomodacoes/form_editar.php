@@ -4,6 +4,10 @@ include '../config/conexao.php';
 
 $id = $_GET['id'];
 
+$sql_preencher_campos = "SELECT * FROM acomodacoes WHERE id = $id";
+$resultado_preencher = mysqli_query($con, $sql_preencher_campos);
+$row = mysqli_fetch_assoc($resultado_preencher);
+
 $sql_consulta_tipo = "SELECT * FROM tipo_da_acomodacao";
 $resultado = mysqli_query($con,$sql_consulta_tipo);
 $total_registros = mysqli_num_rows($resultado);
@@ -26,10 +30,10 @@ $total_registros = mysqli_num_rows($resultado);
             <h1>Editar Acomodação</h1>
             <form action="uAcomodacoes.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $id; ?>">
-                <input type="text" name="nome" placeholder="nome">
-                <input type="text" name="numero" placeholder="numero">
-                <input type="text" name="valor" placeholder="valor">
-                <input type="text" name="capacidade" placeholder="capacidade">
+                <input type="text" name="nome" placeholder="nome" value="<?php echo $row['nome']; ?>">
+                <input type="text" name="numero" placeholder="numero" value="<?php echo $row['numero']; ?>">
+                <input type="text" name="valor" placeholder="valor" value="<?php echo $row['valor']; ?>">
+                <input type="text" name="capacidade" placeholder="capacidade" value="<?php echo $row['capacidade']; ?>">
 
                 <select name="tipo" id="">
                     <?php 
