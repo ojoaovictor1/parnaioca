@@ -21,6 +21,7 @@ include '../config/conexao.php';
             <h1>Cadastrar Frigobar</h1>
 
             <form action="cFrigobar.php" method="POST">
+                <input type="number" name="numero" placeholder="numero" >
                 <select name="acomodacoes" id="">
                     <?php
                         $sql = "SELECT * FROM acomodacoes";

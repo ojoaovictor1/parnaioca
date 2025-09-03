@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,16 +18,14 @@ session_start();
 
         <div id="formulario_clientes">
             <h1>Cadastro de Clientes</h1>
-            <form action="cClientes.php" method="POST">
+            <form action="cClientes.php" method="POST" id="form">
                 <input type="text" name="nome" placeholder="nome">
-                <input type="date" name="data_nasc">
-                <input type="text" name="cpf" placeholder="CPF" maxlength="14" oninput="formatarCPF(this)" id="cpf">
-                <input type="text" name="email" placeholder="Email">
-                <input type="text" name="telefone" placeholder="Telefone" maxlength="14" oninput="formatarTelefone(this)">
-                <input type="text" name="estado" placeholder="Estado">
-                <input type="text" name="cidade" placeholder="Cidade">
-                
-                
+                <input type="date" name="data_nasc" id="data_nasc">
+                <input type="text" name="cpf" placeholder="CPF" id="cpf" maxlength="14" oninput="formatarCPF(this)" id="cpf">
+                <input type="text" name="email" placeholder="Email" id="email" class="inputs required">
+                <input type="text" name="telefone" placeholder="Telefone" id="telefone" maxlength="14" oninput="formatarTelefone(this)">
+                <input type="text" name="estado" placeholder="Estado" id="estado">
+                <input type="text" name="cidade" placeholder="Cidade" id="cidade"> 
                 <input type="submit" value="Enviar">
             </form>
         </div>
@@ -36,5 +35,6 @@ session_start();
         <a href="../inicio.php">Voltar</a> </div>
     </div>
     <script src="../../assets/mascaras.js"></script>
+    <script src="../../assets/validacao.js"></script>
 </body>
 </html>

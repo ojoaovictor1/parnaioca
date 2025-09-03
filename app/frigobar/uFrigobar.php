@@ -5,7 +5,8 @@ include '../config/conexao.php';
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
     $acomodacao_id = $_POST['acomodacoes'];
-    $id = $_POST['id'];  
+    $id = $_POST['id'];
+    $numero = $_POST['numero'];  
  
 }else{
     echo 'Dados não Atualizados' . mysqli_error($con);
@@ -14,7 +15,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
 $sql_update_clientes = 
     "UPDATE frigobar SET 
-    acomodacao_id = $acomodacao_id
+    acomodacao_id = $acomodacao_id,
+    numero = '$numero'
     WHERE id = $id";
 
 if(mysqli_query($con, $sql_update_clientes)){
@@ -22,6 +24,5 @@ if(mysqli_query($con, $sql_update_clientes)){
 }else{
     echo 'Erro ao atualizar frigobar' . mysqli_error($con);
 }
-
 
 ?>

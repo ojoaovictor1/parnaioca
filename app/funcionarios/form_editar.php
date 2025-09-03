@@ -6,7 +6,8 @@ $id = $_GET['id'];
 
 $sql_preencher = "SELECT * FROM funcionarios WHERE id = $id";
 $resultado = mysqli_query($con,$sql_preencher);
-$row = mysqli_fetch_assoc($resultado);
+$row = mysqli_fetch_array($resultado);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

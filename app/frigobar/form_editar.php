@@ -3,8 +3,9 @@ session_start();
 include '../config/conexao.php';
 
 $id = $_GET['id'];
-
-$sql_preencher_campos = "SELECT * FROM frigobar"
+$sql_preencher_campos = "SELECT * FROM frigobar WHERE id = $id";
+$resultado = mysqli_query($con, $sql_preencher_campos);
+$row = mysqli_fetch_array($resultado);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,6 +25,7 @@ $sql_preencher_campos = "SELECT * FROM frigobar"
             <h1>Editar Frigobar</h1>
             <form action="uFrigobar.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $id; ?>">
+                <input type="number" name="numero" value="<?php echo $row['numero']; ?>">
                 <select name="acomodacoes" id="">
                     <?php 
                        $sql = "SELECT * FROM acomodacoes";

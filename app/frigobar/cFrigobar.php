@@ -6,11 +6,13 @@ include '../config/conexao.php';
 $sql_criar_tabela_frigobar = 
     "CREATE TABLE IF NOT EXISTS frigobar (
     id INT PRIMARY KEY AUTO_INCREMENT,
+    numero VARCHAR(32),
     acomodacao_nome VARCHAR(32),
     acomodacao_id INT,
     FOREIGN KEY (acomodacao_id) REFERENCES acomodacoes(id)
     )";
-$acomodacao_id = $_POST['acomodacoes'];    
+$acomodacao_id = $_POST['acomodacoes'];
+$numero = $_POST['numero']; 
 
 
 
@@ -24,8 +26,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
     $sql_cadastrar_frigobar = 
         "INSERT INTO frigobar 
-        (acomodacao_id)
-        VALUES ($acomodacao_id)";
+        (acomodacao_id, numero)
+        VALUES ($acomodacao_id, '$numero')";
 
     mysqli_query($con, $sql_cadastrar_frigobar);
     header('location: index.php');
