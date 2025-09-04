@@ -1,6 +1,8 @@
 <?php
 include '../config/conexao.php';
 session_start();
+$erroItem = isset($_SESSION['erroItem']) ? $_SESSION['erroItem'] : '';
+unset($_SESSION['erroItem']);
 
 ?>
 
@@ -21,6 +23,9 @@ session_start();
         <div id="formulario_clientes">
             
             <h1>Cadastrar Vaga no estacionamento</h1>
+            <?php if($erroItem) : ?>
+                <p style="color: red;"><?= $erroItem; ?></p>
+            <?php endif; ?>
             
             <form action="cVaga_estacionamento.php" method="POST">
                 <input type="number" name="numero" placeholder="numero da vaga">

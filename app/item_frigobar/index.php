@@ -1,3 +1,9 @@
+<?php 
+session_start();
+$erroItem = isset($_SESSION['erroItem']) ? $_SESSION['erroItem'] : '';
+unset($_SESSION['erroItem']);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,10 +19,13 @@
     </div>
 
     <div id="formulario_clientes">
+        <?php if($erroItem) : ?>
+            <p style="color: red;"><?= $erroItem; ?></p>
+        <?php endif; ?>
     <form action="cItem_frigobar.php" method="POST">
         
-        <input type="text" id="nome" name="nome" placeholder="nome" required><br>
-        <input type="number" id="preco" name="preco" placeholder="preco" required><br>
+        <input type="text" id="nome" name="nome" placeholder="nome"><br>
+        <input type="number" id="preco" name="preco" placeholder="preco"><br>
         
         <input type="submit" value="Cadastrar Item">
     </form>

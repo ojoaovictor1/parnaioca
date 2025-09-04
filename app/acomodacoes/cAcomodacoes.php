@@ -18,6 +18,37 @@ mysqli_query($con, $sql_criar_tabela_acomodacoes);
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
+    if(empty($_POST['nome'])){
+        $_SESSION['erroa'] = "O campo nome é obrigatório";
+        header('Location: index.php');
+        exit;
+    }
+
+    if(empty($_POST['numero'])){
+        $_SESSION['erroa'] = "O campo numero é obrigatório";
+        header('Location: index.php');
+        exit;
+    }
+
+    if(empty($_POST['valor'])){
+        $_SESSION['erroa'] = "O campo valor é obrigatório";
+        header('Location: index.php');
+        exit;
+    }
+
+    if(empty($_POST['capacidade'])){
+        $_SESSION['erroa'] = "O campo capacidade é obrigatório";
+        header('Location: index.php');
+        exit;
+    }
+
+    if(empty($_POST['tipo'])){
+        $_SESSION['erroa'] = "O campo nome é obrigatório";
+        header('Location: index.php');
+        exit;
+    }
+
+
 $nome = $_POST['nome'];
 $numero = $_POST['numero'];
 $valor = $_POST['valor'];

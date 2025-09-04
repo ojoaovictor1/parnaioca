@@ -24,6 +24,16 @@ if(mysqli_query($con, $sql_criar_tabela_frigobar)){
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
+    if(empty($_POST['numero'])){
+        $_SESSION['erroItem'] = "O campo numero é obrigatório";
+        header('Location: index.php');
+        exit;
+    }
+    if(empty($_POST['acomodacoes'])){
+        $_SESSION['erroItem'] = "O campo acomodacoes é obrigatório";
+        header('Location: index.php');
+        exit;
+    }
     $sql_cadastrar_frigobar = 
         "INSERT INTO frigobar 
         (acomodacao_id, numero)

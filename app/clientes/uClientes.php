@@ -4,6 +4,29 @@ include '../config/conexao.php';
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
+    if(empty($_POST['nome'])){
+        $_SESSION['erro'] = "O campo nome é obrigatório";
+        header('Location: form_editar.php');
+        exit;
+    }
+
+    if(strlen($_POST['nome']) < 2){
+        $_SESSION['erro'] = "O campo nome deve ter no mínimo 3 caracteres.";
+        header('Location: form_editar.php');
+        exit; 
+        }
+
+    if(empty($_POST['email'])){
+        $_SESSION['erro'] = "O campo email é obrigatório";
+        header('Location: form_editar.php');
+        exit; 
+    }
+    if(empty($_POST['cpf'])){
+        $_SESSION['erro'] = "O campo cpf é obrigatório";
+        header('Location: form_editar.php');
+        exit; 
+    }
+
     $nome = $_POST['nome'];
     $data_nasc = $_POST['data_nasc'];
     $cpf = $_POST['cpf'];

@@ -2,6 +2,9 @@
 session_start();
 include '../config/conexao.php';
 
+$erroItem = isset($_SESSION['erroItem']) ? $_SESSION['erroItem'] : '';
+unset($_SESSION['erroItem']);
+
 $sql_clientes = "SELECT * FROM clientes";
 $resultado_clientes = mysqli_query($con,$sql_clientes);
 
@@ -25,6 +28,9 @@ $resultado_acomodacoes = mysqli_query($con,$sql_acomodacoes);
 
         <div id="formulario_clientes">
             <h1>Cadastro de Hospedagem</h1>
+            <?php if($erroItem) : ?>
+                <p style="color: red;"><?= $erroItem; ?></p>
+            <?php endif; ?>
             <form action="cHospedagem.php" method="POST">
                 
                 <input type="date" name="data_checkin">

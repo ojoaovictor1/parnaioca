@@ -19,6 +19,27 @@ mysqli_query($con, $sql_criar_hospedagem);
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    if(empty($_POST['data_checkin'])){
+        $_SESSION['erroItem'] = "O campo entrada é obrigatório";
+        header('Location: index.php');
+        exit;
+    }
+    if(empty($_POST['data_checkout'])){
+        $_SESSION['erroItem'] = "O campo saída é obrigatório";
+        header('Location: index.php');
+        exit;
+    }
+    if(empty($_POST['cliente'])){
+        $_SESSION['erroItem'] = "O campo cliente é obrigatório";
+        header('Location: index.php');
+        exit;
+    }
+    if(empty($_POST['acomodacao'])){
+        $_SESSION['erroItem'] = "O campo acomodacao é obrigatório";
+        header('Location: index.php');
+        exit;
+    }
     $data_checkin = $_POST['data_checkin'];
     $data_checkout = $_POST['data_checkout'];
     $cliente = $_POST['cliente'];

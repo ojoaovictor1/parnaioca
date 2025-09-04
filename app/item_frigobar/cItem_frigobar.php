@@ -12,6 +12,17 @@ $sql_cadastrar_item = "CREATE TABLE IF NOT EXISTS itens_frigobar (
 mysqli_query($con, $sql_cadastrar_item);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    if(empty($_POST['nome'])){
+        $_SESSION['erroItem'] = "O campo nome é obrigatório";
+        header('Location: index.php');
+        exit;
+    }
+    if(empty($_POST['preco'])){
+        $_SESSION['erroItem'] = "O campo preco é obrigatório";
+        header('Location: index.php');
+        exit;
+    }
     $nome = $_POST['nome'];
     $preco = $_POST['preco'];
     

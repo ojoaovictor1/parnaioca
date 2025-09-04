@@ -1,7 +1,10 @@
 <?php
 session_start();
+$erro = isset($_SESSION['erro']) ? $_SESSION['erro'] : '';
+unset($_SESSION['erro']);
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +20,12 @@ session_start();
         <div id="topo"></div>
 
         <div id="formulario_clientes">
+
             <h1>Cadastro de Clientes</h1>
+            
+            <?php if($erro) : ?>
+                <p style="color: red;"><?= $erro ?></p>
+            <?php endif; ?>
             <form action="cClientes.php" method="POST" id="form">
                 <input type="text" name="nome" placeholder="nome">
                 <input type="date" name="data_nasc" id="data_nasc">

@@ -1,5 +1,7 @@
 <?php
 session_start();
+$errot = isset($_SESSION['errot']) ? $_SESSION['errot'] : '';
+unset($_SESSION['errot']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,6 +20,9 @@ session_start();
         <div id="formulario_clientes">
             
             <h1>Cadastrar Tipo de Acomodação</h1>
+            <?php if($errot) : ?>
+                <p style="color: red;"><?= $errot; ?></p>
+            <?php endif; ?>
 
             <form action="cTipo_acomodacao.php" method="POST">
                 <input type="text " name="tipo_da_acomodacao" placeholder="Tipo de Acomodação"> <br>

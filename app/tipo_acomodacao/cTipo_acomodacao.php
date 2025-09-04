@@ -13,6 +13,11 @@ mysqli_query($con, $sql_criar_tabela_tipo_acomodacao);
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
+    if(empty($_POST['tipo_da_acomodacao'])){
+        $_SESSION['errot'] = "O campo Tipo Acomodação é obrigatório";
+        header('Location: index.php');
+        exit;
+    }
 $tipo = $_POST['tipo_da_acomodacao'];
 
 $sql_cadastrar_tipo_da_acomodacao = 

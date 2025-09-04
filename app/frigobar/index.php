@@ -1,6 +1,8 @@
 <?php
 session_start();
 include '../config/conexao.php';
+$erroItem = isset($_SESSION['erroItem']) ? $_SESSION['erroItem'] : '';
+unset($_SESSION['erroItem']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,6 +21,9 @@ include '../config/conexao.php';
         <div id="formulario_clientes">
             
             <h1>Cadastrar Frigobar</h1>
+            <?php if($erroItem) : ?>
+                <p style="color: red;"><?= $erroItem; ?></p>
+            <?php endif; ?>
 
             <form action="cFrigobar.php" method="POST">
                 <input type="number" name="numero" placeholder="numero" >
