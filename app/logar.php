@@ -14,6 +14,8 @@ if(mysqli_num_rows($resultado) >= 1){
 
     $_SESSION['login'] = $row['login'];
     $_SESSION['password'] = $row['password'];
+    $_SESSION['cargo'] = $row['cargo'];
+    $_SESSION['poderes'] = $row['poderes'];
     header('location: inicio.php');
 }else{
     echo 'Dados incorretos';

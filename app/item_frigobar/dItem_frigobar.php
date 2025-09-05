@@ -2,6 +2,10 @@
 session_start();
 
 include '../config/conexao.php';
+
+if($_SESSION['cargo'] !== 'admin'){
+    die("Acesso negado! Apenas administradores podem executar esta ação.");
+}
 $id = $_GET['id'];
 
 $sql = "DELETE FROM itens_frigobar WHERE id = $id";

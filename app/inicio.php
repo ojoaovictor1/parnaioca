@@ -13,7 +13,7 @@ session_start();
 
     <div id="container">
         <div id="topo">
-            Bem Vindo!!! <?= $_SESSION['login']; ?>
+            Bem Vindo!!! <?= $_SESSION['login']; ?> - <?= $_SESSION['cargo']; ?> - <?= $_SESSION['poderes']; ?>
             <a href="logout.php">Sair</a>
         </div>
 
