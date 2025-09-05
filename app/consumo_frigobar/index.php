@@ -17,7 +17,7 @@ $resultado_itens = mysqli_query($con, $sql_itens);
     <title>Checkout</title>
 </head>
 <body>
-    <h1>Check-out</h1>
+    <h1>Consumo do Frigobar</h1>
 
     <form action="cConsumo_frigobar.php" method="POST">
         <input type="hidden" name="id_hospedagem" value="<?php echo $id_hospedagem; ?>">
@@ -27,7 +27,7 @@ $resultado_itens = mysqli_query($con, $sql_itens);
             <input type="number" name="itens[<?php echo $row['id']; ?>]" value="0" min="0"><br>
         <?php endwhile; ?>
 
-        <input type="submit" value="Finalizar Check-out">
+        <input type="submit" value="Enviar nota para o checkout">
     </form>
 
     <br> <br>

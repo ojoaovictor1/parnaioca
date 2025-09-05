@@ -19,7 +19,7 @@ if(mysqli_num_rows($resultado) >= 0){
                     <th>Editar</th>
                     <th>Excluir</th>
                 </tr>";
-    while( $row = mysqli_fetch_array($resultado)){
+    while($row = mysqli_fetch_array($resultado)){
         echo "<tr>";
         echo "<td>" . $row['id'] . "</td>";
         echo "<td>" . $row['nome'] . "</td>";

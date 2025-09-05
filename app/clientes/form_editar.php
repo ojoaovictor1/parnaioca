@@ -43,7 +43,7 @@ $row = mysqli_fetch_assoc($resultado);
 
         <div id="roda"> 
              
-        <a href="../inicio.php">Voltar</a> </div>
+        <a href="index.php">Voltar</a> </div>
     </div>
     
 </body>

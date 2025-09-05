@@ -40,7 +40,8 @@ unset($_SESSION['erro']);
 
         <div id="roda"> 
             <?php include 'rClientes.php'; ?>    
-        <a href="../inicio.php">Voltar</a> </div>
+        <a href="../inicio.php">Voltar</a> 
+        </div>
     </div>
     <script src="../../assets/mascaras.js"></script>
     <script src="../../assets/validacao.js"></script>

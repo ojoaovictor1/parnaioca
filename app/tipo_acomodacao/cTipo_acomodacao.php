@@ -20,6 +20,17 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     }
 $tipo = $_POST['tipo_da_acomodacao'];
 
+
+$sql_verifica_tipo = "SELECT COUNT(*) FROM tipo_da_acomodacao WHERE tipo = '$tipo'";
+$resultado_verifica_tipo = mysqli_query($con, $sql_verifica_tipo);
+
+if(mysqli_num_rows($resultado_verifica_tipo) > 0){
+    $_SESSION['errot'] = "Já existe um Tipo de Acomodação com este nome" . $tipo;
+    echo mysqli_num_rows($resultado_verifica_tipo);
+    header('Location: index.php');
+    exit;
+}
+
 $sql_cadastrar_tipo_da_acomodacao = 
     "INSERT INTO tipo_da_acomodacao 
     (tipo)

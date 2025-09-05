@@ -6,8 +6,9 @@
     <title>Relatórios</title>
 </head>
 <body>
-    <a href="">Clientes por range de datas</a><br>
-    <a href="">Clientes Ativos e inativos</a><br>
+    <a href="clientes_por_range_data.php">Clientes por range de datas</a><br>
+    <a href="clientes_ativos_inativos.php">Clientes Ativos e inativos</a><br>
     <a href="">Relaórios Financeiros</a><br>
+    <a href="../inicio.php">Voltar</a>
 </body>
 </html>
