@@ -10,7 +10,7 @@ $sql_cadastro_funcionarios = "INSERT INTO funcionarios (nome, cargo, poderes, lo
 
 if(mysqli_query($con, $sql_cadastro_funcionarios)){
     echo 'Funcionário Cadastrado com sucesso!';
-    header('location: ../login.php');
+    header('location: cadastro_funcionarios.php');
 }else{
     echo 'Erro ao cadastrar funcionário';
 }

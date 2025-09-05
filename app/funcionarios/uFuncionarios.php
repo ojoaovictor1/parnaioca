@@ -28,7 +28,7 @@ $sql_update_funcionarios =
 
 $resultado_update = mysqli_query($con,$sql_update_funcionarios);
 if($resultado_update){
-    header('location: form_editar.php');
+    header('location: cadastro_funcionarios.php');
 }else{
     echo 'deu erro:' . mysqli_error($con);
 }
