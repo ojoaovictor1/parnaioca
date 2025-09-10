@@ -1,0 +1,18 @@
+body{
+    background-color: #eee;
+    font-family: Verdana;
+}
+#cont{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+.card{
+    flex: 1 0 22%;
+    box-sizing: border-box;
+    min-width: 200px;
+    background: #eee;
+    padding: 10px;
+    text-align: center;
+}
