@@ -7,7 +7,7 @@ $sql_id_acomodacao = "SELECT * FROM acomodacoes";
 $resultado = mysqli_query($con, $sql_consulta);
 
 if(mysqli_num_rows($resultado) > 0){
-   echo "<table border='1'>
+   echo "<table border='1' class='table table-dark table-hover table-striped'>
                 <tr>
                     <th>ID</th>
                     <th>Número</th>
@@ -23,7 +23,18 @@ if(mysqli_num_rows($resultado) > 0){
         echo "<td>" . $row['ativo'] . "</td>";
         echo "<td>" . $row['acomodacao_id'] . "</td>";
         echo "<td> <a href='form_editar.php?id=" . $row['id'] . "'>Edit.</a> </td>";
-        echo "<td> <a href='dVaga_estacionamento.php?id=" . $row['id'] . "'>Del.</a> </td>";
+        //echo "<td> <a href='dVaga_estacionamento.php?id=" . $row['id'] . "'>Del.</a> </td>";
+
+        echo "<td>
+        <button type='button' class='btn btn-danger btn-sm' 
+            data-bs-toggle='modal' 
+            data-bs-target='#exampleModal' 
+            data-id='".$row['id']."' 
+            data-nome='".$row['ativo']."'>
+            Excluir
+        </button>
+      </td>";
+
         echo "</tr>";
     }
     

@@ -5,7 +5,7 @@ $sql_consulta = "SELECT * FROM clientes";
 $resultado = mysqli_query($con, $sql_consulta);
 
 if(mysqli_num_rows($resultado) >= 0){
-   echo "<table border='1'>
+   echo "<table border='1' class='table table-striped table-dark table-hover'>
                 <tr>
                     <th>ID</th>
                     <th>Nome</th>
@@ -31,7 +31,18 @@ if(mysqli_num_rows($resultado) >= 0){
         echo "<td>" . $row['cidade'] . "</td>";
         echo "<td>" . ($row['situacao'] == 1 ? 'Ativo' : 'Inativo') . "</td>";
         echo "<td> <a href='form_editar.php?id=" . $row['id'] . "'>Edit.</a> </td>";
-        echo "<td> <a href='dClientes.php?id=" . $row['id'] . "'>Del.</a> </td>";
+        //echo "<td> <a href='dClientes.php?id=" . $row['id'] . "'>Del.</a> </td>";
+
+        echo "<td>
+        <button type='button' class='btn btn-danger btn-sm' 
+            data-bs-toggle='modal' 
+            data-bs-target='#exampleModal' 
+            data-id='".$row['id']."' 
+            data-nome='".$row['nome']."'>
+            Excluir
+        </button>
+      </td>";
+
         echo "</tr>";
     }
     echo "Total de registros: ". mysqli_num_rows($resultado); 

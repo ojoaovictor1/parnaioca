@@ -3,7 +3,7 @@ session_start();
 
 include '../config/conexao.php';
 
-if($_SESSION['cargo'] !== 'admin'){
+if($_SESSION['poderes'] !== 'admin'){
     die("Acesso negado! Apenas administradores podem executar esta ação.");
 }
 $id = $_GET['id'];
