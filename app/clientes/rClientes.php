@@ -5,6 +5,29 @@ $sql_consulta = "SELECT * FROM clientes";
 $resultado = mysqli_query($con, $sql_consulta);
 
 if(mysqli_num_rows($resultado) >= 0){
+
+    echo "<form action='rClientes.php' method='POST'>";
+    echo "<select name='cliente'>";
+    echo "<option value=''>Todos</option>";
+    echo "<option value='Ativo'>Ativo</option>";
+    echo "<option value='Inativo'>Inativo</option>";
+    echo "</select>";
+    echo "<input type='submit' value='Filtrar'>";
+    echo "</form>";
+
+    $filtro = isset($_POST['cliente']) ? $_POST['cliente'] : '';
+
+    if($filtro == 'Ativo'){
+        $sql_consulta = "SELECT * FROM clientes WHERE situacao = '1'";
+        $resultado = mysqli_query($con, $sql_consulta);
+    }elseif($filtro == 'Inativo'){
+        $sql_consulta = "SELECT * FROM clientes WHERE situacao = '0'";
+        $resultado = mysqli_query($con, $sql_consulta);
+    } else{
+        $sql_consulta = "SELECT * FROM clientes";
+        $resultado = mysqli_query($con, $sql_consulta);
+    }
+
    echo "<table border='1' class='table table-striped table-dark table-hover'>
                 <tr>
                     <th>ID</th>
@@ -45,7 +68,8 @@ if(mysqli_num_rows($resultado) >= 0){
 
         echo "</tr>";
     }
-    echo "Total de registros: ". mysqli_num_rows($resultado); 
+    echo "Total de registros: ". mysqli_num_rows($resultado);
+    
     
 }else{
     echo 'Nenhum Cliente Cadastrado.';
