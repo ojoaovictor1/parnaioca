@@ -4,7 +4,7 @@ include '../config/conexao.php';
 
 $id_hospedagem = $_GET['id'];
 
-$sql_itens = "SELECT * FROM itens_frigobar";
+$sql_itens = "SELECT * FROM itens_frigobar WHERE ativo = 'Ativo'";
 $resultado_itens = mysqli_query($con, $sql_itens);
 
 

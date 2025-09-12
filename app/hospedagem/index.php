@@ -5,10 +5,10 @@ include '../config/conexao.php';
 $erroItem = isset($_SESSION['erroItem']) ? $_SESSION['erroItem'] : '';
 unset($_SESSION['erroItem']);
 
-$sql_clientes = "SELECT * FROM clientes";
+$sql_clientes = "SELECT * FROM clientes WHERE situacao = 1";
 $resultado_clientes = mysqli_query($con,$sql_clientes);
 
-$sql_acomodacoes = "SELECT * FROM acomodacoes";
+$sql_acomodacoes = "SELECT * FROM acomodacoes WHERE situacao = 'Ativo'";
 $resultado_acomodacoes = mysqli_query($con,$sql_acomodacoes);
 
 ?>
@@ -28,7 +28,7 @@ $resultado_acomodacoes = mysqli_query($con,$sql_acomodacoes);
         <div id="topo"></div>
 
         <div id="formulario_clientes">
-            <h1>Cadastro de Hospedagem</h1>
+            <h1>Realizar Reserva</h1>
             <?php if($erroItem) : ?>
                 <p style="color: red;"><?= $erroItem; ?></p>
             <?php endif; ?>

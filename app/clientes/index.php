@@ -72,11 +72,10 @@ unset($_SESSION['erro']);
                     document.getElementById('nomeJogador').textContent = jogadorNome;
                     document.getElementById('btnConfirmarExclusao').href = 'dClientes.php?id=' + jogadorId;
                 });
-            </script>
-            
-        <a href="../inicio.php">Voltar</a> 
+            </script> 
         
     </div>
+    <a href="../inicio.php">Voltar</a>
 
 <script>
     document.addEventListener("submit", function(e) {

@@ -8,12 +8,19 @@ if($_SESSION['poderes'] !== 'admin'){
 
 $id = $_GET['id'];
 
-$sql_delete_cliente = "DELETE FROM clientes WHERE id = $id";
+$sql_delete_cliente = "UPDATE clientes SET situacao = 0 WHERE id = $id";
+if(mysqli_query($con,$sql_delete_cliente)){
+    echo 'Deletado com Sucesso';
+    header('location: ../clientes/index.php');
+}else{
+    echo 'Erro ao deletar';
+}
+/*$sql_delete_cliente = "DELETE FROM clientes WHERE id = $id";
 
 if(mysqli_query($con,$sql_delete_cliente)){
     echo 'Deletado com Sucesso';
     header('location: index.php');
 }else{
     echo 'Erro ao deletar';
-}
+}*/
 ?>

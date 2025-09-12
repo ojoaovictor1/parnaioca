@@ -47,8 +47,8 @@ $total_registros = mysqli_num_rows($resultado);
                 </select>
 
                 <select name="situacao" id="">
-                    <option value="1">Ativo</option>
-                    <option value="0">Inativo</option>
+                    <option value="Ativo">Ativo</option>
+                    <option value="Inativo">Inativo</option>
                 </select>
                 <input type="submit" value="Enviar">
 

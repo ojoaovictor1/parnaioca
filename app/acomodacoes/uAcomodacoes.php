@@ -41,6 +41,7 @@ $sql_update_Acomodacoes =
 $resultado_update = mysqli_query($con,$sql_update_Acomodacoes);
 if($resultado_update){
     header('location: index.php');
+
 }else{
     echo 'deu erro:' . mysqli_error($con);
 }

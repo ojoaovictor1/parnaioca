@@ -8,7 +8,8 @@ if($_SESSION['poderes'] !== 'admin'){
 }
 $id = $_GET['id'];
 
-$sql = "DELETE FROM itens_frigobar WHERE id = $id";
+//$sql = "DELETE FROM itens_frigobar WHERE id = $id";
+$sql = "UPDATE itens_frigobar SET ativo = 'Inativo' WHERE id = $id";
 if(mysqli_query($con, $sql)){
     echo "Deletado com sucesso";
     header('location: index.php');
