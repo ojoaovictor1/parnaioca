@@ -50,7 +50,7 @@ session_start();
             <div class="card  border=border-0 mb-3" style="max-width: 18rem;">
                 <div class="card-header ">Tipo de acomodação</div>
                 <div class="card-body  bg-warning">
-                    <h5 class="card-title"><a href="clientes/index.php">Tipo de Acomodação</a></h5>
+                    <h5 class="card-title"><a href="tipo_acomodacao/index.php">Tipo de Acomodação</a></h5>
                     <p class="card-text">Vou colocar um ícone de USER</p>
                 </div>
                 <div class="card-footer bg-transparent ">Rodapé</div>
@@ -59,7 +59,7 @@ session_start();
             <div class="card  border=border-0 mb-3" style="max-width: 18rem;">
                 <div class="card-header ">Acomodações</div>
                 <div class="card-body  bg-warning">
-                    <h5 class="card-title"><a href="clientes/index.php"><i class="fa-solid fa-house"></i></a></h5>
+                    <h5 class="card-title"><a href="acomodacoes/index.php"><i class="fa-solid fa-house"></i></a></h5>
                     <p class="card-text">Cadastrar Acomodação</p>
                 </div>
                 <div class="card-footer bg-transparent ">Rodapé</div>
@@ -68,7 +68,7 @@ session_start();
             <div class="card  border=border-0 mb-3" style="max-width: 18rem;">
                 <div class="card-header ">Itens para o Frigobar</div>
                 <div class="card-body  bg-warning">
-                    <h5 class="card-title"><a href="clientes/index.php"><i class="fa-solid fa-champagne-glasses"></i></a></h5>
+                    <h5 class="card-title"><a href="item_frigobar/index.php"><i class="fa-solid fa-champagne-glasses"></i></a></h5>
                     <p class="card-text">Inserir Itens no Frigobar</p>
                 </div>
                 <div class="card-footer bg-transparent ">Rodapé</div>
@@ -77,7 +77,7 @@ session_start();
             <div class="card  border=border-0 mb-3" style="max-width: 18rem;">
                 <div class="card-header ">Estacionamento</div>
                 <div class="card-body  bg-warning">
-                    <h5 class="card-title"><a href="clientes/index.php"><i class="fa-solid fa-car"></i></a></h5>
+                    <h5 class="card-title"><a href="vaga_estacionamento/index.php"><i class="fa-solid fa-car"></i></a></h5>
                     <p class="card-text">Alocar Vaga do Estacionamento</p>
                 </div>
                 <div class="card-footer bg-transparent ">Rodapé</div>
@@ -86,7 +86,7 @@ session_start();
             <div class="card  border=border-0 mb-3" style="max-width: 18rem;">
                 <div class="card-header ">Reserva</div>
                 <div class="card-body  bg-warning">
-                    <h5 class="card-title"><a href="clientes/index.php"><i class="fa-solid fa-suitcase"></i></a></h5>
+                    <h5 class="card-title"><a href="hospedagem/index.php"><i class="fa-solid fa-suitcase"></i></a></h5>
                     <p class="card-text">Fazer Reserva</p>
                 </div>
                 <div class="card-footer bg-transparent ">Rodapé</div>
@@ -95,7 +95,7 @@ session_start();
             <div class="card  border=border-0 mb-3" style="max-width: 18rem;">
                 <div class="card-header ">Frigobar</div>
                 <div class="card-body  bg-warning">
-                    <h5 class="card-title"><a href="clientes/index.php">Frigobar</a></h5>
+                    <h5 class="card-title"><a href="frigobar/index.php">Frigobar</a></h5>
                     <p class="card-text">Vou colocar um ícone de USER</p>
                 </div>
                 <div class="card-footer bg-transparent ">Rodapé</div>

@@ -6,7 +6,7 @@ $resultado = mysqli_query($con, $sql_consulta);
 
 if(mysqli_num_rows($resultado) >= 0){
 
-    echo "<form action='rClientes.php' method='POST'>";
+    echo "<form action='rClientes.php' id='formFiltro' method='POST'>";
     echo "<select name='cliente'>";
     echo "<option value=''>Todos</option>";
     echo "<option value='Ativo'>Ativo</option>";

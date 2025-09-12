@@ -13,7 +13,8 @@ $sql_criar_tabela_clientes =
     email VARCHAR(32) NOT NULL,
     telefone VARCHAR(32) NOT NULL,
     estado VARCHAR(32) NOT NULL,
-    cidade VARCHAR(32) NOT NULL
+    cidade VARCHAR(32) NOT NULL,
+    situacao TINYINT DEFAULT 1
     )";
 
 mysqli_query($con, $sql_criar_tabela_clientes);
