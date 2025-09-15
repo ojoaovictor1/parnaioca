@@ -65,11 +65,11 @@ $resultado_acomodacoes = mysqli_query($con,$sql_acomodacoes);
         <div id="roda"> 
             <?php include 'rHospedagem.php'; ?>  
             
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel-excluir" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Confirmar Exclusão</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel-excluir">Confirmar Exclusão</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -93,6 +93,64 @@ $resultado_acomodacoes = mysqli_query($con,$sql_acomodacoes);
     document.getElementById('nomeJogador').textContent = jogadorNome;
     document.getElementById('btnConfirmarExclusao').href = 'dHospedagem.php?id=' + jogadorId;
   });
+</script>
+
+<!-- Modal de Check-in -->
+
+<div class="modal fade" id="checkin-modal" tabindex="-1" aria-labelledby="checkinModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="checkinModalLabel">Realizar Check-in</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+        <div class="modal-body">
+            <form action="../checkin/cCheckin.php" method="POST">
+                <input type="hidden" name="hospedagem_id" id="hospedagemId">
+                <div class="mb-3">
+                    <label for="clienteNome" class="col-form-label">Cliente:</label>
+                    <input type="text" class="form-control" id="clienteNome" name="cliente_nome" readonly>
+                </div>
+                <div class="mb-3">
+                    <label for="acomodacaoNome" class="col-form-label">Acomodação:</label>
+                    <input type="text" class="form-control" id="acomodacaoNome" name="acomodacao_nome" readonly>
+                </div>
+                <div class="mb-3">
+                    <label for="dataCheckin" class="col-form-label">Data de Check-in:</label>
+                    <input type="date" class="form-control" id="dataCheckin" name="data_checkin" required>
+                </div>
+                <div class="mb-3">
+                    <label for="horaCheckin" class="col-form-label">Hora de Check-in:</label>
+                    <input type="time" class="form-control" id="horaCheckin" name="hora_checkin" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="horaCheckin" class="col-form-label">Valor da Acomodação</label>
+                    <input type="text" class="form-control" id="valor" name="valor" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Confirmar Check-in</button>
+            </form>
+        </div>
+    </div>
+    </div>
+</div>
+<script>
+  const checkinModal = document.getElementById('checkin-modal');
+    checkinModal.addEventListener('show.bs.modal', event => {
+    const button = event.relatedTarget;
+    const hospedagemId = button.getAttribute('data-id');
+    const clienteNome = button.getAttribute('data-nome');
+    const acomodacaoNome = button.getAttribute('data-acomodacao');
+    const valorAcomodacao = button.getAttribute('data-valor');
+
+    document.getElementById('hospedagemId').value = hospedagemId;
+    document.getElementById('clienteNome').value = clienteNome;
+    document.getElementById('acomodacaoNome').value = acomodacaoNome;
+    document.getElementById('valor').value = valorAcomodacao;
+    
+
+    });
 </script>
 
 

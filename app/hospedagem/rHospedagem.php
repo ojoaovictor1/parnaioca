@@ -24,8 +24,33 @@ if(mysqli_num_rows($resultado) > 0){
         echo "<td>" . $row['cliente'] . "</td>";
         echo "<td>" . $row['acomodacao'] . "</td>";
         echo "<td>" . $row['ativo'] . "</td>";
-        echo "<td> <a href='../consumo_frigobar/index.php?id=" . $row['id'] . "'>Check-in</a> </td>";
-        echo "<td> <a href='../consumo_frigobar/index.php?id=" . $row['id'] . "'>Check-out</a> </td>";
+        /*echo "<td>
+                 <a  
+                    data-bs-toggle='modal'
+                    data-bs-target='#checkin-modal'
+                    data-id='".$row['id']."'
+                    data-nome='".$row['cliente']."'
+                    data-acomodacao='".$row['acomodacao'] ."' 
+                    type='button' 
+                    class='btn btn-info btn-sm'>Check-in
+                </a>
+                </td>";*/
+
+        $sql_valor_acomodacao = "SELECT valor FROM acomodacoes WHERE nome = '" . $row['acomodacao'] . "'";
+        $resultado_valor = mysqli_query($con, $sql_valor_acomodacao);
+        $valor_acomodacao = mysqli_fetch_assoc($resultado_valor)['valor'];
+        echo "<td>
+        <button type='button' class='btn btn-info btn-sm' 
+            data-bs-toggle='modal' 
+            data-bs-target='#checkin-modal' 
+            data-id='".$row['id']."' 
+            data-nome='".$row['cliente']."'
+            data-valor='".$valor_acomodacao."'
+            data-acomodacao='".$row['acomodacao']."'>
+            Check-in
+        </button>
+      </td>";
+        echo "<td> <a href='../consumo_frigobar/index.php?id=" . $row['id'] . "' type='button' class='btn btn-secondary btn-sm'>Check-out</a> </td>";
         echo "<td> <a href='form_editar.php?id=" . $row['id'] . "'>Edit.</a> </td>";
         //echo "<td> <a href='dHospedagem.php?id=" . $row['id'] . "'>Del.</a> </td>";
 
@@ -34,7 +59,8 @@ if(mysqli_num_rows($resultado) > 0){
             data-bs-toggle='modal' 
             data-bs-target='#exampleModal' 
             data-id='".$row['id']."' 
-            data-nome='".$row['cliente']."'>
+            data-nome='".$row['cliente']."'
+            data-acomodacao='".$row['acomodacao']."'>
             Excluir
         </button>
       </td>";
