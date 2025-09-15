@@ -64,6 +64,7 @@ unset($_SESSION['erroItem']);
     document.getElementById('btnConfirmarExclusao').href = 'dItem_frigobar.php?id=' + jogadorId;
   });
 </script>
+
         <a href="../inicio.php">Voltar</a>
     </div>
 

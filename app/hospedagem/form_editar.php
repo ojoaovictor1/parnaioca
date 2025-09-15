@@ -4,7 +4,7 @@ include '../config/conexao.php';
 
 $id = $_GET['id'];
 
-$sql_todos_clientes = "SELECT * FROM clientes";
+$sql_todos_clientes = "SELECT * FROM clientes WHERE situacao = 1";
 $resultado_clientes = mysqli_query($con,$sql_todos_clientes);
 $sql_todas_acomodacoes = "SELECT * FROM acomodacoes";
 $resultado_acomodacoes = mysqli_query($con,$sql_todas_acomodacoes);
@@ -53,6 +53,7 @@ $row = mysqli_fetch_assoc($resultado_preencher);
                 </select>
                 
                 <select name="status" id="">
+                    <option value="pedente">Check-in Pendente</option>
                     <option value="ativo">Ativo</option>
                     <option value="finalizado">Finalizado</option>
                     <option value="cancelado">Cancelado</option>
