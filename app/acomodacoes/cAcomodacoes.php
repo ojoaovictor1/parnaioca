@@ -11,6 +11,8 @@ $sql_criar_tabela_acomodacoes =
     valor INT(254) NOT NULL,
     capacidade INT(50) NOT NULL,
     tipo INT NOT NULL,
+    tipo_nome VARCHAR(32) NOT NULL,
+    situacao VARCHAR(32) DEFAULT 'Ativo',
     FOREIGN KEY (tipo) REFERENCES tipo_da_acomodacao(id)
     )";
 
