@@ -52,7 +52,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
     fopen('../log.txt', 'a') or die('Não foi possível abrir o arquivo de logs');
     $data_hora = date('d/m/Y H:i:s');
-    $log = "[$data_hora] - CHECK-IN: $cliente - $acomodacao - R$ $valor\n";
+    $log = "[$data_hora] - CHECK-IN REALIZADO POR {$_SESSION['login']}: $cliente - $acomodacao - R$ $valor\n";
     file_put_contents('../log.txt', $log, FILE_APPEND);
     
     header('location: ../hospedagem/index.php');

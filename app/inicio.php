@@ -42,7 +42,7 @@ session_start();
                 <div class="card-header ">Clientes</div>
                 <div class="card-body  bg-warning">
                     <h5 class="card-title"><a href="clientes/index.php"><i class="fa-solid fa-user"></i></a></h5>
-                    <p class="card-text">Cadastrar Usuário</p>
+                    <p class="card-text">Cadastrar Cliente</p>
                 </div>
                 <div class="card-footer bg-transparent ">Rodapé</div>
             </div>
