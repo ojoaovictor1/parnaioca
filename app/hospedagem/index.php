@@ -109,11 +109,11 @@ $resultado_acomodacoes = mysqli_query($con,$sql_acomodacoes);
                 <input type="hidden" name="hospedagem_id" id="hospedagemId">
                 <div class="mb-3">
                     <label for="clienteNome" class="col-form-label">Cliente:</label>
-                    <input type="text" class="form-control" id="clienteNome" name="cliente_nome" readonly>
+                    <input type="text" class="form-control" id="clienteNome" name="cliente_nome" readonly disabled>
                 </div>
                 <div class="mb-3">
                     <label for="acomodacaoNome" class="col-form-label">Acomodação:</label>
-                    <input type="text" class="form-control" id="acomodacaoNome" name="acomodacao_nome" readonly>
+                    <input type="text" class="form-control" id="acomodacaoNome" name="acomodacao_nome" readonly disabled>
                 </div>
                 <div class="mb-3">
                     <label for="dataCheckin" class="col-form-label">Data de Check-in:</label>
@@ -126,7 +126,7 @@ $resultado_acomodacoes = mysqli_query($con,$sql_acomodacoes);
 
                 <div class="mb-3">
                     <label for="horaCheckin" class="col-form-label">Valor da Acomodação</label>
-                    <input type="text" class="form-control" id="valor" name="valor" required>
+                    <input type="text" class="form-control" id="valor" name="valor" required disabled>
                 </div>
 
                 <button type="submit" class="btn btn-primary">Confirmar Check-in</button>
@@ -163,7 +163,7 @@ $resultado_acomodacoes = mysqli_query($con,$sql_acomodacoes);
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
         <div class="modal-body">
-            <form action="../checkin/cCheckin.php" method="POST">
+            <form action="../checkin/cCheckout.php" method="POST">
                 <input type="hidden" name="hospedagem_id" id="hospedagemIdCheckout">
                 <div class="mb-3">
                     <label for="clienteNome" class="col-form-label">Cliente:</label>

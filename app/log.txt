@@ -1,3 +1,4 @@
 [16/09/2025 01:09:40] - CHECK-IN: luc luc - Suite Lopes Mendes Deluxe - R$ 800
 [16/09/2025 11:12:26] - CHECK-IN: Arrascaeta - kitnet - R$ 2600000.00
 [16/09/2025 11:17:54] - CHECK-IN REALIZADO POR joao: Fafá de Belém - Celso Portiolli House - R$ 850.00
+[16/09/2025 17:35:08] - CHECK-IN REALIZADO POR joao: Modesto - Casa do Messi - R$ 2000.00
