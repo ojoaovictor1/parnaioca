@@ -50,7 +50,42 @@ if(mysqli_num_rows($resultado) > 0){
             Check-in
         </button>
       </td>";
-        echo "<td> <a href='../consumo_frigobar/index.php?id=" . $row['id'] . "' type='button' class='btn btn-secondary btn-sm'>Check-out</a> </td>";
+
+        //echo "<td> <a href='../consumo_frigobar/index.php?id=" . $row['id'] . "' type='button' class='btn btn-secondary btn-sm'>Check-out</a> </td>";
+        // Meu checkout ... excluir o outro!
+        
+        
+        /*echo "<td>
+        <button type='button' class='btn btn-secondary btn-sm' 
+            data-bs-toggle='modal' 
+            data-bs-target='#checkout-modal' 
+            data-id='".$row['id']."' 
+            data-nome='".$row['cliente']."'
+            data-valor='".$valor_acomodacao."'
+            data-acomodacao='".$row['acomodacao']."'>
+            Check-out
+        </button>
+      </td>";*/
+
+      echo "<td>";
+        if ($row['ativo'] == 'Ativo') {
+        echo "<button type='button' class='btn btn-secondary btn-sm' 
+        data-bs-toggle='modal' 
+        data-bs-target='#checkout-modal' 
+        data-id='".$row['id']."' 
+        data-nome='".$row['cliente']."'
+        data-valor='".$valor_acomodacao."'
+        data-acomodacao='".$row['acomodacao']."'>
+        Check-out
+        </button>";
+        } else {
+            echo "<button type='button' class='btn btn-secondary btn-sm' disabled title='Check-in não realizado'>
+            Check-out
+    </button>";
+}
+echo "</td>";
+
+        
         echo "<td> <a href='form_editar.php?id=" . $row['id'] . "'>Edit.</a> </td>";
         //echo "<td> <a href='dHospedagem.php?id=" . $row['id'] . "'>Del.</a> </td>";
 
