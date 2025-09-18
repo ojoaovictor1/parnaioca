@@ -13,16 +13,7 @@ session_start();
     <link rel="stylesheet" href="estilo_inicio.css">
 </head>
 <body>
-    <!-- <nav>
-        <ul>
-            <li><a href="#home">Início</a></li>
-            <li><a href="#card">Cadastros</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
-
-        </ul>
-    </nav> -->
-
+    
     <nav id="sidebar">
             <div id="sidebar_content">
                 <div id="user">
@@ -78,9 +69,9 @@ session_start();
 
                     <li class="side_item">
                         <a href="#intranet">
-                            <i class="fa-solid fa-chart-line"></i>
+                            <i class="fa-solid fa-address-book"></i>
                             <span class="item-description">
-                                Intranet
+                               Contatos
                             </span>
                         </a>
                     </li>
@@ -99,6 +90,7 @@ session_start();
             </div>
     </nav>
 
+    <!-- Conteúdo principal -->
     <main>
         <section id="inicio">
             <h1>Início</h1>
@@ -179,16 +171,16 @@ session_start();
         </section>
 
          <section id="dashboard">
-            <h1>About</h1>
-            <p>Conteúdo para a seção about</p>
+            <h1>Dashboard</h1>
+            <p>Conteúdo para a Dashboard</p>
         </section>
         <section id="relatorios">
-            <h1>Services</h1>
-            <p>Conteúdo para a seção services</p>
+            <h1>Relatórios</h1>
+            <p>Conteúdo para Relatórios</p>
         </section>
         <section id="intranet">
-            <h1>Contact</h1>
-            <p>Conteúdo para a seção contact</p>
+            <h1>Contatos</h1>
+            <p>Conteúdo para a seção contatos</p>
         </section>
 
 

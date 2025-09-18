@@ -8,7 +8,19 @@ body{
     align-items: center;
     justify-content: center;
     
-    
+}
+#container-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 550px; 
+    max-width: 350px;
+    padding: 1rem;
+    margin: auto; 
+    border: 1px solid #ccc;
+    border-radius: 12px;
 }
 #lado_esquerdo{
     flex: 1;
@@ -16,7 +28,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(105, 54, 54);
+    /*background-color: rgb(105, 54, 54);*/
     height: 100vh;
     width: 100vh;
 }
@@ -25,19 +37,22 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 40%;
-    height: 60%;
-    background-color:rgb(63, 95, 95);
+    width: 50%;
+    height: 70%;
+    background-color:rgb(63, 95, 63);
+    opacity: 0.9;
     border-radius: 12px;
     
 }
 #lado_direito{
     flex: 1;
-    background-color:rgb(63, 95, 95);
+    
+    background-position: 50% 90%;
     display: flex;
     flex-direction: column;
     height: 100vh;
     width: 100vh;
+    background-image: url('../../assets/parnaioca4-cortada.jpg');
 }
 #formulario_funcionarios{
     display: flex;
