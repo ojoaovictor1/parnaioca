@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 $erro = isset($_SESSION['erro']) ? $_SESSION['erro'] : '';
 unset($_SESSION['erro']);
 
