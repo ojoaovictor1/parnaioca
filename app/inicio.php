@@ -2,7 +2,6 @@
 session_start();
 ?>
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -108,16 +107,24 @@ session_start();
                 <div class="card border border-0 mb-3" style="max-width: 18rem;">
                     <div class="card-header ">Clientes</div>
                     <div class="card-body  bg-warning">
-                        <h5 class="card-title"><a href="clientes/index.php"><i class="fa-solid fa-user"></i></a></h5>
+                        <h5 class="card-title">
+                            <a href="clientes/index.php">
+                                <i class="fa-solid fa-user"></i>
+                            </a>
+                        </h5>
                         <p class="card-text">Cadastrar Cliente</p>
                     </div>
                     <div class="card-footer bg-transparent ">Rodapé</div>
                 </div>
 
-                <div class="card  border=border-0 mb-3" style="max-width: 18rem;">
+                <div class="card border border-0 mb-3" style="max-width: 18rem;">
                     <div class="card-header ">Tipo de acomodação</div>
                     <div class="card-body  bg-warning">
-                        <h5 class="card-title"><a href="tipo_acomodacao/index.php">Tipo de Acomodação</a></h5>
+                        <h5 class="card-title">
+                            <a href="tipo_acomodacao/index.php">
+                                Tipo de Acomodação
+                            </a>
+                        </h5>
                         <p class="card-text">Vou colocar um ícone de USER</p>
                     </div>
                     <div class="card-footer bg-transparent ">Rodapé</div>
@@ -183,10 +190,15 @@ session_start();
             <p>Conteúdo para a seção contatos</p>
         </section>
 
+        <section id="cadastro_auxiliar">
+                <!-- Aqui o AJAX vai injetar o conteúdo -->
+        </section>
+
 
     </main>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
     <script src="script.js"></script>
+    <script src="assets/funcoes.js"></script>
 </body>
 </html>
