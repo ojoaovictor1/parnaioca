@@ -5,7 +5,8 @@ include '../config/conexao.php';
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
     $tipo = $_POST['tipo'];
-    $id = $_POST['id'];  
+    $id = $_POST['id'];
+    $situacao = $_POST['situacao'];  
  
 }else{
     echo 'Dados não Atualizados' . mysqli_error($con);
@@ -14,7 +15,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
 $sql_update_tipo_acomodacao = 
     "UPDATE tipo_da_acomodacao SET 
-    tipo = '$tipo'
+    tipo = '$tipo',
+    situacao = $situacao
     WHERE id = $id";
 
 $resultado_update = mysqli_query($con,$sql_update_tipo_acomodacao);

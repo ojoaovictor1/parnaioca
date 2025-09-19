@@ -4,7 +4,7 @@ include '../config/conexao.php';
 
 $id = $_GET['id'];
 
-$sql = "DELETE FROM frigobar WHERE id = $id";
+$sql = "UPDATE frigobar SET situacao = '0' WHERE id = $id";
 
 if(mysqli_query($con,$sql)){
     header('location: index.php');

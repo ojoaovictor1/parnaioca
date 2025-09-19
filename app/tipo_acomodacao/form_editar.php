@@ -27,6 +27,10 @@ $row = mysqli_fetch_assoc($resultado);
             <form action="uTipo_acomodacao.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $id; ?>">
                 <input type="text" name="tipo" placeholder="tipo da acomodação" value="<?php echo $row['tipo']; ?>">
+                <select name="situacao" id="">
+                    <option value="1" >Ativo</option>
+                    <option value="0" >Inativo</option>
+                </select>
                 <input type="submit" value="Enviar">
             </form>
         </div>

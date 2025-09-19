@@ -40,6 +40,11 @@ $resultado = mysqli_query($con,$sql);
                             }
                     ?>
                 </select>
+
+                <select name="situacao" id="">
+                    <option value="1" >Ativo</option>
+                    <option value="0" >Inativo</option>
+                </select>
                 <input type="submit" value="Enviar">
             </form>
         </div>

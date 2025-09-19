@@ -31,7 +31,7 @@ if(mysqli_num_rows($resultado) >= 0){
     
     
 }else{
-    echo 'Nenhum Cliente Cadastrado.';
+    echo 'Nenhum Item Cadastrado.';
 }
 echo "Total de registros: ". mysqli_num_rows($resultado); 
 ?>

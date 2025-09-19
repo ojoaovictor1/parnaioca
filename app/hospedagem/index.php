@@ -11,6 +11,9 @@ $resultado_clientes = mysqli_query($con,$sql_clientes);
 $sql_acomodacoes = "SELECT * FROM acomodacoes WHERE situacao = 'Ativo'";
 $resultado_acomodacoes = mysqli_query($con,$sql_acomodacoes);
 
+$sql_itens = "SELECT * FROM itens_frigobar WHERE ativo = 'Ativo'";
+$resultado_itens = mysqli_query($con, $sql_itens);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -155,7 +158,7 @@ $resultado_acomodacoes = mysqli_query($con,$sql_acomodacoes);
 
 <!-- Modal de Check-out -->
 
-<div class="modal fade" id="checkout-modal" tabindex="-1" aria-labelledby="checkoutModalLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="checkout-modal" tabindex="-1" aria-labelledby="checkoutModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -209,7 +212,103 @@ $resultado_acomodacoes = mysqli_query($con,$sql_acomodacoes);
     
 
     });
+</script> -->
+
+<!-- Modal de Check-out -->
+<div class="modal fade" id="checkout-modal" tabindex="-1" aria-labelledby="checkoutModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg"> <!-- modal-lg para mais espaço -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="checkoutModalLabel">Realizar Check-out</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <!-- Formulário: Consumo Frigobar -->
+          <div class="col-md-6 border-end pe-4">
+            <h5>Consumo do Frigobar</h5>
+            <form action="cConsumo_frigobar.php" method="POST" id="formFrigobar">
+              <input type="hidden" name="id_hospedagem" id="frigobarHospedagemId" value="<?php echo $id_hospedagem; ?>">
+              
+              <div id="frigobar-itens-list">        
+                
+                <?php while($row = mysqli_fetch_assoc($resultado_itens)): ?>
+                    
+                    <label class="col-form-label"><?php echo $row['nome']; ?> (R$ <?php echo $row['preco']; ?>)</label>
+                    <input type="number" class="form-control" name="itens[<?php echo $row['id']; ?>]" value="0" min="0"><br>
+                    
+                    
+                    <?php endwhile; ?>
+
+              </div>
+
+              <input type="submit" class="btn btn-secondary mt-2" value="Enviar nota para o checkout">
+            </form>
+          </div>
+
+          <!-- Formulário: Check-out -->
+          <div class="col-md-6 ps-4">
+            <h5>Dados do Check-out</h5>
+            <form action="../checkin/cCheckout.php" method="POST">
+              <input type="hidden" name="hospedagem_id" id="hospedagemIdCheckout">
+
+              <div class="mb-3">
+                <label for="clienteNome" class="col-form-label">Cliente:</label>
+                <input type="text" class="form-control" id="clienteNomeCheckout" name="cliente_nome" readonly>
+              </div>
+
+              <div class="mb-3">
+                <label for="acomodacaoNome" class="col-form-label">Acomodação:</label>
+                <input type="text" class="form-control" id="acomodacaoNomeCheckout" name="acomodacao_nome" readonly>
+              </div>
+
+              <div class="mb-3">
+                <label for="dataCheckout" class="col-form-label">Data de Check-out:</label>
+                <input type="date" class="form-control" id="dataCheckout" name="data_checkout" required>
+              </div>
+
+              <div class="mb-3">
+                <label for="horaCheckout" class="col-form-label">Hora de Check-out:</label>
+                <input type="time" class="form-control" id="horaCheckout" name="hora_checkout" required>
+              </div>
+
+              <div class="mb-3">
+                <label for="valorCheckout" class="col-form-label">Consumo do Frigobar (R$):</label>
+                <input type="text" class="form-control" id="valorCheckout" name="valor" required>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Confirmar Check-out</button>
+            </form>
+          </div>
+        </div> <!-- .row -->
+      </div> <!-- .modal-body -->
+    </div>
+  </div>
+</div>
+
+<script>
+  const checkoutModal = document.getElementById('checkout-modal');
+  checkoutModal.addEventListener('show.bs.modal', event => {
+    const button = event.relatedTarget;
+
+    const hospedagemId = button.getAttribute('data-id');
+    const clienteNome = button.getAttribute('data-nome');
+    const acomodacaoNome = button.getAttribute('data-acomodacao');
+    const valorAcomodacao = button.getAttribute('data-valor');
+
+    // Preencher dados do formulário de check-out
+    document.getElementById('hospedagemIdCheckout').value = hospedagemId;
+    document.getElementById('clienteNomeCheckout').value = clienteNome;
+    document.getElementById('acomodacaoNomeCheckout').value = acomodacaoNome;
+    document.getElementById('valorCheckout').value = valorAcomodacao;
+
+    // Preencher o campo hidden do formulário de frigobar
+    document.getElementById('frigobarHospedagemId').value = hospedagemId;
+
+    // (Opcional) Você pode buscar os itens via AJAX e preencher a div `#frigobar-itens-list`
+  });
 </script>
+
 
 
         <a href="../inicio.php">Voltar</a> </div>

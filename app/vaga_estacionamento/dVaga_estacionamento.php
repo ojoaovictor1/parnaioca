@@ -3,7 +3,7 @@ session_start();
 include '../config/conexao.php';
 
 $id = $_GET['id'];
-$sql_delete = "DELETE FROM estacionamento WHERE id = $id";
+$sql_delete = "UPDATE estacionamento SET situacao = 0 WHERE id = $id";
 
 if(mysqli_query($con,$sql_delete)){
     header("location: index.php");

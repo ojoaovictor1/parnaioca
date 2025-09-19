@@ -130,7 +130,7 @@ session_start();
                     <div class="card-footer bg-transparent ">Rodapé</div>
                 </div>
 
-                <div class="card  border=border-0 mb-3" style="max-width: 18rem;">
+                <div class="card  border border-0 mb-3" style="max-width: 18rem;">
                     <div class="card-header ">Acomodações</div>
                     <div class="card-body  bg-warning">
                         <h5 class="card-title"><a href="acomodacoes/index.php"><i class="fa-solid fa-house"></i></a></h5>
@@ -139,7 +139,7 @@ session_start();
                     <div class="card-footer bg-transparent ">Rodapé</div>
                 </div>
 
-                <div class="card  border=border-0 mb-3" style="max-width: 18rem;">
+                <div class="card  border border-0 mb-3" style="max-width: 18rem;">
                     <div class="card-header ">Itens para o Frigobar</div>
                     <div class="card-body  bg-warning">
                         <h5 class="card-title"><a href="item_frigobar/index.php"><i class="fa-solid fa-champagne-glasses"></i></a></h5>
@@ -148,7 +148,7 @@ session_start();
                     <div class="card-footer bg-transparent ">Rodapé</div>
                 </div>
 
-                <div class="card  border=border-0 mb-3" style="max-width: 18rem;">
+                <div class="card  border border-0 mb-3" style="max-width: 18rem;">
                     <div class="card-header ">Estacionamento</div>
                     <div class="card-body  bg-warning">
                         <h5 class="card-title"><a href="vaga_estacionamento/index.php"><i class="fa-solid fa-car"></i></a></h5>
@@ -157,7 +157,7 @@ session_start();
                     <div class="card-footer bg-transparent ">Rodapé</div>
                 </div>
 
-                <div class="card  border=border-0 mb-3" style="max-width: 18rem;">
+                <div class="card  border border-0 mb-3" style="max-width: 18rem;">
                     <div class="card-header ">Reserva</div>
                     <div class="card-body  bg-warning">
                         <h5 class="card-title"><a href="hospedagem/index.php"><i class="fa-solid fa-suitcase"></i></a></h5>
@@ -166,7 +166,7 @@ session_start();
                     <div class="card-footer bg-transparent ">Rodapé</div>
                 </div>
 
-                <div class="card  border=border-0 mb-3" style="max-width: 18rem;">
+                <div class="card  border border-0 mb-3" style="max-width: 18rem;">
                     <div class="card-header ">Frigobar</div>
                     <div class="card-body  bg-warning">
                         <h5 class="card-title"><a href="frigobar/index.php">Frigobar</a></h5>

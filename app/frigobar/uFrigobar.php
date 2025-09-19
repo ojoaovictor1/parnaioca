@@ -6,7 +6,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
     $acomodacao_id = $_POST['acomodacoes'];
     $id = $_POST['id'];
-    $numero = $_POST['numero'];  
+    $numero = $_POST['numero'];
+    $situacao = $_POST['situacao'];
  
 }else{
     echo 'Dados não Atualizados' . mysqli_error($con);
@@ -16,7 +17,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 $sql_update_clientes = 
     "UPDATE frigobar SET 
     acomodacao_id = $acomodacao_id,
-    numero = '$numero'
+    numero = '$numero',
+    situacao = $situacao
     WHERE id = $id";
 
 if(mysqli_query($con, $sql_update_clientes)){
