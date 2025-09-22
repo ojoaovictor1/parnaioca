@@ -22,4 +22,20 @@ $sql_criar_tabela_checkout =
         $data_checkout = $_POST['data_checkout']
         $hora_checkout = $_POST['hora_checkout'];
         $consumo_frigobar = $_POST['valor'];
+
+        $sql_insert_checkout = "INSERT INTO checkout 
+                                (hospedagem_id, 
+                                cliente,
+                                acomodacao,
+                                data_checkout,
+                                hora_checkout,
+                                consumo_frigobar) 
+                                VALUES
+                                ($hospedagem_id,
+                                '$cliente',
+                                '$acomodacao',
+                                '$data_checkout',
+                                '$hora_checkout',
+                                $consumo_frigobar)";
+    }
 ?>

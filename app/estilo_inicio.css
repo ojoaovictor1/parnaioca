@@ -48,8 +48,6 @@ nav ul li a:hover {
 
 /* Conteúdo principal */
 main {
-    /* margin-left: 20px; mesma largura do menu */
-    /*padding: 20px;*/
     height: 100vh;
     overflow-y: auto;
     flex: 1;
@@ -202,6 +200,7 @@ section {
 #open_btn_icon{
     transition: transform .3s ease;
 }
+/*
 #open_sidebar #open_btn_icon{
     transform: rotate(180deg);
 }
@@ -226,7 +225,19 @@ section {
     justify-content: flex-start;
     gap: 14px;
 }
+*/
 /* fim do sidebar */
+#app{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    height: 700px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    transform: translateY(15%);
+}
 
 
 #inicio{
