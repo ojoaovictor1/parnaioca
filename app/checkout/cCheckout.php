@@ -19,7 +19,7 @@ $sql_criar_tabela_checkout =
         $hospedagem_id = $_POST['hospedagem_id'];
         $cliente = $_POST['cliente_nome'];
         $acomodacao = $_POST['acomodacao_nome'];
-        $data_checkout = $_POST['data_checkout']
+        $data_checkout = $_POST['data_checkout'];
         $hora_checkout = $_POST['hora_checkout'];
         $consumo_frigobar = $_POST['valor'];
 
@@ -37,5 +37,16 @@ $sql_criar_tabela_checkout =
                                 '$data_checkout',
                                 '$hora_checkout',
                                 $consumo_frigobar)";
+        mysqli_query($con, $sql_insert_checkout);
+
+        $sql_update_hospedagem = "UPDATE hospedagem 
+                                  SET ativo = 'Finalizado' 
+                                  WHERE id = $hospedagem_id";
+        mysqli_query($con, $sql_update_hospedagem);
+
+        fopen('../log.txt', 'a') or die('Não foi possível abrir o arquivo de logs');
+        $data_hora = date('d/m/Y H:i:s');
+        $log = "[$data_hora] - CHECK-OUT REALIZADO POR {$_SESSION['login']}: $cliente - $acomodacao - R$ $consumo_frigobar\n";
+        file_put_contents('../log.txt', $log, FILE_APPEND);
     }
 ?>
