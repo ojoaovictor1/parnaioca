@@ -2,3 +2,8 @@
 [16/09/2025 11:12:26] - CHECK-IN: Arrascaeta - kitnet - R$ 2600000.00
 [16/09/2025 11:17:54] - CHECK-IN REALIZADO POR joao: Fafá de Belém - Celso Portiolli House - R$ 850.00
 [16/09/2025 17:35:08] - CHECK-IN REALIZADO POR joao: Modesto - Casa do Messi - R$ 2000.00
+[22/09/2025 23:41:14] - CHECK-IN REALIZADO POR joao: João victor - Apartamento Standard - R$ 300
+[23/09/2025 00:45:21] - CHECK-IN REALIZADO POR joao: luc luc - Apartamento Standard - R$ 300
+[23/09/2025 00:54:14] - CHECK-IN REALIZADO POR joao: Milano - Suíte Lagoa Azul - R$ 500
+[23/09/2025 00:55:15] - CHECK-OUT REALIZADO POR joao: Milano - Suíte Lagoa Azul - R$ 5095.00
+[23/09/2025 00:56:00] - CHECK-OUT REALIZADO POR joao: Milano - Suíte Lagoa Azul - R$ 5095.00

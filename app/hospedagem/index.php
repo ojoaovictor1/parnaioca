@@ -112,11 +112,11 @@ $resultado_itens = mysqli_query($con, $sql_itens);
                 <input type="hidden" name="hospedagem_id" id="hospedagemId">
                 <div class="mb-3">
                     <label for="clienteNome" class="col-form-label">Cliente:</label>
-                    <input type="text" class="form-control" id="clienteNome" name="cliente_nome" readonly disabled>
+                    <input type="text" class="form-control" id="clienteNome" name="cliente_nome" readonly>
                 </div>
                 <div class="mb-3">
                     <label for="acomodacaoNome" class="col-form-label">Acomodação:</label>
-                    <input type="text" class="form-control" id="acomodacaoNome" name="acomodacao_nome" readonly disabled>
+                    <input type="text" class="form-control" id="acomodacaoNome" name="acomodacao_nome" readonly>
                 </div>
                 <div class="mb-3">
                     <label for="dataCheckin" class="col-form-label">Data de Check-in:</label>
@@ -129,7 +129,7 @@ $resultado_itens = mysqli_query($con, $sql_itens);
 
                 <div class="mb-3">
                     <label for="horaCheckin" class="col-form-label">Valor da Acomodação</label>
-                    <input type="text" class="form-control" id="valor" name="valor" required disabled>
+                    <input type="text" class="form-control" id="valor" name="valor" required readonly>
                 </div>
 
                 <button type="submit" class="btn btn-primary">Confirmar Check-in</button>
@@ -227,18 +227,41 @@ $resultado_itens = mysqli_query($con, $sql_itens);
           <!-- Formulário: Consumo Frigobar -->
           <div class="col-md-6 border-end pe-4">
             <h5>Consumo do Frigobar</h5>
-            <form action="cConsumo_frigobar.php" method="POST" id="formFrigobar">
+            <form action="../consumo_frigobar/cConsumo_frigobar.php" method="POST" id="formFrigobar">
               <input type="hidden" name="id_hospedagem" id="frigobarHospedagemId" value="<?php echo $id_hospedagem; ?>">
               
-              <div id="frigobar-itens-list">        
-                
+              <div id="frigobar-itens-list"> 
+
                 <?php while($row = mysqli_fetch_assoc($resultado_itens)): ?>
-                    
-                    <label class="col-form-label"><?php echo $row['nome']; ?> (R$ <?php echo $row['preco']; ?>)</label>
-                    <input type="number" class="form-control" name="itens[<?php echo $row['id']; ?>]" value="0" min="0"><br>
-                    
-                    
-                    <?php endwhile; ?>
+                  <label class="col-form-label">
+                      <?php echo $row['nome']; ?> (R$ <?php echo $row['preco']; ?>)
+                  </label>
+                  <input 
+                      type="number" 
+                      class="form-control item-quantidade" 
+                      data-preco="<?php echo $row['preco']; ?>" 
+                      name="itens[<?php echo $row['id']; ?>]" 
+                      value="0" 
+                      min="0"
+                  ><br>
+               <?php endwhile; ?>
+                 
+               <script>
+                document.querySelectorAll('.item-quantidade').forEach(input => {
+                    input.addEventListener('input', calcularTotal);
+                });
+
+                function calcularTotal() {
+                    let total = 0;
+                    document.querySelectorAll('.item-quantidade').forEach(input => {
+                        const preco = parseFloat(input.dataset.preco);
+                        const qtd = parseInt(input.value) || 0;
+                        total += preco * qtd;
+                    });
+
+                    document.getElementById('valorCheckout').value = total.toFixed(2);
+}
+               </script>
 
               </div>
 
@@ -249,7 +272,7 @@ $resultado_itens = mysqli_query($con, $sql_itens);
           <!-- Formulário: Check-out -->
           <div class="col-md-6 ps-4">
             <h5>Dados do Check-out</h5>
-            <form action="../checkin/cCheckout.php" method="POST">
+            <form action="../checkout/cCheckout.php" method="POST">
               <input type="hidden" name="hospedagem_id" id="hospedagemIdCheckout">
 
               <div class="mb-3">
@@ -294,13 +317,13 @@ $resultado_itens = mysqli_query($con, $sql_itens);
     const hospedagemId = button.getAttribute('data-id');
     const clienteNome = button.getAttribute('data-nome');
     const acomodacaoNome = button.getAttribute('data-acomodacao');
-    const valorAcomodacao = button.getAttribute('data-valor');
+    
 
     // Preencher dados do formulário de check-out
     document.getElementById('hospedagemIdCheckout').value = hospedagemId;
     document.getElementById('clienteNomeCheckout').value = clienteNome;
     document.getElementById('acomodacaoNomeCheckout').value = acomodacaoNome;
-    document.getElementById('valorCheckout').value = valorAcomodacao;
+    
 
     // Preencher o campo hidden do formulário de frigobar
     document.getElementById('frigobarHospedagemId').value = hospedagemId;

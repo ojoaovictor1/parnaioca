@@ -7,11 +7,13 @@ $sql_criar_tabela_consumo_frigobar =
     "CREATE TABLE IF NOT EXISTS consumo_frigobar (
     id INT AUTO_INCREMENT PRIMARY KEY,
     hospedagem_id INT,
+    cliente_id INT,
     item_id INT,
     quantidade INT,
     valor_total DECIMAL(10,2),
-    momento DATE,
+    momento DATETIME,
     FOREIGN KEY (hospedagem_id) REFERENCES hospedagem(id),
+    FOREIGN KEY (cliente_id) REFERENCES clientes(id),
     FOREIGN KEY (item_id) REFERENCES itens_frigobar(id)
     )";
 
@@ -30,7 +32,7 @@ foreach($itens as $item_id => $qtd){
         $row = mysqli_fetch_assoc($res);
         $preco = $row['preco'];
         $valor_total = $preco * $qtd;
-        $data = date("Y-m-d");
+        $data = date('Y-m-d H:i:s');
 
         $sql_insert = "INSERT INTO consumo_frigobar (hospedagem_id, item_id, quantidade, valor_total, momento) 
                        VALUES ($hospedagem_id, $item_id, $qtd, $valor_total, '$data')";

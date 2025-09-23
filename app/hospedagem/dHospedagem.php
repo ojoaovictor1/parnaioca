@@ -4,7 +4,7 @@ include '../config/conexao.php';
 
 $id = $_GET['id'];
 
-$sql = "DELETE FROM hospedagem WHERE id = $id";
+$sql = "UPDATE hospedagem SET ativo = 'inativo' WHERE id = $id";
 
 if(mysqli_query($con,$sql)){
     header('location: index.php');
