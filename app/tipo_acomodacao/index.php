@@ -64,7 +64,7 @@ unset($_SESSION['errot']);
   });
 </script>
             
-            <a href="../inicio.php">Voltar</a> 
+            <a href="../inicio.php#cadastros">Voltar</a> 
             
         </div>
     </div>

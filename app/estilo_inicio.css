@@ -59,6 +59,7 @@ section {
     padding: 25px 50px;
     border-bottom: 1px solid #ccc;
     min-height: 100vh;
+    
 }
 #card{
     display: flex;
@@ -225,7 +226,7 @@ section {
     justify-content: flex-start;
     gap: 14px;
 }
-*/
+
 /* fim do sidebar */
 #app{
     display: flex;

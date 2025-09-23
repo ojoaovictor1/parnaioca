@@ -76,7 +76,7 @@ unset($_SESSION['erroItem']);
     document.getElementById('btnConfirmarExclusao').href = 'dFrigobar.php?id=' + jogadorId;
   });
 </script>
-            <a href="../inicio.php">Voltar</a> 
+            <a href="../inicio.php#cadastros">Voltar</a> 
             
         </div>
     </div>

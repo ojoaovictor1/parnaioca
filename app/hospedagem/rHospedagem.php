@@ -30,18 +30,26 @@ if(mysqli_num_rows($resultado) > 0){
         $valor_acomodacao = mysqli_fetch_assoc($resultado_valor)['valor'];
         
         /*checkin*/
-        echo "<td>
-        <button type='button' class='btn btn-info btn-sm' 
-            data-bs-toggle='modal' 
-            data-bs-target='#checkin-modal' 
-            data-id='".$row['id']."' 
-            data-nome='".$row['cliente']."'
-            data-valor='".$valor_acomodacao."'
-            data-acomodacao='".$row['acomodacao']."'>
-            Check-in
-        </button>
-        </td>";
-
+        
+        
+            echo "<td>";
+            if($row['ativo'] == 'Check-in Pedente') {
+            echo "<button type='button' class='btn btn-info btn-sm' 
+                data-bs-toggle='modal' 
+                data-bs-target='#checkin-modal' 
+                data-id='".$row['id']."' 
+                data-nome='".$row['cliente']."'
+                data-valor='".$valor_acomodacao."'
+                data-acomodacao='".$row['acomodacao']."'>
+                Check-in
+            </button>";
+            }else{
+                echo "<button type='button' class='btn btn-info btn-sm' disabled title='Check-in já realizado'>
+                Check-in
+            </button>";
+            }
+            echo "</td>";
+        
         /*checkout*/
         echo "<td>";
         if ($row['ativo'] == 'Ativo') {

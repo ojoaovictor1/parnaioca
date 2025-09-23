@@ -132,7 +132,7 @@ session_start();
                                 Tipo de Acomodação
                             </a>
                         </h5>
-                        <p class="card-text">Vou colocar um ícone de USER</p>
+                        <p class="card-text">Cadastrar um tipo de Acomodação</p>
                     </div>
                     <div class="card-footer bg-transparent ">Rodapé</div>
                 </div>
@@ -177,7 +177,7 @@ session_start();
                     <div class="card-header ">Frigobar</div>
                     <div class="card-body  bg-warning">
                         <h5 class="card-title"><a href="frigobar/index.php">Frigobar</a></h5>
-                        <p class="card-text">Vou colocar um ícone de USER</p>
+                        <p class="card-text">Cadastrar Frigobar</p>
                     </div>
                     <div class="card-footer bg-transparent ">Rodapé</div>
                 </div>
