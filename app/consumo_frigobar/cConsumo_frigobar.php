@@ -41,6 +41,4 @@ foreach($itens as $item_id => $qtd){
 }
 
 
-$sql_update = "UPDATE hospedagem SET ativo = 'Finalizado' WHERE id = $hospedagem_id";
-mysqli_query($con, $sql_update);
 ?>

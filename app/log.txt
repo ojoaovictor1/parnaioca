@@ -8,3 +8,6 @@
 [23/09/2025 00:55:15] - CHECK-OUT REALIZADO POR joao: Milano - Suíte Lagoa Azul - R$ 5095.00
 [23/09/2025 00:56:00] - CHECK-OUT REALIZADO POR joao: Milano - Suíte Lagoa Azul - R$ 5095.00
 [23/09/2025 11:08:13] - CHECK-IN REALIZADO POR decanta: Pdiddy - Lagoa Azul Escura - R$ 1000000.00
+[23/09/2025 11:54:47] - CHECK-OUT REALIZADO POR decanta: Pdiddy - Lagoa Azul Escura - R$ 87437.00
+[23/09/2025 12:14:13] - CHECK-IN REALIZADO POR decanta: Modesto - Celso Portiolli House - R$ 850.00
+[23/09/2025 12:16:18] - CHECK-OUT REALIZADO POR decanta: Modesto - Celso Portiolli House - R$ 24982.00

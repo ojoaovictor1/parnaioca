@@ -29,7 +29,7 @@ include '../config/conexao.php';
         </div>
 
         <div id="roda"> <?php include 'buscar_clientes.php'; ?>
-            <a href="index.php">Voltar</a>
+            <a href="../inicio.php#relatorios">Voltar</a>
         </div>
     </div>
     

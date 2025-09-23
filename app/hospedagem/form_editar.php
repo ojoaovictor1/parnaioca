@@ -53,10 +53,10 @@ $row = mysqli_fetch_assoc($resultado_preencher);
                 </select>
                 
                 <select name="status" id="">
-                    <option value="pedente">Check-in Pendente</option>
-                    <option value="ativo">Ativo</option>
-                    <option value="finalizado">Finalizado</option>
-                    <option value="cancelado">Cancelado</option>
+                    <option value="Check-in Pedente">Check-in Pendente</option>
+                    <option value="Ativo">Ativo</option>
+                    <option value="Finalizado">Finalizado</option>
+                    <option value="Cancelado">Cancelado</option>
                 </select>
               
                 <input type="submit" value="Enviar">

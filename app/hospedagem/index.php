@@ -238,10 +238,10 @@ $resultado_itens = mysqli_query($con, $sql_itens);
                 <input type="time" class="form-control" id="horaCheckout" name="hora_checkout" required>
               </div>
 
-              <!--<div class="mb-3">
+              <div class="mb-3">
                 <label for="valorCheckout" class="col-form-label">Consumo do Frigobar (R$):</label>
                 <input type="text" class="form-control" id="valorCheckout" name="valor" required>
-              </div> -->
+              </div>
 
               <button type="submit" class="btn btn-primary">Confirmar Check-out</button>
             </form>

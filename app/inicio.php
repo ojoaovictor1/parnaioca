@@ -7,6 +7,12 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="estilo_inicio.css">
@@ -183,19 +189,89 @@ session_start();
             <p>Conteúdo para a Dashboard</p>
         </section>
         <section id="relatorios">
-            <h1>Relatórios</h1>
-            <p>Conteúdo para a seção Relatórios</p>
+            
+
+             <div id="card_topo"> 
+                <h1>Relatórios</h1> 
+                <p>Conteúdo do Relatório</p>
+            </div>
+            
+            <div id="cards_content">
+                <div class="card border border-0 mb-3" style="max-width: 18rem;">
+                    <div class="card-header ">Período</div>
+                    <div class="card-body  bg-warning">
+                        <h5 class="card-title">
+                            <a href="relatorios/clientes_por_range_data.php">
+                                <i class="fa-solid fa-user"></i>
+                            </a>
+                        </h5>
+                        <p class="card-text">Clientes por Período</p>
+                    </div>
+                    <div class="card-footer bg-transparent ">Rodapé</div>
+                </div>
+
+                <div class="card border border-0 mb-3" style="max-width: 18rem;">
+                    <div class="card-header ">Ativos e Inativos</div>
+                    <div class="card-body  bg-warning">
+                        <h5 class="card-title">
+                            <a href="relatorios/clientes_ativos_inativos.php">
+                                <i class="fa-solid fa-user-clock"></i>
+                            </a>
+                        </h5>
+                        <p class="card-text">Clientes Ativos e Inativos</p>
+                    </div>
+                    <div class="card-footer bg-transparent ">Rodapé</div>
+                </div>
+
+                <div class="card  border border-0 mb-3" style="max-width: 18rem;">
+                    <div class="card-header ">Financeiro</div>
+                    <div class="card-body  bg-warning">
+                        <h5 class="card-title"><a href="acomodacoes/index.php"><i class="fa-solid fa-sack-dollar"></i></a></h5>
+                        <p class="card-text">Relatório Financeiro</p>
+                    </div>
+                    <div class="card-footer bg-transparent ">Rodapé</div>
+                </div>
+
+                
+            </div>
         
         </section>
 
         <section id="intranet">    
             <h1>Contatos</h1>
+            <p>Entre em Contato</p>
             
-            </div>
-        </section>
+            <div id="container_contatos">
+                <div id="esquerda">
+                    <div id="map"></div>
+                </div>
 
-        <section id="cadastro_auxiliar">
-                <!-- Aqui o AJAX vai injetar o conteúdo -->
+                <div id="direita">
+                    <div id="minicards">
+                        <img src="../\assets/email-opened-svgrepo-com.svg" alt="" width="40px" height="40px">
+                        <h5>Email:</h5>
+                        <p>parnaioca@parnaioca.com</p>
+
+                    </div>
+                    <div id="minicards">
+                        <img src="../assets/phone-calling-svgrepo-com.svg" alt="" width="40px" height="40px">
+                        <h5>Telefone:</h5>
+                        <p>+55 21973187499</p>
+                    </div>
+
+                    <div id="minicards">
+                        <img src="../assets/location-pin-svgrepo-com.svg" alt="" width="40px" height="40px">
+                        <h5>Endereço:</h5>
+                        <p>Av. Governador Leonel, 7589.</p>
+                    </div>
+
+                    <div id="minicards">
+                        <img src="../assets/instagram-svgrepo-com.svg" alt="" width="40px" height="40px">
+                        <h5>Instagram:</h5>
+                        <p>@parnaioca</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
 
@@ -204,5 +280,32 @@ session_start();
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
     <script src="script.js"></script>
     <script src="assets/funcoes.js"></script>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Verifica se o elemento #map existe
+        const mapElement = document.getElementById('map');
+        if (mapElement) {
+            // Inicializa o mapa na latitude/longitude e com zoom 13
+            var map = L.map('map').setView([-23.191563, -44.251623], 12); // Exemplo: Rio de Janeiro
+
+            // Adiciona os tiles da OpenStreetMap
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors'
+            }).addTo(map);
+
+            // Adiciona um marcador (opcional)
+            L.marker([-23.191563, -44.251623]).addTo(map)
+                .bindPopup('Parnaioca é Aqui!')
+                .openPopup();
+        } else {
+            console.warn("Elemento #map não encontrado.");
+        }
+    });
+</script>
+
+     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
 </body>
 </html>

@@ -48,7 +48,7 @@ $resultado_sqlno = mysqli_query($con,$sqlno);
     <script src="https://cdn.datatables.net/plug-ins/1.13.6/i18n/pt-BR.json"></script>
 </head>
 <body>
-    <a href="../inicio.php">Voltar</a>
+    <a href="../inicio.php#relatorios">Voltar</a>
     <h1>Clientes Ativos</h1>
     <table id="tabelaExemplo" class="table table-striped">
         <thead><tr>
