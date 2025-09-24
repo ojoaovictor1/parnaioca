@@ -17,6 +17,8 @@ session_start();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="estilo_inicio.css">
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
 <body>
     
@@ -184,9 +186,141 @@ session_start();
             </div>
         </section>
 
-         <section id="dashboard">
-            <h1>Dashboard</h1>
-            <p>Conteúdo para a Dashboard</p>
+        <section id="dashboard">
+            <div id="container_dashboard">
+                <h1>Dashboard</h1>
+                <p>Conteúdo do Dashboard</p>
+                <?php include 'dashboard/rSaida_de_itens.php'; ?>
+                <div id="cards_dashboard">
+                    <div class="card text-bg-warning mb-3" style="max-width: 16rem">
+                        <div class="card-header">Item com menor saída.</div>
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <?php
+                                $resultado_menor = mysqli_query($con, $sql_menor);
+                                $menor = mysqli_fetch_assoc($resultado_menor);
+                                echo $menor['nome'];
+                                ?>
+                            </h5>
+                            <p class="card-text"><?= $menor['quantidade_total'] . " Saídas" ?></p>
+                        </div>
+                    </div>
+
+                    <div class="card text-bg-success mb-3" style="max-width: 16rem">
+                        <div class="card-header">Item com maior saída.</div>
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <?php
+                                $resultado_maior = mysqli_query($con, $sql_maior);
+                                $maior = mysqli_fetch_assoc($resultado_maior);
+                                echo $maior['nome'];
+                                ?>
+                            </h5>
+                            <p class="card-text"><?= $maior['quantidade_total'] . " Saídas"?></p>
+                        </div>
+                    </div>
+
+                    <div class="card text-bg-warning mb-3" style="max-width: 16rem">
+                        <div class="card-header">Quarto menos Rentável</div>
+                        <div class="card-body">
+                            <h5 class="card-title">Nome do Quarto</h5>
+                            <p class="card-text">Descrição</p>
+                        </div>
+                    </div>
+
+                    <div class="card text-bg-success mb-3" style="max-width: 16rem">
+                        <div class="card-header">Quarto mais Retável</div>
+                        <div class="card-body">
+                            <h5 class="card-title">Nome do Quarto</h5>
+                            <p class="card-text">Descrição</p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div id="graficos_dashboard">
+                    <div id="grafico1">
+                        <?php include 'dashboard/rSaida_de_itens.php';
+                                while($newRow = mysqli_fetch_assoc($resultado)){
+                                    echo $newRow['nome'] . " " . $newRow['quantidade_total'] . "<br>";
+                                }
+                        ?>   
+                        <canvas id="myChart"></canvas>
+                        
+                        <script>
+                            const ctx = document.getElementById('myChart').getContext('2d');
+                            const myChart = new Chart(ctx, {
+                                type: 'bar',
+                                data: {
+                                    labels: ['Item 1', 'Item 2', 'Item 3', 'Item 2'],
+                                    datasets: [{
+                                        label: 'Todos os Itens',
+                                        data: [12, 19, 3, 5],
+                                        backgroundColor: [
+                                            'rgba(255, 99, 132, 0.2)',
+                                            'rgba(54, 162, 235, 0.2)',
+                                            'rgba(255, 206, 86, 0.2)',
+                                            'rgba(75, 192, 192, 0.2)',
+                                            'rgba(153, 102, 255, 0.2)',
+                                            'rgba(255, 159, 64, 0.2)'
+                                        ],
+                                        borderColor: [
+                                            'rgba(255, 99, 132, 1)',
+                                            'rgba(54, 162, 235, 1)',
+                                            'rgba(255, 206, 86, 1)',
+                                            'rgba(75, 192, 192, 1)',
+                                            'rgba(153, 102, 255, 1)',
+                                            'rgba(255, 159, 64, 1)'
+                                        ],
+                                        borderWidth: 1
+                                    }]
+                                },
+                                options: {
+                                    scales: {
+                                        y: {
+                                            beginAtZero: true
+                                        }
+                                    }
+                                }
+                            });
+                        </script>
+                        
+                    </div>
+
+                    <div id="grafico2">
+                        <canvas id="myChart2"></canvas>
+                        
+                        <script>
+                            const ctx2 = document.getElementById('myChart2').getContext('2d');
+                            const myChart2 = new Chart(ctx2, {
+                                type: 'line',
+                                data: {
+                                    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                                    datasets: [{
+                                        label: 'Quarto Menos Rentável',
+                                        backgroundColor: 'rgb(255, 99, 132)',
+                                        borderColor: 'rgb(255, 99, 132)',
+                                        data: [0, 10, 5, 2, 20, 30, 45],
+
+                                        
+                                    },
+                                    {
+                                        label: 'Quarto Mais Rentável',
+                                        backgroundColor: 'rgba(46, 132, 212, 1)',
+                                        borderColor: 'rgba(46, 132, 212, 1)',
+                                        data: [0, 15, 45, 9, 40, 5, 40],
+                                    }
+                                ]
+                                },
+                                options: {}
+                            });
+                        </script>
+                </div>
+
+                <div id="datatable_dashboard"></div>
+
+            </div>
         </section>
         <section id="relatorios">
             
@@ -239,9 +373,10 @@ session_start();
 
         <section id="intranet">    
             <h1>Contatos</h1>
-            <p>Entre em Contato</p>
-            
+            <p>Conteúdo para a seção Contatos</p>
+
             <div id="container_contatos">
+                 
                 <div id="esquerda">
                     <div id="map"></div>
                 </div>

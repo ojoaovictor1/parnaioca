@@ -283,6 +283,34 @@ section {
     z-index: 0;
 }
 
+/* Dashboard */
+#container_dashboard{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+}
+#cards_dashboard{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+#graficos_dashboard{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+#grafico1, #grafico2{
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    width: 580px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 #inicio{
     background-image: url('../assets/parnaioca1.webp');
     background-repeat:round;
