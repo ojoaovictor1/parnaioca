@@ -13,6 +13,29 @@ session_start();
     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
     crossorigin=""/>
 
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.bootstrap5.min.css">   
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <!-- DataTables + Botões -->
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js    /buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.print.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.colVis.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.bootstrap5.min.js"></script>   
+    <!-- Dependências para PDF e Excel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+    <!-- Idioma PT-BR -->
+    <script src="https://cdn.datatables.net/plug-ins/1.13.6/i18n/pt-BR.json"></script> 
+    <!-- Bootstrap CSS e JS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="estilo_inicio.css">
@@ -250,13 +273,15 @@ session_start();
                         
                         <script>
                             const ctx = document.getElementById('myChart').getContext('2d');
+                            const nomesItens = <?= $nomes_json; ?>;
+                            const quantidadesTotais = <?= $quantidades_json; ?>;
                             const myChart = new Chart(ctx, {
                                 type: 'bar',
                                 data: {
-                                    labels: ['Item 1', 'Item 2', 'Item 3', 'Item 2'],
+                                    labels: nomesItens,
                                     datasets: [{
-                                        label: 'Todos os Itens',
-                                        data: [12, 19, 3, 5],
+                                        label: 'Quantidade Total de Saídas',
+                                        data: quantidadesTotais,
                                         backgroundColor: [
                                             'rgba(255, 99, 132, 0.2)',
                                             'rgba(54, 162, 235, 0.2)',
@@ -318,7 +343,12 @@ session_start();
                         </script>
                 </div>
 
-                <div id="datatable_dashboard"></div>
+                <div id="datatable_dashboard">
+                    <h3>Clientes Hospedados Atualmente.</h3>
+                    <?php include 'dashboard/rAtualmente_hospedado.php'; ?>
+                    
+                </div>
+                
 
             </div>
         </section>

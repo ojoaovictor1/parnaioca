@@ -30,5 +30,17 @@ $sql_maior = "SELECT
             LIMIT 1;";
 $resultado_maior = mysqli_query($con, $sql_menor);
 
+$nomes_itens = [];
+$quantidades_totais = [];
+$todos_os_dados = [];
+
+while ($row = mysqli_fetch_assoc($resultado)) {
+    $nomes_itens[] = $row['nome'];
+    $quantidades_totais[] = $row['quantidade_total'];
+    $todos_os_dados[] = $row;
+}
+
+$nomes_json = json_encode($nomes_itens);
+$quantidades_json = json_encode($quantidades_totais);
 
 ?>

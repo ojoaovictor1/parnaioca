@@ -311,6 +311,14 @@ section {
     width: 580px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+#datatable_dashboard{
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+    width: 100%;
+}
 #inicio{
     background-image: url('../assets/parnaioca1.webp');
     background-repeat:round;
