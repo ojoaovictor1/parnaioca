@@ -53,9 +53,15 @@ if(mysqli_num_rows($resultado) >= 0){
         echo "<td>" . $row['estado'] . "</td>";
         echo "<td>" . $row['cidade'] . "</td>";
         echo "<td>" . ($row['situacao'] == 1 ? 'Ativo' : 'Inativo') . "</td>";
-        echo "<td> <a href='form_editar.php?id=" . $row['id'] . "'>Edit.</a> </td>";
-        //echo "<td> <a href='dClientes.php?id=" . $row['id'] . "'>Del.</a> </td>";
 
+        
+        echo "<td> <a href='form_editar.php?id=" 
+        . $row['id'] . "'>
+        <button type='button'class='btn btn-info'>Edit.</button>
+        </a> </td>";
+       
+        //echo "<td> <a href='dClientes.php?id=" . $row['id'] . "'>Del.</a> </td>";
+        if($_SESSION['poderes'] == 'admin'){
         echo "<td>
         <button type='button' class='btn btn-danger btn-sm' 
             data-bs-toggle='modal' 
@@ -64,8 +70,19 @@ if(mysqli_num_rows($resultado) >= 0){
             data-nome='".$row['nome']."'>
             Excluir
         </button>
-      </td>";
-
+        </td>";
+        }else{
+        echo "<td>
+        <button type='button' class='btn btn-danger btn-sm' 
+            data-bs-toggle='modal' 
+            data-bs-target='#exampleModal'
+            disabled 
+            data-id='".$row['id']."' 
+            data-nome='".$row['nome']."'>
+            Excluir
+        </button>
+        </td>";  
+        }
         echo "</tr>";
     }
     echo "Total de registros: ". mysqli_num_rows($resultado);

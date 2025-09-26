@@ -21,6 +21,7 @@ if(mysqli_num_rows($resultado) >= 0){
         echo "<td> <a href='form_editar.php?id=" . $row['id'] . "'>Edit.</a> </td>";
         //echo "<td> <a href='dTipo_acomodacao.php?id=" . $row['id'] . "'>Del.</a> </td>";
 
+        if($_SESSION['poderes'] == 'admin'){
         echo "<td>
         <button type='button' class='btn btn-danger btn-sm' 
             data-bs-toggle='modal' 
@@ -30,7 +31,18 @@ if(mysqli_num_rows($resultado) >= 0){
             Excluir
         </button>
       </td>";
-
+        }else{
+           echo "<td>
+            <button type='button' class='btn btn-danger btn-sm' 
+            data-bs-toggle='modal'
+            disabled 
+            data-bs-target='#exampleModal' 
+            data-id='".$row['id']."' 
+            data-nome='".$row['tipo']."'>
+            Excluir
+        </button>
+      </td>"; 
+        }
         echo "</tr>";
     }
     

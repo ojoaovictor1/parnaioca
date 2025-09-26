@@ -70,11 +70,13 @@ if(mysqli_num_rows($resultado) > 0){
 echo "</td>";
 
         if($row['ativo'] == 'Finalizado'){
-        echo "<td> <a href='form_editar.php?id=" . $row['id'] . "'> <button type='button' disabled class='btn btn-warning btn-sm'>Editar</button></a> </td>";
+        echo "<td> <button type='button' disabled class='btn btn-warning btn-sm'>Editar</button> </td>";
         
         }else{
             echo "<td> <a href='form_editar.php?id=" . $row['id'] . "'> <button type='button' class='btn btn-warning btn-sm'>Editar</button></a> </td>";
         }
+
+        if($_SESSION['poderes'] == 'admin'){
         echo "<td>
         <button type='button' class='btn btn-danger btn-sm' 
             data-bs-toggle='modal' 
@@ -85,7 +87,19 @@ echo "</td>";
             Excluir
         </button>
       </td>";
-
+        }else{
+            echo "<td>
+            <button type='button' class='btn btn-danger btn-sm' 
+            data-bs-toggle='modal'
+            disabled 
+            data-bs-target='#exampleModal' 
+            data-id='".$row['id']."' 
+            data-nome='".$row['cliente']."'
+            data-acomodacao='".$row['acomodacao']."'>
+            Excluir
+        </button>
+      </td>";
+        }
         echo "</tr>";
     }
     
