@@ -59,6 +59,28 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     echo 'Dados não Atualizados' . mysqli_error($con);
     
 }
+/* Resgatando os dados antes do UPDATE.  */
+$sql_antes_update = "SELECT * FROM clientes WHERE id = $id";
+$resultado_antes_update = mysqli_query($con, $sql_antes_update);
+$row = mysqli_fetch_assoc($resultado_antes_update);
+
+$registros_antigos = array("nome"=> $row['nome'],
+                           "data_nasc"=> $row['data_nasc'],
+                           "cpf"=> $row['cpf'],
+                           "email"=> $row['email'],
+                           "telefone"=>$row['telefone'],
+                           "estado"=> $row['estado'],
+                           "cidade"=> $row['cidade'],
+                           "situacao"=> $row['situacao']);
+        /* LOG de UPDATE */
+        fopen('../log.txt', 'a') or die('Não foi possível abrir o arquivo de logs');
+        $data_hora = date('d/m/Y H:i:s');
+        $log = "[$data_hora] - Dados que serão Editados. Realizado(a) por {$_SESSION['login']}: " 
+                                                                        . $registros_antigos['nome'] . "-"
+                                                                        . $registros_antigos['data_nasc']. " - " 
+                                                                        . $registros_antigos['cpf']
+                                                                        . "\n";
+        file_put_contents('../log.txt', $log, FILE_APPEND);
 
 $sql_update_clientes = 
     "UPDATE clientes SET 
@@ -86,4 +108,13 @@ if($row = mysqli_num_rows($resultado_cpf) > 0){
         echo 'deu erro:' . mysqli_error($con);
     }
 }
+
+fopen('../log.txt', 'a') or die('Não foi possível abrir o arquivo de logs');
+        $data_hora = date('d/m/Y H:i:s');
+        $log = "[$data_hora] - Dados Editados. Realizado(a) por {$_SESSION['login']}: " 
+                                                                        . $nome . "-"
+                                                                        . $data_nasc. " - " 
+                                                                        . $cpf
+                                                                        . "\n";
+        file_put_contents('../log.txt', $log, FILE_APPEND);
 ?>

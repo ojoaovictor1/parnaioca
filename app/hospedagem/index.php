@@ -247,31 +247,14 @@ $resultado_itens = mysqli_query($con, $sql_itens);
               <button type="submit" class="btn btn-primary">Confirmar Check-out</button>
             </form>
           </div>
-        </div> <!-- .row -->
-      </div> <!-- .modal-body -->
+        </div> 
+      </div> 
     </div>
   </div>
 </div>
 
 <script>
   const checkoutModal = document.getElementById('checkout-modal');
-  /*checkoutModal.addEventListener('show.bs.modal', event => {
-    const button = event.relatedTarget;
-
-    const hospedagemId = button.getAttribute('data-id');
-    const clienteNome = button.getAttribute('data-nome');
-    const acomodacaoNome = button.getAttribute('data-acomodacao');
-    
-
-    // Preencher dados do formulário de check-out
-    document.getElementById('hospedagemIdCheckout').value = hospedagemId;
-    document.getElementById('clienteNomeCheckout').value = clienteNome;
-    document.getElementById('acomodacaoNomeCheckout').value = acomodacaoNome;
-    
-
-    // Preencher o campo hidden do formulário de frigobar
-    document.getElementById('frigobarHospedagemId').value = hospedagemId;
-});*/
    
     checkoutModal.addEventListener('show.bs.modal', event => {
     const button = event.relatedTarget;

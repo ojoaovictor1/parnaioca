@@ -69,10 +69,12 @@ if(mysqli_num_rows($resultado) > 0){
 }
 echo "</td>";
 
+        if($row['ativo'] == 'Finalizado'){
+        echo "<td> <a href='form_editar.php?id=" . $row['id'] . "'> <button type='button' disabled class='btn btn-warning btn-sm'>Editar</button></a> </td>";
         
-        echo "<td> <a href='form_editar.php?id=" . $row['id'] . "'>Edit.</a> </td>";
-        //echo "<td> <a href='dHospedagem.php?id=" . $row['id'] . "'>Del.</a> </td>";
-
+        }else{
+            echo "<td> <a href='form_editar.php?id=" . $row['id'] . "'> <button type='button' class='btn btn-warning btn-sm'>Editar</button></a> </td>";
+        }
         echo "<td>
         <button type='button' class='btn btn-danger btn-sm' 
             data-bs-toggle='modal' 
