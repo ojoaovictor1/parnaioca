@@ -185,6 +185,7 @@ $resultado_itens = mysqli_query($con, $sql_itens);
                       name="itens[<?php echo $row['id']; ?>]" 
                       value="0" 
                       min="0"
+                      onkeydown="return false;"
                   ><br>
                <?php endwhile; ?>
                  
