@@ -2,7 +2,10 @@
 session_start();
 include '../config/conexao.php';
 
-$id = $_GET['id'];
+$erro = isset($_SESSION['erro']) ? $_SESSION['erro'] : '';
+unset($_SESSION['erro']);
+
+$id = $_GET['id'] ?? null;
 
 $sql_preencher_campos_editar = "SELECT * FROM clientes WHERE id = $id";
 $resultado = mysqli_query($con,$sql_preencher_campos_editar);
@@ -24,6 +27,9 @@ $row = mysqli_fetch_assoc($resultado);
 
         <div id="formulario_clientes">
             <h1>Editar Cliente</h1>
+            <?php if($erro) : ?>
+                <p style="color: red;"><?= $erro ?></p>
+            <?php endif; ?>
             <form action="uClientes.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $id; ?>">
                 <input type="text" name="nome" placeholder="nome" value="<?php echo $row['nome']; ?>">

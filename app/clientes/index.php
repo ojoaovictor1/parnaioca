@@ -1,5 +1,5 @@
 <?php
-//session_start();
+session_start();
 $erro = isset($_SESSION['erro']) ? $_SESSION['erro'] : '';
 unset($_SESSION['erro']);
 
@@ -29,7 +29,7 @@ unset($_SESSION['erro']);
                 <p style="color: red;"><?= $erro ?></p>
             <?php endif; ?>
             <form action="cClientes.php" method="POST" id="form">
-                <input type="text" name="nome" placeholder="nome">
+                <input type="text" name="nome" placeholder="nome" pattern="[a-zA-Z\s]+">
                 <input type="date" name="data_nasc" id="data_nasc">
                 <input type="text" name="cpf" placeholder="CPF" id="cpf" maxlength="14" oninput="formatarCPF(this)" id="cpf">
                 <input type="text" name="email" placeholder="Email" id="email" class="inputs required">

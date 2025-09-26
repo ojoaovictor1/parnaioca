@@ -76,7 +76,24 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         $telefone = $_POST['telefone'];
         $estado = $_POST['estado'];
         $cidade = $_POST['cidade'];
+
+        $data_atual = date("Y-m-d");
+        $data_atual_DT = new DateTime($data_atual, new DateTimeZone('America/Sao_Paulo'));
+        $data_nasc_DT = new DateTime($data_nasc, new DateTimeZone('America/Sao_Paulo'));
         
+        if($data_nasc > $data_atual){
+            $_SESSION['erro'] = "Data de nascimento inválida";
+            header('Location: index.php');
+            exit; 
+        }
+        
+        $diferenca = $data_atual_DT->diff($data_nasc_DT);
+
+        if($diferenca->y < 18){
+            $_SESSION['erro'] = "É necessário ter mais de 18 anos para se cadastrar";
+            header('Location: index.php');
+            exit; 
+        }
 
         $sql_cadastrar_clientes = 
             "INSERT INTO clientes 
