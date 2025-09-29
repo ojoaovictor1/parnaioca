@@ -5,17 +5,17 @@ $sql_consulta = "SELECT * FROM acomodacoes";
 $resultado = mysqli_query($con, $sql_consulta);
 
 if(mysqli_num_rows($resultado) >= 0){
-   echo "<table border='1' class='table table-striped table-hover table-dark'>
+   echo "<table border='1' class='table table-striped table-hover '>
                 <tr>
-                    <th>ID</th>
-                    <th>Nome</th>
-                    <th>Número</th>
-                    <th>Valor</th>
-                    <th>Capacidade</th>
-                    <th>Situação</th>
-                    <th>Nome_Tipo</th>
-                    <th>Editar</th>
-                    <th>Excluir</th>
+                    <th style='background-color: #ac7835'>ID</th>
+                    <th style='background-color: #ac7835'>Nome</th>
+                    <th style='background-color: #ac7835'>Número</th>
+                    <th style='background-color: #ac7835'>Valor</th>
+                    <th style='background-color: #ac7835'>Capacidade</th>
+                    <th style='background-color: #ac7835'>Situação</th>
+                    <th style='background-color: #ac7835'>Nome_Tipo</th>
+                    <th style='background-color: #ac7835'>Editar</th>
+                    <th style='background-color: #ac7835'>Excluir</th>
                 </tr>";
     while( $row = mysqli_fetch_array($resultado)){
         echo "<tr>";

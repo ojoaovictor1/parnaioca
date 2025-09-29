@@ -5,17 +5,17 @@ $sql_consulta = "SELECT * FROM hospedagem";
 $resultado = mysqli_query($con, $sql_consulta);
 
 if(mysqli_num_rows($resultado) > 0){
-   echo "<table border='1' class='table table-dark table-striped table-hover'>
+   echo "<table border='1' class='table table-striped table-hover'>
                 <tr>
-                    <th>Entrada</th>
-                    <th>Saída</th>
-                    <th>Cliente</th>
-                    <th>Acomodação</th>
-                    <th>Status</th>
-                    <th>Realizar Check-in</th>
-                    <th>Realizar Check-out</th>
-                    <th>Editar</th>
-                    <th>Excluir</th>
+                    <th style='background-color: #ac7835'>Entrada</th>
+                    <th style='background-color: #ac7835'>Saída</th>
+                    <th style='background-color: #ac7835'>Cliente</th>
+                    <th style='background-color: #ac7835'>Acomodação</th>
+                    <th style='background-color: #ac7835'>Status</th>
+                    <th style='background-color: #ac7835'>Realizar Check-in</th>
+                    <th style='background-color: #ac7835'>Realizar Check-out</th>
+                    <th style='background-color: #ac7835'>Editar</th>
+                    <th style='background-color: #ac7835'>Excluir</th>
                 </tr>";
     while( $row = mysqli_fetch_array($resultado)){
         echo "<tr>";

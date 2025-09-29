@@ -14,6 +14,7 @@ $total_registros = mysqli_num_rows($resultado);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Acomodações</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../estilo_inicio.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
@@ -21,8 +22,19 @@ $total_registros = mysqli_num_rows($resultado);
 <body>
     <?php include '../include/menu.php'; ?>
     <main>
-    <div id="container">
-        <div id="topo"></div>
+    <div id="container_acomodacoes">
+        <div id="topo">
+            <ol id="breadcrumb">
+                <li>
+                    <a href="../inicio.php#cadastros">
+                    <i class="fa-solid fa-user"></i>    
+                    Cadastros</a>
+                </li>
+                <li>
+                    Cadastrar Acomodações
+                </li>
+            </ol>
+        </div>
 
         <div id="formulario_clientes">
             <h1>Cadastro de Acomodações</h1>
@@ -30,12 +42,12 @@ $total_registros = mysqli_num_rows($resultado);
                 <p style="color: red;"><?= $erroa; ?></p>
             <?php endif; ?>
             <form action="cAcomodacoes.php" method="POST">
-                <input type="text" name="nome" placeholder="nome">
-                <input type="number" name="numero" placeholder="numero">
-                <input type="text" name="valor" placeholder="valor" oninput="formatarMoeda(this)">
-                <input type="number" name="capacidade" placeholder="capacidade">
+                <input type="text" class="form-control" name="nome" placeholder="nome">
+                <input type="number" class="form-control" name="numero" placeholder="numero">
+                <input type="text" class="form-control" name="valor" placeholder="valor" oninput="formatarMoeda(this)">
+                <input type="number" class="form-control" name="capacidade" placeholder="capacidade">
 
-                <select name="tipo" id="">
+                <select name="tipo" id="" class="form-control">
                     <?php 
                         if($total_registros > 0){
                             while($row = mysqli_fetch_array($resultado)){
@@ -46,7 +58,7 @@ $total_registros = mysqli_num_rows($resultado);
                     ?>   
                 </select>
 
-                <input type="submit" value="Enviar">
+                <input type="submit" class="btn btn-primary form-control" value="Enviar">
             </form>
         </div>
 

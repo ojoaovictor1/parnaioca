@@ -21,8 +21,19 @@ unset($_SESSION['erro']);
     
     <?php include '../include/menu.php'; ?>
     <main>
-    <div id="container">
-        <div id="topo"></div>
+    <div id="container_clientes">
+        <div id="topo">
+            <ol id="breadcrumb">
+                <li>
+                    <a href="../inicio.php#cadastros">
+                    <i class="fa-solid fa-user"></i>    
+                    Cadastros</a>
+                </li>
+                <li>
+                    Cadastrar Cliente
+                </li>
+            </ol>
+        </div>
 
         <div id="formulario_clientes">
 
@@ -32,14 +43,14 @@ unset($_SESSION['erro']);
                 <p style="color: red;"><?= $erro ?></p>
             <?php endif; ?>
             <form action="cClientes.php" method="POST" id="form">
-                <input type="text" name="nome" placeholder="nome" pattern="[a-zA-Z\s]+">
-                <input type="date" name="data_nasc" id="data_nasc">
-                <input type="text" name="cpf" placeholder="CPF" id="cpf" maxlength="14" oninput="formatarCPF(this)" id="cpf">
-                <input type="text" name="email" placeholder="Email" id="email" class="inputs required">
-                <input type="text" name="telefone" placeholder="Telefone" id="telefone" maxlength="14" oninput="formatarTelefone(this)">
-                <input type="text" name="estado" placeholder="Estado" id="estado">
-                <input type="text" name="cidade" placeholder="Cidade" id="cidade"> 
-                <input type="submit" value="Enviar">
+                <input type="text" class="form-control" name="nome" placeholder="nome" pattern="[a-zA-Z\s]+">
+                <input type="date" class="form-control" name="data_nasc" id="data_nasc">
+                <input type="text" class="form-control" name="cpf" placeholder="CPF" id="cpf" maxlength="14" oninput="formatarCPF(this)" id="cpf">
+                <input type="text" class="form-control" name="email" placeholder="Email" id="email" class="inputs required">
+                <input type="text" class="form-control" name="telefone" placeholder="Telefone" id="telefone" maxlength="14" oninput="formatarTelefone(this)">
+                <input type="text" class="form-control" name="estado" placeholder="Estado" id="estado">
+                <input type="text" class="form-control" name="cidade" placeholder="Cidade" id="cidade"> 
+                <input type="submit" class="btn  w-100 py-2" style='background-color: #ac7835' value="Enviar">
             </form>
         </div>
 

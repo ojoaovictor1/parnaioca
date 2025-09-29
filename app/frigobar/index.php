@@ -10,14 +10,29 @@ unset($_SESSION['erroItem']);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frigobar</title>
-    <link rel="stylesheet" href="../include/estilo_clientes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../estilo_inicio.css">
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 <body>
    
+    <?php include '../include/menu.php'; ?>
 
-    <div id="container">
-        <div id="topo"></div>
+    
+    <main>
+    <div id="container_frigobar">
+        <div id="topo">
+            <ol id="breadcrumb">
+                <li>
+                    <a href="../inicio.php#cadastros">
+                    <i class="fa-solid fa-user"></i>    
+                    Cadastros</a>
+                </li>
+                <li>
+                    Cadastrar Frigobar
+                </li>
+            </ol>
+        </div>
 
         <div id="formulario_clientes">
             
@@ -27,8 +42,8 @@ unset($_SESSION['erroItem']);
             <?php endif; ?>
 
             <form action="cFrigobar.php" method="POST">
-                <input type="number" name="numero" placeholder="numero" >
-                <select name="acomodacoes" id="">
+                <input type="number" class='form-control' name="numero" placeholder="numero" >
+                <select name="acomodacoes" id="" class='form-control'>
                     <?php
                         $sql = "SELECT * FROM acomodacoes";
                         $resultado = mysqli_query($con,$sql);
@@ -39,8 +54,8 @@ unset($_SESSION['erroItem']);
                             }
                         }
                     ?>
-                </select> <br>
-                <input type="submit" value="Enviar">
+                </select>
+                <input type="submit" class='btn btn-primary form-control' value="Enviar">
             </form>
         </div>
 
@@ -64,7 +79,7 @@ unset($_SESSION['erroItem']);
                 </div>
             </div>
         </div>
-
+    </main>
 <script>
   const exampleModal = document.getElementById('exampleModal');
   exampleModal.addEventListener('show.bs.modal', event => {

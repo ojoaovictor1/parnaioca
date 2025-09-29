@@ -4,7 +4,11 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+:root{
+--cor-principal: #ac7835;
+--cor-secundaria: #0d6cda;
+--cor-cinza: #666;
+}
 html {
     scroll-behavior: smooth;
 }
@@ -15,7 +19,33 @@ body {
     height: 100vh;
     overflow: hidden;
 }
-
+#breadcrumb{
+    list-style-type: none;
+    padding: 0;
+}
+#breadcrumb li{
+    display: inline;
+    font-family: 'Segoe UI';
+}
+#breadcrumb li::after{
+    content: '/';
+    margin-right: 4px;
+    color: var(--cor-cinza);
+}
+#breadcrumb li:last-child::after{
+    content: '';
+    color: var(--cor-cinza);
+}
+#breadcrumb li a{
+    display: inline;
+    color: var(--cor-principal);
+    text-decoration: none;
+    margin-right: 4px;
+}
+#breadcrumb li a:hover{
+    color: var(--cor-secundaria);
+    text-decoration: underline;
+}
 /* Menu lateral */
 nav {
     width: 120px;
@@ -43,7 +73,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 /* Conteúdo principal */
@@ -206,13 +236,13 @@ section {
     transform: rotate(180deg);
 }
 .item-description{
-    width: 0px;
+    width: auto;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
     font-size: 14px;
     transition: width .6s;
-    opacity: 0;
+    height: auto;
 }
 
 #sidebar.open-sidebar{
@@ -322,4 +352,80 @@ section {
 #inicio{
     background-image: url('../assets/parnaioca1.webp');
     background-repeat:round;
+}
+main{
+    background-color: rgb(243, 243, 243);
+
+}
+
+#container_clientes{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#container_tipo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+}
+#container_acomodacoes{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    padding: 30px;
+}
+#container_item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    padding: 30px;
+}
+#container_vaga{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    padding: 30px;
+}
+#container_reserva{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    padding: 30px;
+}
+#container_frigobar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    padding: 30px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    flex: 1;
+    gap: 10px;
+}
+#formulario_tipo_acomodacao{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#roda{
+    flex: 1;
 }

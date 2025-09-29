@@ -21,14 +21,27 @@ $resultado_itens = mysqli_query($con, $sql_itens);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hospedagem</title>
-    <link rel="stylesheet" href="../include/estilo_clientes.css">
+    <link rel="stylesheet" href="../estilo_inicio.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 <body>
    
-
-    <div id="container">
-        <div id="topo"></div>
+    <?php include '../include/menu.php'; ?>
+    <div id="container_reserva">
+        <div id="topo">
+            <ol id="breadcrumb">
+                <li>
+                    <a href="../inicio.php#cadastros">
+                    <i class="fa-solid fa-user"></i>    
+                    Cadastros</a>
+                </li>
+                <li>
+                    Realizar Reserva
+                </li>
+            </ol>
+        </div>
 
         <div id="formulario_clientes">
             <h1>Realizar Reserva</h1>
@@ -37,10 +50,10 @@ $resultado_itens = mysqli_query($con, $sql_itens);
             <?php endif; ?>
             <form action="cHospedagem.php" method="POST">
                 
-                <input type="date" name="data_checkin">
-                <input type="date" name="data_checkout">
+                <input type="date" class='form-control' name="data_checkin ">
+                <input type="date" class='form-control' name="data_checkout">
 
-                <select name="cliente">
+                <select name="cliente" class='form-control'>
                     <?php 
                         if(mysqli_num_rows($resultado_clientes) > 0){
                             while($row = mysqli_fetch_array($resultado_clientes)){
@@ -50,7 +63,7 @@ $resultado_itens = mysqli_query($con, $sql_itens);
                     ?>
                 </select>
 
-                <select name="acomodacao" id="">
+                <select name="acomodacao" id="" class='form-control'>
                     <?php 
                         if(mysqli_num_rows($resultado_acomodacoes) > 0){
                             while($row = mysqli_fetch_array($resultado_acomodacoes)){
@@ -61,7 +74,7 @@ $resultado_itens = mysqli_query($con, $sql_itens);
 
                 </select>
                
-                <input type="submit" value="Enviar">
+                <input type="submit" class='form-control' value="Enviar">
             </form>
         </div>
 

@@ -17,6 +17,18 @@ $resultado_itens = mysqli_query($con, $sql_itens);
     <title>Checkout</title>
 </head>
 <body>
+    <div id="topo">
+            <ol id="breadcrumb">
+                <li>
+                    <a href="../inicio.php#cadastros">
+                    <i class="fa-solid fa-user"></i>    
+                    Cadastros</a>
+                </li>
+                <li>
+                    Cadastrar Cliente
+                </li>
+            </ol>
+        </div>
     <h1>Consumo do Frigobar</h1>
 
     <form action="cConsumo_frigobar.php" method="POST">

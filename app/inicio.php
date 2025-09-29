@@ -47,7 +47,6 @@ session_start();
     
     <?php include 'include/menu.php'; ?>
 
-    <!-- Conteúdo principal -->
     <main>
         <section id="inicio">
             <h1>Início</h1>
@@ -247,7 +246,7 @@ session_start();
                             const myChart2 = new Chart(ctx2, {
                                 type: 'line',
                                 data: {
-                                    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                                    labels: ['Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro', 'Janeiro', 'Fevereiro'],
                                     datasets: [{
                                         label: 'Quarto Menos Rentável',
                                         backgroundColor: 'rgb(255, 99, 132)',

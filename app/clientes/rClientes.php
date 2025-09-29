@@ -6,13 +6,13 @@ $resultado = mysqli_query($con, $sql_consulta);
 
 if(mysqli_num_rows($resultado) >= 0){
 
-    echo "<form action='rClientes.php' id='formFiltro' method='POST'>";
-    echo "<select name='cliente'>";
+    echo "<form action='rClientes.php' class='d-flex flex-row col-3 ' id='formFiltro' method='POST'>";
+    echo "<select name='cliente' class='form-control'>";
     echo "<option value=''>Todos</option>";
     echo "<option value='Ativo'>Ativo</option>";
     echo "<option value='Inativo'>Inativo</option>";
     echo "</select>";
-    echo "<input type='submit' value='Filtrar'>";
+    echo "<input type='submit' class='btn  w-100 py-2' style='background-color: #ac7835' value='Filtrar'>";
     echo "</form>";
 
     $filtro = isset($_POST['cliente']) ? $_POST['cliente'] : '';
@@ -28,19 +28,19 @@ if(mysqli_num_rows($resultado) >= 0){
         $resultado = mysqli_query($con, $sql_consulta);
     }
 
-   echo "<table border='1' class='table table-striped table-dark table-hover'>
+   echo "<table border='1' class='table table-striped  table-hover'>
                 <tr>
-                    <th>ID</th>
-                    <th>Nome</th>
-                    <th>Data de Nascimento</th>
-                    <th>CPF</th>
-                    <th>Email</th>
-                    <th>Telefone</th>
-                    <th>Estado</th>
-                    <th>Cidade</th>
-                    <th>Situação</th>
-                    <th>Editar</th>
-                    <th>Excluir</th>
+                    <th style='background-color: #ac7835'>ID</th>
+                    <th style='background-color: #ac7835'>Nome</th>
+                    <th style='background-color: #ac7835'>Data de Nascimento</th>
+                    <th style='background-color: #ac7835'>CPF</th>
+                    <th style='background-color: #ac7835'>Email</th>
+                    <th style='background-color: #ac7835'>Telefone</th>
+                    <th style='background-color: #ac7835'>Estado</th>
+                    <th style='background-color: #ac7835'>Cidade</th>
+                    <th style='background-color: #ac7835'>Situação</th>
+                    <th style='background-color: #ac7835'>Editar</th>
+                    <th style='background-color: #ac7835'Excluir</th>
                 </tr>";
     while($row = mysqli_fetch_array($resultado)){
         echo "<tr>";

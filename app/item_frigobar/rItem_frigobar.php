@@ -5,14 +5,14 @@ $sql_consulta = "SELECT * FROM itens_frigobar";
 $resultado = mysqli_query($con, $sql_consulta);
 
 if(mysqli_num_rows($resultado) >= 0){
-   echo "<table border='1' class='table table-striped table-dark table-hover'>
+   echo "<table border='1' class='table table-striped  table-hover'>
                 <tr>
-                    <th>ID</th>
-                    <th>Nome</th>
-                    <th>Preço</th>
-                    <th>Ativo</th>
-                    <th>Editar</th>
-                    <th>Excluir</th>
+                    <th style='background-color: #ac7835'>ID</th>
+                    <th style='background-color: #ac7835'>Nome</th>
+                    <th style='background-color: #ac7835'>Preço</th>
+                    <th style='background-color: #ac7835'>Ativo</th>
+                    <th style='background-color: #ac7835'>Editar</th>
+                    <th style='background-color: #ac7835'>Excluir</th>
                 </tr>";
     while( $row = mysqli_fetch_array($resultado)){
         echo "<tr>";

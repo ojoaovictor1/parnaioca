@@ -5,13 +5,13 @@ $sql_consulta = "SELECT * FROM tipo_da_acomodacao";
 $resultado = mysqli_query($con, $sql_consulta);
 
 if(mysqli_num_rows($resultado) >= 0){
-   echo "<table border='1' class='table table-striped table-dark table-hover'>
+   echo "<table border='1' class='table table-striped table-hover'>
                 <tr>
-                    <th>ID</th>
-                    <th>Tipo</th>
-                    <th>Situação</th>
-                    <th>Editar</th>
-                    <th>Excluir</th>
+                    <th style='background-color: #ac7835'>ID</th>
+                    <th style='background-color: #ac7835'>Tipo</th>
+                    <th style='background-color: #ac7835'>Situação</th>
+                    <th style='background-color: #ac7835'>Editar</th>
+                    <th style='background-color: #ac7835'>Excluir</th>
                 </tr>";
     while( $row = mysqli_fetch_array($resultado)){
         echo "<tr>";

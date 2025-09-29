@@ -6,15 +6,15 @@ $sql = "SELECT fg.id, fg.acomodacao_nome, fg.situacao, fg.acomodacao_id, fg.nume
 $resultado = mysqli_query($con, $sql);
 
 if(mysqli_num_rows($resultado) >= 0){
-   echo "<table border='1' class='table table-dark table-striped table-hover'>
+   echo "<table border='1' class='table table-striped table-hover'>
                 <tr>
-                    <th>ID</th>
-                    <th>Numero</th>
-                    <th>Acomodação</th>
-                    <th>Acomodação ID</th>
-                    <th>Situação</th>
-                    <th>Editar</th>
-                    <th>Excluir</th>
+                    <th style='background-color: #ac7835'>ID</th>
+                    <th style='background-color: #ac7835'>Numero</th>
+                    <th style='background-color: #ac7835'>Acomodação</th>
+                    <th style='background-color: #ac7835'>Acomodação ID</th>
+                    <th style='background-color: #ac7835'>Situação</th>
+                    <th style='background-color: #ac7835'>Editar</th>
+                    <th style='background-color: #ac7835'>Excluir</th>
                 </tr>";
     while( $row = mysqli_fetch_array($resultado)){
         echo "<tr>";
