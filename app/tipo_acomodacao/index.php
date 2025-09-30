@@ -40,7 +40,7 @@ unset($_SESSION['errot']);
 
             <form action="cTipo_acomodacao.php" class='col-6' method="POST">
                 <input type="text " name="tipo_da_acomodacao" class="form-control" placeholder="Tipo de Acomodação">
-                <input type="submit" class="btn btn-primary form-control" value="Enviar">
+                <input type="submit" class="btn  form-control" style='background-color: #ac7835' value="Enviar">
             </form>
         </div>
 
@@ -78,8 +78,6 @@ unset($_SESSION['errot']);
     document.getElementById('btnConfirmarExclusao').href = 'dTipo_acomodacao.php?id=' + jogadorId;
   });
 </script>
-            
-            <a href="../inicio.php#cadastros">Voltar</a> 
             
         </div>
     </div>

@@ -94,17 +94,17 @@ $sql_update_clientes =
     situacao = '$situacao'
     WHERE id = $id";
 
-$sql_verifica_cpf = "SELECT * FROM clientes WHERE cpf = '$cpf'";
-$resultado_cpf = mysqli_query($con,$sql_verifica_cpf);
+$sql_verifica_cpf = "SELECT * FROM clientes WHERE cpf = '$cpf' AND id != '$id'";
+$resultado_cpf = mysqli_query($con, $sql_verifica_cpf);
 
-if($row = mysqli_num_rows($resultado_cpf) > 0){
+if (mysqli_num_rows($resultado_cpf) > 0) {
     echo 'Erro: CPF já cadastrado!';
 } else {
-
-    $resultado_update = mysqli_query($con,$sql_update_clientes);
-    if($resultado_update){
-        header('location: index.php');
-    }else{
+    $resultado_update = mysqli_query($con, $sql_update_clientes);
+    if ($resultado_update) {
+        header('Location: index.php');
+        exit;
+    } else {
         echo 'deu erro:' . mysqli_error($con);
     }
 }

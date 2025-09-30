@@ -16,3 +16,9 @@
 [26/09/2025 12:52:02] - Dados Editados. Realizado(a) por decanta: Datena Pleno-1996-05-05 - 19191919
 [26/09/2025 14:36:08] - CHECK-IN REALIZADO POR decanta: Arrascaeta - Lagoa Azul Escura - R$ 1000000.00
 [26/09/2025 14:37:45] - CHECK-OUT REALIZADO POR decanta: Arrascaeta - Lagoa Azul Escura - R$ 124960.00
+[29/09/2025 21:16:54] - Dados que serão Editados. Realizado(a) por joao: Apresenta-1996-12-12 - 484.156.131-56
+[29/09/2025 21:16:54] - Dados Editados. Realizado(a) por joao: Apresenta-1996-12-12 - 484.156.131-56
+[29/09/2025 21:17:03] - Dados que serão Editados. Realizado(a) por joao: Apresenta-1996-12-12 - 484.156.131-56
+[29/09/2025 21:17:03] - Dados Editados. Realizado(a) por joao: Apresenta-1996-12-12 - 484.156.131-55
+[29/09/2025 21:17:17] - Dados que serão Editados. Realizado(a) por joao: Apresenta-1996-12-12 - 484.156.131-55
+[29/09/2025 21:17:17] - Dados Editados. Realizado(a) por joao: Apresenta-1996-12-12 - 484.156.131-53

@@ -43,7 +43,7 @@ unset($_SESSION['erroItem']);
             <input type="text" id="nome" class='form-control' name="nome" placeholder="nome">
             <input type="number" id="preco" class='form-control' name="preco" placeholder="preco">
             
-            <input type="submit" class='btn btn-primary form-control' value="Cadastrar Item">
+            <input type="submit" class='btn  form-control' style='background-color: #ac7835' value="Cadastrar Item">
         </form>
         </div>
 

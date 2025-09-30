@@ -17,12 +17,28 @@ $row = mysqli_fetch_assoc($resultado);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Cliente</title>
-    <link rel="stylesheet" href="../include/estilo_clientes.css">
-</head>
-<body>
-   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
-    <div id="container">
+    <link rel="stylesheet" href="../estilo_inicio.css">
+</head>
+<body> 
+    <?php include '../include/menu.php'; ?>
+   
+    <main>
+    <div id="container_clientes">
+        <div id="topo">
+            <ol id="breadcrumb">
+                <li>
+                    <a href="../inicio.php#cadastros">
+                    <i class="fa-solid fa-user"></i>    
+                    Cadastros</a>
+                </li>
+                <li>
+                    Cadastrar Cliente
+                </li>
+            </ol>
+        </div>
         <div id="topo"></div>
 
         <div id="formulario_clientes">
@@ -31,26 +47,25 @@ $row = mysqli_fetch_assoc($resultado);
                 <p style="color: red;"><?= $erro ?></p>
             <?php endif; ?>
             <form action="uClientes.php" method="POST">
-                <input type="hidden" name="id" value="<?php echo $id; ?>">
-                <input type="text" name="nome" placeholder="nome" value="<?php echo $row['nome']; ?>">
-                <input type="date" name="data_nasc" value="<?php echo $row['data_nasc']; ?>">
-                <input type="text" name="cpf" placeholder="CPF" value="<?php echo $row['cpf']; ?>">
-                <input type="text" name="email" placeholder="Email" value="<?php echo $row['email']; ?>">
-                <input type="text" name="telefone" placeholder="Telefone" value="<?php echo $row['telefone']; ?>">
-                <input type="text" name="estado" placeholder="Estado" value="<?php echo $row['estado']; ?>">
-                <input type="text" name="cidade" placeholder="Cidade" value="<?php echo $row['cidade']; ?>">
-                <select name="situacao" id="">
+                <input type="hidden" class="form-control" name="id" value="<?php echo $id; ?>">
+                <input type="text" class="form-control" name="nome" placeholder="nome" value="<?php echo $row['nome']; ?>">
+                <input type="date" class="form-control" name="data_nasc" value="<?php echo $row['data_nasc']; ?>">
+                <input type="text" class="form-control" name="cpf" placeholder="CPF" value="<?php echo $row['cpf']; ?>">
+                <input type="text" class="form-control" name="email" placeholder="Email" value="<?php echo $row['email']; ?>">
+                <input type="text" class="form-control" name="telefone" placeholder="Telefone" value="<?php echo $row['telefone']; ?>">
+                <input type="text" class="form-control" name="estado" placeholder="Estado" value="<?php echo $row['estado']; ?>">
+                <input type="text" class="form-control" name="cidade" placeholder="Cidade" value="<?php echo $row['cidade']; ?>">
+                <select class="form-select" name="situacao" id="">
                     <option value="1">Ativo</option>
                     <option value="0">Inativo</option>
                 </select>
-                <input type="submit" value="Enviar">
+                <input type="submit" class="btn" style='background-color: #ac7835' value="Enviar">
             </form>
         </div>
 
         <div id="roda"> 
              
-        <a href="index.php">Voltar</a> </div>
     </div>
-    
+    </main>
 </body>
 </html>

@@ -18,10 +18,14 @@ if(mysqli_num_rows($resultado) >= 0){
         echo "<td>" . $row['id'] . "</td>";
         echo "<td>" . $row['tipo'] . "</td>";
         echo "<td>" . ($row['situacao'] == 1 ? 'Ativo' : 'Inativo') . "</td>";
-        echo "<td> <a href='form_editar.php?id=" . $row['id'] . "'>Edit.</a> </td>";
-        //echo "<td> <a href='dTipo_acomodacao.php?id=" . $row['id'] . "'>Del.</a> </td>";
+        
+        
+        echo "<td> <a href='form_editar.php?id=" 
+        . $row['id'] . "'>
+        <button type='button'class='btn btn-info'>Edit.</button>
+        </a> </td>";
 
-        if($_SESSION['poderes'] == 'admin'){
+        if($_SESSION['poderes'] == 'admin' AND $row['situacao'] == 1){
         echo "<td>
         <button type='button' class='btn btn-danger btn-sm' 
             data-bs-toggle='modal' 

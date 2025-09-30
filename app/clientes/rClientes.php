@@ -1,4 +1,8 @@
 <?php 
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 include '../config/conexao.php';
 
 $sql_consulta = "SELECT * FROM clientes";
@@ -40,7 +44,7 @@ if(mysqli_num_rows($resultado) >= 0){
                     <th style='background-color: #ac7835'>Cidade</th>
                     <th style='background-color: #ac7835'>Situação</th>
                     <th style='background-color: #ac7835'>Editar</th>
-                    <th style='background-color: #ac7835'Excluir</th>
+                    <th style='background-color: #ac7835'>Excluir</th>
                 </tr>";
     while($row = mysqli_fetch_array($resultado)){
         echo "<tr>";
@@ -61,7 +65,7 @@ if(mysqli_num_rows($resultado) >= 0){
         </a> </td>";
        
         //echo "<td> <a href='dClientes.php?id=" . $row['id'] . "'>Del.</a> </td>";
-        if($_SESSION['poderes'] == 'admin'){
+        if($_SESSION['poderes'] == 'admin' && $row['situacao'] == 1){
         echo "<td>
         <button type='button' class='btn btn-danger btn-sm' 
             data-bs-toggle='modal' 
@@ -71,7 +75,7 @@ if(mysqli_num_rows($resultado) >= 0){
             Excluir
         </button>
         </td>";
-        }else{
+        }elseif($_SESSION['poderes'] != 'admin' || $row['situacao'] == 0){
         echo "<td>
         <button type='button' class='btn btn-danger btn-sm' 
             data-bs-toggle='modal' 

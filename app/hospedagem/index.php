@@ -74,7 +74,7 @@ $resultado_itens = mysqli_query($con, $sql_itens);
 
                 </select>
                
-                <input type="submit" class='form-control' value="Enviar">
+                <input type="submit" class='btn form-control' style="" value="Enviar">
             </form>
         </div>
 

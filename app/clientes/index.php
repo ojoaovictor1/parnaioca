@@ -92,7 +92,6 @@ unset($_SESSION['erro']);
         
     </div>
     </main>
-    <a href="../inicio.php#cadastros">Voltar</a>
 
 <script>
     document.addEventListener("submit", function(e) {

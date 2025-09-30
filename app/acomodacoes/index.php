@@ -58,7 +58,7 @@ $total_registros = mysqli_num_rows($resultado);
                     ?>   
                 </select>
 
-                <input type="submit" class="btn btn-primary form-control" value="Enviar">
+                <input type="submit" class="btn form-control" style='background-color: #ac7835' value="Enviar">
             </form>
         </div>
 
