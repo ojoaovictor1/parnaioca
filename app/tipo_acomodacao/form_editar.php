@@ -32,7 +32,10 @@ $row = mysqli_fetch_assoc($resultado);
                     Cadastros</a>
                 </li>
                 <li>
-                    Editar Tipo da Acomodação
+                    <a href="../tipo_acomodacao/index.php">Cadastrar Tipo de Acomodação</a>
+                </li>
+                <li>
+                    Editar Tipo de Acomodação
                 </li>
             </ol>
         </div>

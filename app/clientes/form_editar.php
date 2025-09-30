@@ -35,7 +35,10 @@ $row = mysqli_fetch_assoc($resultado);
                     Cadastros</a>
                 </li>
                 <li>
-                    Cadastrar Cliente
+                    <a href="../clientes/index.php">Cadastrar Cliente </a>
+                </li>
+                <li>
+                    Editar Cliente
                 </li>
             </ol>
         </div>
@@ -50,9 +53,9 @@ $row = mysqli_fetch_assoc($resultado);
                 <input type="hidden" class="form-control" name="id" value="<?php echo $id; ?>">
                 <input type="text" class="form-control" name="nome" placeholder="nome" value="<?php echo $row['nome']; ?>">
                 <input type="date" class="form-control" name="data_nasc" value="<?php echo $row['data_nasc']; ?>">
-                <input type="text" class="form-control" name="cpf" placeholder="CPF" value="<?php echo $row['cpf']; ?>">
+                <input type="text" class="form-control" name="cpf" placeholder="CPF" oninput="formatarCPF(this)" maxlength="14" value="<?php echo $row['cpf']; ?>">
                 <input type="text" class="form-control" name="email" placeholder="Email" value="<?php echo $row['email']; ?>">
-                <input type="text" class="form-control" name="telefone" placeholder="Telefone" value="<?php echo $row['telefone']; ?>">
+                <input type="text" class="form-control" name="telefone" placeholder="Telefone" maxlength="14" oninput="formatarTelefone(this)" value="<?php echo $row['telefone']; ?>">
                 <input type="text" class="form-control" name="estado" placeholder="Estado" value="<?php echo $row['estado']; ?>">
                 <input type="text" class="form-control" name="cidade" placeholder="Cidade" value="<?php echo $row['cidade']; ?>">
                 <select class="form-select" name="situacao" id="">
@@ -67,5 +70,6 @@ $row = mysqli_fetch_assoc($resultado);
              
     </div>
     </main>
+    <script src="../../assets/mascaras.js"></script>
 </body>
 </html>

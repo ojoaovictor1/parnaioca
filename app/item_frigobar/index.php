@@ -35,6 +35,7 @@ unset($_SESSION['erroItem']);
         
 
         <div id="formulario_clientes">
+            <h1>Cadastrar Item do Frigobar</h1>
             <?php if($erroItem) : ?>
                 <p style="color: red;"><?= $erroItem; ?></p>
             <?php endif; ?>
@@ -81,7 +82,6 @@ unset($_SESSION['erroItem']);
   });
 </script>
 
-        <a href="../inicio.php#cadastros">Voltar</a>
     </div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>

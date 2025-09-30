@@ -190,8 +190,8 @@ session_start();
                 <div id="graficos_dashboard">
                     <div id="grafico1">
                         <?php include 'dashboard/rSaida_de_itens.php';
-                                while($newRow = mysqli_fetch_assoc($resultado)){
-                                    echo $newRow['nome'] . " " . $newRow['quantidade_total'] . "<br>";
+                                while($row = mysqli_fetch_assoc($resultado)){
+                                    echo $row['nome'] . " " . $row['quantidade_total'] . "<br>";
                                 }
                         ?>   
                         <canvas id="myChart"></canvas>

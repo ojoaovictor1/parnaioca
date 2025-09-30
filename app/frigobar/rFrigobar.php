@@ -23,7 +23,7 @@ if(mysqli_num_rows($resultado) >= 0){
         echo "<td>" . $row['nome'] . "</td>";
         echo "<td>" . $row['acomodacao_id'] . "</td>";
         echo "<td>" . ($row['situacao'] == '1' ? 'Ativo' : 'Inativo') . "</td>";
-        echo "<td> <a href='form_editar.php?id=" . $row['id'] . "'>Edit.</a> </td>";
+        echo "<td> <a href='form_editar.php?id=" . $row['id'] . "'><button class='btn btn-primary'>Edit</button></a> </td>";
         //echo "<td> <a href='dFrigobar.php?id=" . $row['id'] . "'>Del.</a> </td>";
 
 

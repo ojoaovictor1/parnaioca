@@ -19,12 +19,31 @@ $row = mysqli_fetch_assoc($resultado_preencher);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Hospedagem</title>
-    <link rel="stylesheet" href="../include/estilo_clientes.css">
+    <link rel="stylesheet" href="../estilo_inicio.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 <body>
    
-
-    <div id="container">
+    <?php include '../include/menu.php'; ?>
+    <main>
+    <div id="container_reserva">
+        <div id="topo">
+            <ol id="breadcrumb">
+                <li>
+                    <a href="../inicio.php#cadastros">
+                    <i class="fa-solid fa-user"></i>    
+                    Cadastros</a>
+                </li>
+                <li>
+                    <a href="../hospedagem/index.php">Cadastrar Vaga no Estacionamento</a>
+                </li>
+                <li>
+                    Editar Hospedagem
+                </li>
+            </ol>
+        </div>
         <div id="topo"></div>
 
         <div id="formulario_clientes">
@@ -32,10 +51,10 @@ $row = mysqli_fetch_assoc($resultado_preencher);
 
             <form action="uHospedagem.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $id; ?>">
-                <input type="date" name="data_checkin" placeholder="" value="<?php echo $row['data_checkin']; ?>">
-                <input type="date" name="data_checkout" placeholder="" value="<?php echo $row['data_checkout']; ?>">
+                <input type="date" name="data_checkin" placeholder="" class="form-control" value="<?php echo $row['data_checkin']; ?>">
+                <input type="date" name="data_checkout" placeholder="" class="form-control" value="<?php echo $row['data_checkout']; ?>">
 
-                <select name="clientes" id="">
+                <select name="clientes" id="" class="form-control">
                     <?php 
                         while($row = mysqli_fetch_array($resultado_clientes)){
                             echo "<option value='" . $row['nome'] . "'>" . $row['nome'] . "</option>";
@@ -44,7 +63,7 @@ $row = mysqli_fetch_assoc($resultado_preencher);
                     ?>
                 </select>
                 
-                <select name="acomodacoes" id="">
+                <select name="acomodacoes" id="" class="form-control">
                     <?php 
                         while($row = mysqli_fetch_array($resultado_acomodacoes)){
                             echo "<option value='" . $row['nome'] . "'>" . $row['nome'] . "</option>";
@@ -52,21 +71,21 @@ $row = mysqli_fetch_assoc($resultado_preencher);
                     ?>
                 </select>
                 
-                <select name="status" id="">
+                <select name="status" id="" class="form-control">
                     <option value="Check-in Pedente">Check-in Pendente</option>
                     <option value="Ativo">Ativo</option>
                     <option value="Finalizado">Finalizado</option>
                     <option value="Cancelado">Cancelado</option>
                 </select>
               
-                <input type="submit" value="Enviar">
+                <input type="submit" value="Enviar" class="btn form-control" style='background-color: #ac7835'>
             </form>
         </div>
 
         <div id="roda"> 
              
-        <a href="index.php">Voltar</a> </div>
+        </div>
     </div>
-    
+    </main>
 </body>
 </html>

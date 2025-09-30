@@ -74,7 +74,7 @@ $resultado_itens = mysqli_query($con, $sql_itens);
 
                 </select>
                
-                <input type="submit" class='btn form-control' style="" value="Enviar">
+                <input type="submit" class='btn form-control' style='background-color: #ac7835' value="Enviar">
             </form>
         </div>
 
@@ -112,7 +112,9 @@ $resultado_itens = mysqli_query($con, $sql_itens);
 </script>
 
 <!-- Modal de Check-in -->
-
+<?php
+  $sql_data = ""
+?>
 <div class="modal fade" id="checkin-modal" tabindex="-1" aria-labelledby="checkinModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -159,11 +161,12 @@ $resultado_itens = mysqli_query($con, $sql_itens);
     const clienteNome = button.getAttribute('data-nome');
     const acomodacaoNome = button.getAttribute('data-acomodacao');
     const valorAcomodacao = button.getAttribute('data-valor');
+    const diferenca = button.getAttribute('data-diferenca');
 
     document.getElementById('hospedagemId').value = hospedagemId;
     document.getElementById('clienteNome').value = clienteNome;
     document.getElementById('acomodacaoNome').value = acomodacaoNome;
-    document.getElementById('valor').value = valorAcomodacao;
+    document.getElementById('valor').value = diferenca * valorAcomodacao;
     
 
     });
@@ -296,9 +299,7 @@ $resultado_itens = mysqli_query($con, $sql_itens);
 
 </script>
 
-
-
-        <a href="../inicio.php#cadastros">Voltar</a> </div>
+ </div>
     </div>
        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script> 

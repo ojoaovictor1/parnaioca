@@ -20,7 +20,8 @@ if(mysqli_num_rows($resultado) >= 0){
         echo "<td>" . $row['nome'] . "</td>";
         echo "<td>" . $row['preco'] . "</td>";
         echo "<td>" . $row['ativo'] . "</td>";
-        echo "<td> <a href='form_editar.php?id=" . $row['id'] . "'>Edit.</a> </td>";
+
+        echo "<td> <a href='form_editar.php?id=" . $row['id'] . "'><button class='btn btn-primary'>Edit</button></a> </td>";
 
         //echo "<td> <a href='dItem_frigobar.php?id=" . $row['id'] . "'>Del.</a> </td>";
         if($_SESSION['poderes'] == 'admin'){

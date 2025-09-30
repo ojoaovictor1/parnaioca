@@ -30,8 +30,10 @@ if(mysqli_num_rows($resultado) > 0){
         $valor_acomodacao = mysqli_fetch_assoc($resultado_valor)['valor'];
         
         /*checkin*/
-        
-        
+        $data_checkin = new DateTime($row['data_checkin'], new DateTimeZone('America/Sao_Paulo'));
+        $data_checkout = new DateTime($row['data_checkout'], new DateTimeZone('America/Sao_Paulo')) ;
+        $diferenca = $data_checkin->diff($data_checkout);
+        $dias = $diferenca->days;
             echo "<td>";
             if($row['ativo'] == 'Check-in Pedente') {
             echo "<button type='button' class='btn btn-info btn-sm' 
@@ -40,7 +42,8 @@ if(mysqli_num_rows($resultado) > 0){
                 data-id='".$row['id']."' 
                 data-nome='".$row['cliente']."'
                 data-valor='".$valor_acomodacao."'
-                data-acomodacao='".$row['acomodacao']."'>
+                data-acomodacao='".$row['acomodacao']."'
+                data-diferenca='".$dias."'>
                 Check-in
             </button>";
             }else{

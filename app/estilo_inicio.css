@@ -17,7 +17,7 @@ body {
     display: flex;
     font-family: Arial, sans-serif;
     height: 100vh;
-    overflow: hidden;
+    overflow-y: auto;
 }
 #breadcrumb{
     list-style-type: none;
@@ -397,6 +397,7 @@ main{
     padding: 30px;
 }
 #container_reserva{
+    margin-top: 200px;
     display: flex;
     flex-direction: column;
     justify-content: center;

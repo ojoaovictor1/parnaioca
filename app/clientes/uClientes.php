@@ -21,6 +21,11 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         header('Location: form_editar.php');
         exit; 
     }
+    if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+        $_SESSION['erro'] = "Formato de email inválido";
+        header('Location: form_editar.php');
+        exit;
+    }
     if(empty($_POST['cpf'])){
         $_SESSION['erro'] = "O campo cpf é obrigatório";
         header('Location: form_editar.php');

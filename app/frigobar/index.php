@@ -55,7 +55,7 @@ unset($_SESSION['erroItem']);
                         }
                     ?>
                 </select>
-                <input type="submit" class='btn btn-primary form-control' value="Enviar">
+                <input type="submit" class='btn form-control' style='background-color: #ac7835' value="Enviar">
             </form>
         </div>
 
@@ -91,7 +91,6 @@ unset($_SESSION['erroItem']);
     document.getElementById('btnConfirmarExclusao').href = 'dFrigobar.php?id=' + jogadorId;
   });
 </script>
-            <a href="../inicio.php#cadastros">Voltar</a> 
             
         </div>
     </div>

@@ -96,15 +96,15 @@ unset($_SESSION['erroItem']);
   const exampleModal = document.getElementById('exampleModal');
   exampleModal.addEventListener('show.bs.modal', event => {
     const button = event.relatedTarget;
-    const jogadorId = button.getAttribute('data-id');
-    const jogadorNome = button.getAttribute('data-nome');
+    const Id = button.getAttribute('data-id');
+    const Nome = button.getAttribute('data-nome');
 
-    document.getElementById('nomeJogador').textContent = jogadorNome;
-    document.getElementById('btnConfirmarExclusao').href = 'dVaga_estacionamento.php?id=' + jogadorId;
+    document.getElementById('nomeJogador').textContent = Nome;
+    document.getElementById('btnConfirmarExclusao').href = 'dVaga_estacionamento.php?id=' + Id;
   });
 </script>
 
-            <a href="../inicio.php#cadastros">Voltar</a>
+            
         </div>
     </div>
 
