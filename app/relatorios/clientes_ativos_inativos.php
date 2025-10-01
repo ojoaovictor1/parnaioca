@@ -22,7 +22,8 @@ $resultado_sqlno = mysqli_query($con,$sqlno);
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.bootstrap5.min.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../estilo_inicio.css">
 
 
 
@@ -48,7 +49,23 @@ $resultado_sqlno = mysqli_query($con,$sqlno);
     <script src="https://cdn.datatables.net/plug-ins/1.13.6/i18n/pt-BR.json"></script>
 </head>
 <body>
-    <a href="../inicio.php#relatorios">Voltar</a>
+    <?php include '../include/menu.php'; ?>
+    <main>
+    
+    <div id="container_clientes">
+        <div id="topo">
+            <ol id="breadcrumb">
+                <li>
+                    <a href="../inicio.php#relatorios">
+                    <i class="fa-solid fa-chart-bar"></i>    
+                    Relatórios</a>
+                </li>
+                <li>
+                    Clientes Ativos e Inativos
+                </li>
+            </ol>
+        </div>
+        <div id="topo"></div>
     <h1>Clientes Ativos</h1>
     <table id="tabelaExemplo" class="table table-striped">
         <thead><tr>
@@ -108,6 +125,9 @@ $resultado_sqlno = mysqli_query($con,$sqlno);
 
         }
         ?> <br> <br>
+    </table>
+    </div>
+    </main>
 <script>
         $(document).ready(function() {
             $('#tabelaExemplo').DataTable({

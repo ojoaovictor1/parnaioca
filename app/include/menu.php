@@ -16,7 +16,7 @@
                 </div>
                 <ul id="side_itens">
                     <li class="side_item active">
-                        <a href="#inicio">
+                        <a href="\parnaioca\app\inicio.php#inicio">
                             <i class="fa-solid fa-house"></i>
                             <span class="item-description">
                                 Inicio
@@ -25,7 +25,7 @@
                     </li>
 
                     <li class="side_item">
-                        <a href="#cadastros">
+                        <a href="\parnaioca\app\inicio.php#cadastros">
                             <i class="fa-regular fa-circle-user"></i>
                             <span class="item-description">
                                 Cadastros
@@ -34,7 +34,7 @@
                     </li>
 
                     <li class="side_item">
-                        <a href="#dashboard">
+                        <a href="\parnaioca\app\inicio.php#dashboard">
                             <i class="fa-solid fa-chart-line"></i>
                             <span class="item-description">
                                 Dashboard
@@ -43,7 +43,7 @@
                     </li>
 
                     <li class="side_item">
-                        <a href="#relatorios">
+                        <a href="\parnaioca\app\inicio.php#relatorios">
                             <i class="fa-regular fa-file"></i>
                             <span class="item-description">
                                 Relatórios
@@ -52,7 +52,7 @@
                     </li>
 
                     <li class="side_item">
-                        <a href="#intranet">
+                        <a href="\parnaioca\app\inicio.php#intranet">
                             <i class="fa-solid fa-address-book"></i>
                             <span class="item-description">
                                Contatos

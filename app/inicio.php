@@ -167,20 +167,22 @@ session_start();
                             <p class="card-text"><?= $maior['quantidade_total'] . " Saídas"?></p>
                         </div>
                     </div>
+                    
 
+                     <?php include 'dashboard/rRelacao_de_quarto.php'; ?>
                     <div class="card text-bg-warning mb-3" style="max-width: 16rem">
                         <div class="card-header">Quarto menos Rentável</div>
                         <div class="card-body">
-                            <h5 class="card-title">Nome do Quarto</h5>
-                            <p class="card-text">Descrição</p>
+                            <h5 class="card-title"><?= $acomodacao_menor['acomodacao'] ?></h5>
+                            <p class="card-text">Flaquito</p>
                         </div>
                     </div>
 
                     <div class="card text-bg-success mb-3" style="max-width: 16rem">
-                        <div class="card-header">Quarto mais Retável</div>
+                        <div class="card-header">Quarto mais Rentável</div>
                         <div class="card-body">
-                            <h5 class="card-title">Nome do Quarto</h5>
-                            <p class="card-text">Descrição</p>
+                            <h5 class="card-title"><?= $acomodacao_maior['acomodacao'] ?></h5>
+                            <p class="card-text">The Best</p>
                         </div>
                     </div>
 
@@ -240,27 +242,22 @@ session_start();
 
                     <div id="grafico2">
                         <canvas id="myChart2"></canvas>
-                        
+                        <?php include 'dashboard/rRelacao_de_quarto.php'; ?>
                         <script>
                             const ctx2 = document.getElementById('myChart2').getContext('2d');
                             const myChart2 = new Chart(ctx2, {
                                 type: 'line',
                                 data: {
-                                    labels: ['Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro', 'Janeiro', 'Fevereiro'],
+                                    labels: <?= $acomodacoes_json; ?>,
                                     datasets: [{
-                                        label: 'Quarto Menos Rentável',
-                                        backgroundColor: 'rgb(255, 99, 132)',
-                                        borderColor: 'rgb(255, 99, 132)',
-                                        data: [0, 10, 5, 2, 20, 30, 45],
+                                        label: 'Rentabilidade das Acomodações',
+                                        backgroundColor: 'rgba(128, 99, 255, 1)',
+                                        borderColor: 'rgba(128, 99, 255, 1)',
+                                        data: <?= $valores_json; ?>,
 
                                         
                                     },
-                                    {
-                                        label: 'Quarto Mais Rentável',
-                                        backgroundColor: 'rgba(46, 132, 212, 1)',
-                                        borderColor: 'rgba(46, 132, 212, 1)',
-                                        data: [0, 15, 45, 9, 40, 5, 40],
-                                    }
+                                   
                                 ]
                                 },
                                 options: {}
