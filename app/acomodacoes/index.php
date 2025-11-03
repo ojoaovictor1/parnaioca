@@ -4,7 +4,7 @@ include '../config/conexao.php';
 $erroa = isset($_SESSION['erroa']) ? $_SESSION['erroa'] : '';
 unset($_SESSION['erroa']);
 
-$sql_consulta_tipo = "SELECT * FROM tipo_da_acomodacao";
+$sql_consulta_tipo = "SELECT * FROM tipo_da_acomodacao WHERE situacao = 1";
 $resultado = mysqli_query($con,$sql_consulta_tipo);
 $total_registros = mysqli_num_rows($resultado);
 ?>

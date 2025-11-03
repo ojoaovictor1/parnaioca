@@ -34,8 +34,9 @@ if(mysqli_num_rows($resultado) > 0){
         $data_checkout = new DateTime($row['data_checkout'], new DateTimeZone('America/Sao_Paulo')) ;
         $diferenca = $data_checkin->diff($data_checkout);
         $dias = $diferenca->days;
+        
             echo "<td>";
-            if($row['ativo'] == 'Check-in Pedente') {
+            if($row['ativo'] == 'Check-in Pendente'){
             echo "<button type='button' class='btn btn-info btn-sm' 
                 data-bs-toggle='modal' 
                 data-bs-target='#checkin-modal' 

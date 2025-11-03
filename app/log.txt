@@ -23,3 +23,16 @@
 [29/09/2025 21:17:17] - Dados que serão Editados. Realizado(a) por joao: Apresenta-1996-12-12 - 484.156.131-55
 [29/09/2025 21:17:17] - Dados Editados. Realizado(a) por joao: Apresenta-1996-12-12 - 484.156.131-53
 [30/09/2025 23:50:57] - CHECK-IN REALIZADO POR joao: Milano - Suíte Lagoa Azul - R$ 1500
+[05/10/2025 15:23:53] - Dados que serão Editados. Realizado(a) por joao: Suzane Cota-1997-09-16 - 231.618.965-18
+[05/10/2025 15:24:08] - Dados que serão Editados. Realizado(a) por joao: Suzane Cota-2000-09-16 - 231.618.965-18
+[05/10/2025 15:32:18] - CHECK-IN REALIZADO POR joao: Optimus Prime - Vasco da Gama - R$ 100
+[05/10/2025 15:33:50] - CHECK-OUT REALIZADO POR joao: Optimus Prime - Vasco da Gama - R$ 2817.00
+[02/11/2025 23:35:14] - CHECK-OUT REALIZADO POR joao: Milano - Suíte Lagoa Azul - R$ 686.00
+[03/11/2025 03:53:35] - CHECK-OUT REALIZADO POR joao: Optimus Prime - Suíte Parnaioca - R$ 3753.00
+[03/11/2025 03:53:54] - CHECK-IN REALIZADO POR joao: João victor - Cabra Macho - R$ 2800
+[03/11/2025 04:02:35] - CHECK-OUT REALIZADO POR joao: João victor - Cabra Macho - R$ 290.00
+[03/11/2025 04:07:13] - CHECK-OUT REALIZADO POR joao: luc luc - Suíte Parnaioca - R$ 90.00
+[03/11/2025 04:08:57] - CHECK-IN REALIZADO POR joao: João victor - Apartamento Standard - R$ 900
+[03/11/2025 04:09:20] - CHECK-OUT REALIZADO POR joao: João victor - Apartamento Standard - R$ 75.00
+[03/11/2025 04:11:06] - CHECK-IN REALIZADO POR joao: Optimus Prime - Suite Lopes Mendes Deluxe - R$ 4000
+[03/11/2025 04:11:36] - CHECK-OUT REALIZADO POR joao: Optimus Prime - Suite Lopes Mendes Deluxe - R$ 95.00

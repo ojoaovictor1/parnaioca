@@ -50,7 +50,7 @@ $resultado_itens = mysqli_query($con, $sql_itens);
             <?php endif; ?>
             <form action="cHospedagem.php" method="POST">
                 
-                <input type="date" class='form-control' name="data_checkin ">
+                <input type="date" class='form-control' name="data_checkin">
                 <input type="date" class='form-control' name="data_checkout">
 
                 <select name="cliente" class='form-control'>
@@ -185,7 +185,7 @@ $resultado_itens = mysqli_query($con, $sql_itens);
           <!-- Formulário: Consumo Frigobar -->
           <div class="col-md-6 border-end pe-4">
             <h5>Consumo do Frigobar</h5>
-            <form action="../consumo_frigobar/cConsumo_frigobar.php" method="POST" id="formFrigobar">
+            <form id="formFrigobar" action="../consumo_frigobar/cConsumo_frigobar.php" method="POST">
               <input type="hidden" name="id_hospedagem" id="frigobarHospedagemId" value="<?php echo $id_hospedagem; ?>">
               
               <div id="frigobar-itens-list"> 
@@ -232,7 +232,7 @@ $resultado_itens = mysqli_query($con, $sql_itens);
           <!-- Formulário: Check-out -->
           <div class="col-md-6 ps-4">
             <h5>Dados do Check-out</h5>
-            <form action="../checkout/cCheckout.php" method="POST">
+            <form id="formCheckout" action="../checkout/cCheckout.php" method="POST">
               <input type="hidden" name="hospedagem_id" id="hospedagemIdCheckout">
 
               <div class="mb-3">
@@ -268,6 +268,55 @@ $resultado_itens = mysqli_query($con, $sql_itens);
     </div>
   </div>
 </div>
+
+<script>
+  // ajax para inserir itens do frigobar sem atualizar a pagina e desabilitar os campos com ajax e jquery
+  document.getElementById('formFrigobar').addEventListener('submit', function(event) {
+    event.preventDefault(); 
+
+    const formData = new FormData(this);
+
+    fetch('../consumo_frigobar/cConsumo_frigobar.php', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+      alert('Consumo do frigobar registrado com sucesso!');
+      document.querySelectorAll('.item-quantidade').forEach(input => {
+        input.disabled = true;
+      });
+      document.getElementById('formFrigobar').style.display = 'none';
+    })
+    .catch(error => {
+      console.error('Erro ao registrar consumo do frigobar:', error);
+    });
+  });
+
+  // ajax para realizar o checkout sem atualizar a pagina e imprimir um swal de sucesso e fechar o modal
+  document.getElementById('formCheckout').addEventListener('submit', function(event) {
+    event.preventDefault(); 
+
+    const formData = new FormData(this);
+
+    fetch('../checkout/cCheckout.php', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+      alert('Check-out realizado com sucesso!');
+      const checkoutModal = bootstrap.Modal.getInstance(document.getElementById('checkout-modal'));
+      checkoutModal.hide();
+      location.reload();
+
+    })
+    .catch(error => {
+      console.error('Erro ao realizar o check-out:', error);
+    });
+  });
+
+</script>
 
 <script>
   const checkoutModal = document.getElementById('checkout-modal');
